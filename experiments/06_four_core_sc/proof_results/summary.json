@@ -1,0 +1,148 @@
+{
+  "2cores_2lines": {
+    "cores": 2,
+    "lines": 2,
+    "programs": "nondeterministic command streams; one in-flight op per core",
+    "values": "unbounded integers: symbolic payload(version) permits arbitrary and repeated data values; a successful write constrains its new version to requested data",
+    "internal_protocol_actions": 44,
+    "frontend_actions": 32,
+    "proof": "UNBOUNDED_INDUCTION_PASS",
+    "checks": [
+      {
+        "obligation": "initial",
+        "result": "unsat",
+        "seconds": 0.069,
+        "smt_bytes": 22105,
+        "file": "initial.smt2"
+      },
+      {
+        "obligation": "induction",
+        "result": "unsat",
+        "seconds": 0.135,
+        "smt_bytes": 251158,
+        "file": "induction.smt2"
+      },
+      {
+        "obligation": "safety",
+        "result": "unsat",
+        "seconds": 0.003,
+        "smt_bytes": 20357,
+        "file": "safety.smt2"
+      }
+    ]
+  },
+  "4cores_2lines": {
+    "cores": 4,
+    "lines": 2,
+    "programs": "nondeterministic command streams; one in-flight op per core",
+    "values": "unbounded integers: symbolic payload(version) permits arbitrary and repeated data values; a successful write constrains its new version to requested data",
+    "internal_protocol_actions": 88,
+    "frontend_actions": 64,
+    "proof": "UNBOUNDED_INDUCTION_PASS",
+    "checks": [
+      {
+        "obligation": "initial",
+        "result": "unsat",
+        "seconds": 0.007,
+        "smt_bytes": 42005,
+        "file": "initial.smt2"
+      },
+      {
+        "obligation": "induction",
+        "result": "unsat",
+        "seconds": 0.454,
+        "smt_bytes": 855816,
+        "file": "induction.smt2"
+      },
+      {
+        "obligation": "safety",
+        "result": "unsat",
+        "seconds": 0.004,
+        "smt_bytes": 38765,
+        "file": "safety.smt2"
+      }
+    ]
+  },
+  "4cores_3lines": {
+    "cores": 4,
+    "lines": 3,
+    "programs": "nondeterministic command streams; one in-flight op per core",
+    "values": "unbounded integers: symbolic payload(version) permits arbitrary and repeated data values; a successful write constrains its new version to requested data",
+    "internal_protocol_actions": 132,
+    "frontend_actions": 96,
+    "proof": "UNBOUNDED_INDUCTION_PASS",
+    "checks": [
+      {
+        "obligation": "initial",
+        "result": "unsat",
+        "seconds": 0.007,
+        "smt_bytes": 61588,
+        "file": "initial.smt2"
+      },
+      {
+        "obligation": "induction",
+        "result": "unsat",
+        "seconds": 1.037,
+        "smt_bytes": 1767639,
+        "file": "induction.smt2"
+      },
+      {
+        "obligation": "safety",
+        "result": "unsat",
+        "seconds": 0.008,
+        "smt_bytes": 56971,
+        "file": "safety.smt2"
+      }
+    ]
+  },
+  "witnesses": {
+    "handoff": {
+      "result": "sat",
+      "seconds": 0.021,
+      "events": [
+        "core0:issue_2_line0",
+        "core0:ask_write_line0",
+        "l0::dir:start_rqW_c0",
+        "l0::dir:grant_M_c0",
+        "l0::net:deliver_grM_c0",
+        "core0:complete_store_line0",
+        "l0::dir:accept_gack_c0",
+        "core1:issue_1_line0",
+        "core1:ask_read_line0",
+        "l0::dir:start_rqR_c1",
+        "l0::net:deliver_recall_c0",
+        "l0::dir:accept_wb_c0",
+        "l0::dir:grant_S_c1",
+        "l0::net:deliver_grS_c1",
+        "core1:complete_read_line0"
+      ],
+      "smt_file": "ownership_handoff_witness.smt2"
+    },
+    "competing_cas": {
+      "result": "sat",
+      "seconds": 0.03,
+      "events": [
+        "core0:issue_3_line0",
+        "core1:issue_3_line0",
+        "core0:ask_write_line0",
+        "core1:ask_write_line0",
+        "l0::dir:start_rqW_c0",
+        "l0::dir:grant_M_c0",
+        "l0::net:deliver_grM_c0",
+        "core0:complete_cas_line0",
+        "l0::dir:accept_gack_c0",
+        "l0::dir:start_rqW_c1",
+        "l0::net:deliver_recall_c0",
+        "l0::dir:accept_wb_c0",
+        "l0::dir:grant_M_c1",
+        "l0::net:deliver_grM_c1",
+        "core1:complete_cas_line0"
+      ],
+      "smt_file": "competing_cas_witness.smt2"
+    }
+  },
+  "ordering_mutant": {
+    "strict_writer_order": "unsat",
+    "broken_writer_order": "sat"
+  }
+}

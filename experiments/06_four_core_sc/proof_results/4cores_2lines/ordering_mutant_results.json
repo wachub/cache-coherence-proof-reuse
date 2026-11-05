@@ -1,0 +1,4 @@
+{
+  "strict_writer_order": "unsat",
+  "broken_writer_order": "sat"
+}

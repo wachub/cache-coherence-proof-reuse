@@ -1,0 +1,46 @@
+{
+  "handoff": {
+    "result": "sat",
+    "seconds": 0.021,
+    "events": [
+      "core0:issue_2_line0",
+      "core0:ask_write_line0",
+      "l0::dir:start_rqW_c0",
+      "l0::dir:grant_M_c0",
+      "l0::net:deliver_grM_c0",
+      "core0:complete_store_line0",
+      "l0::dir:accept_gack_c0",
+      "core1:issue_1_line0",
+      "core1:ask_read_line0",
+      "l0::dir:start_rqR_c1",
+      "l0::net:deliver_recall_c0",
+      "l0::dir:accept_wb_c0",
+      "l0::dir:grant_S_c1",
+      "l0::net:deliver_grS_c1",
+      "core1:complete_read_line0"
+    ],
+    "smt_file": "ownership_handoff_witness.smt2"
+  },
+  "competing_cas": {
+    "result": "sat",
+    "seconds": 0.03,
+    "events": [
+      "core0:issue_3_line0",
+      "core1:issue_3_line0",
+      "core0:ask_write_line0",
+      "core1:ask_write_line0",
+      "l0::dir:start_rqW_c0",
+      "l0::dir:grant_M_c0",
+      "l0::net:deliver_grM_c0",
+      "core0:complete_cas_line0",
+      "l0::dir:accept_gack_c0",
+      "l0::dir:start_rqW_c1",
+      "l0::net:deliver_recall_c0",
+      "l0::dir:accept_wb_c0",
+      "l0::dir:grant_M_c1",
+      "l0::net:deliver_grM_c1",
+      "core1:complete_cas_line0"
+    ],
+    "smt_file": "competing_cas_witness.smt2"
+  }
+}
