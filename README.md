@@ -99,3 +99,11 @@ python -m unittest discover -s tests -v
 ```
 
 The cache does not establish new proofs; it reuses prior Z3 answers only for an **identical** SMT obligation and solver configuration. The proof still excludes arbitrary queue bounds, full trace-level SC refinement, and liveness.
+
+## Codex project onboarding (documentation-only v1.2)
+
+To continue this project with a coding agent, first read [`AGENTS.md`](AGENTS.md)
+and the detailed [`CODEX_PROJECT_HANDOFF.md`](CODEX_PROJECT_HANDOFF.md).
+These two documents describe current verified guarantees, unresolved proof gaps,
+reproduction commands, proof-reuse heuristics, and a feature-addition protocol.
+No transition-system source or SMT proof obligation changed in v1.2.
