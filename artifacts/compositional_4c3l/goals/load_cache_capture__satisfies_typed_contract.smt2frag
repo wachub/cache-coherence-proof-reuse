@@ -1,0 +1,5 @@
+; load_cache_capture__satisfies_typed_contract
+(push 1)
+(assert (and (and (and msi_inv spec_inv) delta_load_cache_capture) (not contract_load_cache_capture)))
+(check-sat)
+(pop 1)

@@ -9,3 +9,6 @@ venv/
 # Generated proof cache and fast-verification run outputs
 .proof_cache/
 .fast_verify_outputs/
+# Regenerable large single-file and per-obligation SMT proof exports
+artifacts/**/sliced_queries/
+artifacts/**/all_contract_queries.smt2

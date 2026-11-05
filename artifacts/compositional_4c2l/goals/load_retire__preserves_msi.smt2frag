@@ -1,0 +1,5 @@
+; load_retire__preserves_msi
+(push 1)
+(assert (and (and (and msi_inv spec_inv) delta_load_retire) (not msi_inv_next)))
+(check-sat)
+(pop 1)

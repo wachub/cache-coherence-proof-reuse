@@ -1,0 +1,243 @@
+{
+  "passed": true,
+  "solver_version": "4.13.3.0",
+  "mode": "sliced",
+  "seconds": 2.9884,
+  "cache_hits": 0,
+  "solved": 29,
+  "solver_contexts": 11,
+  "goals": {
+    "spec_initial": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "cf638a77ff05c342"
+    },
+    "inherited_preserves_spec": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "ca01bd34ac35cf07"
+    },
+    "inherited_preserves_msi": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "63368aaccf4857d9"
+    },
+    "store_stage__preserves_msi": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "a5d1f2b77e5eee18"
+    },
+    "store_stage__preserves_spec": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "7724336a36e07021"
+    },
+    "store_stage__satisfies_typed_contract": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "2ec595d58d139aba"
+    },
+    "resolve_speculation__preserves_msi": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "828d8777b2786588"
+    },
+    "resolve_speculation__preserves_spec": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "7c20e0162044cbff"
+    },
+    "resolve_speculation__satisfies_typed_contract": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "191771b5f691ae95"
+    },
+    "store_issue__preserves_msi": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "e25285df3bc3a528"
+    },
+    "store_issue__preserves_spec": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "41faf2f91b2271b2"
+    },
+    "store_issue__satisfies_typed_contract": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "180397ec048016a7"
+    },
+    "load_forward__preserves_msi": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "53672de9136f1c13"
+    },
+    "load_forward__preserves_spec": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "b7a4ce71c68c1a33"
+    },
+    "load_forward__satisfies_typed_contract": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "c5736ce157bc6dae"
+    },
+    "load_cache_capture__preserves_msi": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "5d2f0ae841870b65"
+    },
+    "load_cache_capture__preserves_spec": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "5858103d02edfb1c"
+    },
+    "load_cache_capture__satisfies_typed_contract": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "912c2245a773bc30"
+    },
+    "load_retire__preserves_msi": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "3e5c244986f90a15"
+    },
+    "load_retire__preserves_spec": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "9be72c6369e75da5"
+    },
+    "load_retire__satisfies_typed_contract": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "7d8e86e3a7f43df3"
+    },
+    "load_replay__preserves_msi": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "15448e7ca1bdf007"
+    },
+    "load_replay__preserves_spec": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "0e6ee8ee402f761d"
+    },
+    "load_replay__satisfies_typed_contract": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "57580654fe117ff5"
+    },
+    "typed_contracts_equal_original_interface": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "ab5dd55de6e7cb51"
+    },
+    "transition_partition_exact": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "c3e44a2d868c3219"
+    },
+    "read_result_correct": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "f4a40de00c85e1c9"
+    },
+    "youngest_store_forwarded": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "97854b1af7851ac9"
+    },
+    "read_order_respected": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "a0ecf19858263edc"
+    }
+  },
+  "complete_contract_suite": true,
+  "module_counts": {
+    "store_stage": 24,
+    "resolve_speculation": 12,
+    "store_issue": 12,
+    "load_forward": 24,
+    "load_cache_capture": 12,
+    "load_retire": 12,
+    "load_replay": 12
+  },
+  "baseline": {
+    "passed": true,
+    "solver_version": "4.13.3.0",
+    "mode": "batch",
+    "seconds": 0.7712,
+    "cache_hits": 0,
+    "solved": 3,
+    "goals": {
+      "initial": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "a5f97286f407bba2"
+      },
+      "induction": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "776f85a6463aff6a"
+      },
+      "safety": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "643b79aad751218a"
+      }
+    }
+  },
+  "full_regression": {
+    "passed": true,
+    "solver_version": "4.13.3.0",
+    "mode": "batch",
+    "seconds": 1.2645,
+    "cache_hits": 0,
+    "solved": 3,
+    "goals": {
+      "initial": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "a2698cfe53408230"
+      },
+      "induction": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "4674d73b8e9617d5"
+      },
+      "safety": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "bd77a1ab29e0b49d"
+      }
+    }
+  },
+  "mutants": {
+    "passed": false,
+    "solver_version": "4.13.3.0",
+    "mode": "batch",
+    "seconds": 0.0596,
+    "cache_hits": 0,
+    "solved": 3,
+    "goals": {
+      "unvalidated_read": {
+        "status": "sat",
+        "source": "solver",
+        "hash": "76113c60fc59572f"
+      },
+      "premature_read": {
+        "status": "sat",
+        "source": "solver",
+        "hash": "804ca0dbd37721e9"
+      },
+      "stuttering_store_issue": {
+        "status": "sat",
+        "source": "solver",
+        "hash": "51ded43bd014729b"
+      }
+    },
+    "detected": true
+  },
+  "all_requested_checks_passed": true
+}

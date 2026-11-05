@@ -1,0 +1,5 @@
+; load_forward__satisfies_typed_contract
+(push 1)
+(assert (and (and (and msi_inv spec_inv) delta_load_forward) (not contract_load_forward)))
+(check-sat)
+(pop 1)

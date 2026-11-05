@@ -1,0 +1,15 @@
+test_bundle_manifest_tracks_exact_hashes (test_compositional_verify.CompositionalTests.test_bundle_manifest_tracks_exact_hashes) ... ok
+test_full_contract_checks_unsat (test_compositional_verify.CompositionalTests.test_full_contract_checks_unsat) ... ok
+test_partition_all_actions_no_implicit_symmetry (test_compositional_verify.CompositionalTests.test_partition_all_actions_no_implicit_symmetry) ... ok
+test_sliced_proof_context_has_no_unrelated_family (test_compositional_verify.CompositionalTests.test_sliced_proof_context_has_no_unrelated_family) ... ok
+test_typed_contracts_detect_all_mutants (test_compositional_verify.CompositionalTests.test_typed_contracts_detect_all_mutants) ... ok
+test_batch_isolated_agree_and_no_push_leak (test_fast_verify.FastVerifyTests.test_batch_isolated_agree_and_no_push_leak) ... ok
+test_cache_keys_include_semantics_and_options (test_fast_verify.FastVerifyTests.test_cache_keys_include_semantics_and_options) ... ok
+test_failed_interface_localizes_bad_retirement (test_fast_verify.FastVerifyTests.test_failed_interface_localizes_bad_retirement) ... ok
+test_full_four_core_delta_and_mutant_sensitivity (test_fast_verify.FastVerifyTests.test_full_four_core_delta_and_mutant_sensitivity) ... ok
+test_generated_queries_unchanged (test_fast_verify.FastVerifyTests.test_generated_queries_unchanged) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 3.703s
+
+OK

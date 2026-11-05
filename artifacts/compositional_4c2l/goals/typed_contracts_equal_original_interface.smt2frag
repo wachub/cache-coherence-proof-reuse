@@ -1,0 +1,5 @@
+; typed_contracts_equal_original_interface
+(push 1)
+(assert (not (= arch_interface (or contract_store_stage contract_resolve_speculation contract_store_issue contract_load_forward contract_load_cache_capture contract_load_retire contract_load_replay))))
+(check-sat)
+(pop 1)

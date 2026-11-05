@@ -1,0 +1,5 @@
+; inherited_preserves_spec
+(push 1)
+(assert (and (and msi_inv spec_inv) inherited (not spec_inv_next)))
+(check-sat)
+(pop 1)

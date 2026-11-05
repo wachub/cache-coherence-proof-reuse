@@ -1,0 +1,5 @@
+; load_replay__satisfies_typed_contract
+(push 1)
+(assert (and (and (and msi_inv spec_inv) delta_load_replay) (not contract_load_replay)))
+(check-sat)
+(pop 1)

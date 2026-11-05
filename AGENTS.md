@@ -32,3 +32,23 @@ Use `tools/fast_verify.py` with shared sessions/caching for iteration; fresh `--
 5. Commit only after successful fresh checks; document unresolved proof gaps explicitly.
 
 Priority research direction: complete the missing machine-checked SC trace refinement; then queue-size generalization and more speculative reads. Do not falsely describe proposed solver heuristics as already implemented.
+
+## v1.3 compositional verification (current priority)
+
+**Current instruction: do not add cache-model features unless explicitly asked.**
+Use `docs/COMPOSITIONAL_VERIFICATION.md`, `docs/COMPOSITIONAL_QUICKSTART.md`,
+and `tools/compositional_verify.py` to improve proof reuse around the **unchanged**
+combined model. The contract layer groups existing actions into seven typed
+architectural effects; unfamiliar action names must cause a hard failure,
+not silent omission. Separate *typed* `store_issue` / `load_retire` / `load_replay`
+contracts from the older interface's broad union: the latter is too weak to
+rule out every event misclassification. Verify the abstract interface and
+retirement order independently of per-line MSI safety.
+
+When optimizing proof code, prefer dependency-sliced SMT-LIB contexts over
+adding new processor behaviors. If modifying a shared invariant, state layout
+or contract, invalidate affected proof caches. Emit standalone SMT-LIB queries,
+source SHA-256 manifest, regression output, and negative controls. Always
+recheck both 4-core / 2-line and 4-core / 3-line models with `--no-cache
+--baseline --full-regression --check-mutants` before release. Neither `UNSAT`
+nor formula sharing by itself proves an end-to-end SC trace refinement.

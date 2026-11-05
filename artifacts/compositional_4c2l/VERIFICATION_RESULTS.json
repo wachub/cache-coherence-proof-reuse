@@ -1,0 +1,243 @@
+{
+  "passed": true,
+  "solver_version": "4.13.3.0",
+  "mode": "sliced",
+  "seconds": 1.7671,
+  "cache_hits": 0,
+  "solved": 29,
+  "solver_contexts": 11,
+  "goals": {
+    "spec_initial": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "7053a56be5873836"
+    },
+    "inherited_preserves_spec": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "0915d2c86559af21"
+    },
+    "inherited_preserves_msi": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "1a09bb7b2d8117e7"
+    },
+    "store_stage__preserves_msi": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "d9807fe3f10b3ce8"
+    },
+    "store_stage__preserves_spec": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "f93ab7dcaeaf76cb"
+    },
+    "store_stage__satisfies_typed_contract": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "74f0b0023a162695"
+    },
+    "resolve_speculation__preserves_msi": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "af22808355258140"
+    },
+    "resolve_speculation__preserves_spec": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "fa4d9a6aeaac8909"
+    },
+    "resolve_speculation__satisfies_typed_contract": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "e29cf58a952642de"
+    },
+    "store_issue__preserves_msi": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "3bdc67c866aa2335"
+    },
+    "store_issue__preserves_spec": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "b321e32fd33718c2"
+    },
+    "store_issue__satisfies_typed_contract": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "d270929337febda2"
+    },
+    "load_forward__preserves_msi": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "6052937786c3923d"
+    },
+    "load_forward__preserves_spec": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "c006e05c056db2e0"
+    },
+    "load_forward__satisfies_typed_contract": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "9dd1b9aa4f3c208a"
+    },
+    "load_cache_capture__preserves_msi": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "068f9a5282cf77cb"
+    },
+    "load_cache_capture__preserves_spec": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "0a20f350de66388d"
+    },
+    "load_cache_capture__satisfies_typed_contract": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "fa9a963ee2aa05fd"
+    },
+    "load_retire__preserves_msi": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "6a8e91ca499f2faa"
+    },
+    "load_retire__preserves_spec": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "31e8cf10d49302b1"
+    },
+    "load_retire__satisfies_typed_contract": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "5b3864e532642475"
+    },
+    "load_replay__preserves_msi": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "c52639995c674c87"
+    },
+    "load_replay__preserves_spec": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "4db9bf2db53df840"
+    },
+    "load_replay__satisfies_typed_contract": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "9d79b3e6cf3f8c73"
+    },
+    "typed_contracts_equal_original_interface": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "4e8f578bd3844c9a"
+    },
+    "transition_partition_exact": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "38e238c2a740f5fe"
+    },
+    "read_result_correct": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "a83ac5bc6d38958f"
+    },
+    "youngest_store_forwarded": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "333d2293f161b036"
+    },
+    "read_order_respected": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "48ec5f0f22865ca0"
+    }
+  },
+  "complete_contract_suite": true,
+  "module_counts": {
+    "store_stage": 16,
+    "resolve_speculation": 12,
+    "store_issue": 8,
+    "load_forward": 16,
+    "load_cache_capture": 8,
+    "load_retire": 8,
+    "load_replay": 8
+  },
+  "baseline": {
+    "passed": true,
+    "solver_version": "4.13.3.0",
+    "mode": "batch",
+    "seconds": 0.4672,
+    "cache_hits": 0,
+    "solved": 3,
+    "goals": {
+      "initial": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "ba914f5ebcecd70f"
+      },
+      "induction": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "24a3cab36417e92e"
+      },
+      "safety": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "755afa1de5671980"
+      }
+    }
+  },
+  "full_regression": {
+    "passed": true,
+    "solver_version": "4.13.3.0",
+    "mode": "batch",
+    "seconds": 0.7339,
+    "cache_hits": 0,
+    "solved": 3,
+    "goals": {
+      "initial": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "8df6ef1ab836bd5d"
+      },
+      "induction": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "129869b5729bc7b6"
+      },
+      "safety": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "93a9793e932980a9"
+      }
+    }
+  },
+  "mutants": {
+    "passed": false,
+    "solver_version": "4.13.3.0",
+    "mode": "batch",
+    "seconds": 0.092,
+    "cache_hits": 0,
+    "solved": 3,
+    "goals": {
+      "unvalidated_read": {
+        "status": "sat",
+        "source": "solver",
+        "hash": "562b494e04650acc"
+      },
+      "premature_read": {
+        "status": "sat",
+        "source": "solver",
+        "hash": "1c13fef31947ca52"
+      },
+      "stuttering_store_issue": {
+        "status": "sat",
+        "source": "solver",
+        "hash": "c07ea6c7ba1ad2e3"
+      }
+    },
+    "detected": true
+  },
+  "all_requested_checks_passed": true
+}

@@ -1,0 +1,5 @@
+; resolve_speculation__satisfies_typed_contract
+(push 1)
+(assert (and (and (and msi_inv spec_inv) delta_resolve_speculation) (not contract_resolve_speculation)))
+(check-sat)
+(pop 1)

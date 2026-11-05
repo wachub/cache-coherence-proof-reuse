@@ -260,3 +260,26 @@ The runnable tools and commands are documented in [`docs/FAST_SOLVER_PLAYBOOK.md
 - Reusing a cached theorem when the generated SMT text, solver version or options changed.
 - Treating `unknown`, a bounded-depth UNSAT result, a successful witness, or a stale archived JSON result as a fresh unbounded proof.
 - Inferring arbitrary queue capacity, general memory-model trace refinement, or liveness from fixed-model induction.
+
+## v1.3 — compositional proof reuse, without adding processor features
+
+Read [`docs/COMPOSITIONAL_VERIFICATION.md`](docs/COMPOSITIONAL_VERIFICATION.md).
+`tools/compositional_verify.py` wraps the unchanged four-core speculative MSI
+model with **seven typed architectural-event contracts**. The modular proof
+checks each transition family for preservation of the old MSI invariant,
+preservation of the speculative invariant, and correct projected architectural
+effects. It also checks inherited steps, partition/interface coverage,
+forwarding, read values, and retirement order.
+
+Use dependency-**sliced** SMT-LIB contexts: an unchanged `store_issue` proof is
+not made syntactically dependent on every `load_retire` transition. For the
+full solver session, `shared_contracts.smt2` uses standard `define-fun`
+abbreviations; `sliced_queries/` has standalone exact proof obligations. Store
+SHA-256 hashes of assumptions, model source, solver parameters and every
+formula in `contract_manifest.json`. The actual CACHE MODEL IS NOT MODIFIED.
+
+Never confuse a named abbreviation, unsat core, or stale cached `UNSAT`
+result with an independently checked proof certificate. The future goal is
+assume/guarantee contracts for richer speculative ordering, followed by a
+machine-checked SC trace-refinement relation. CHCs/PDR, interpolation,
+assumption literals, and Alethe are *candidates*, not claimed implementations.

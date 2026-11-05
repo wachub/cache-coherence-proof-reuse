@@ -1,0 +1,5 @@
+; store_stage__satisfies_typed_contract
+(push 1)
+(assert (and (and (and msi_inv spec_inv) delta_store_stage) (not contract_store_stage)))
+(check-sat)
+(pop 1)

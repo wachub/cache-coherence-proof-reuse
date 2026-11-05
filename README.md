@@ -107,3 +107,21 @@ and the detailed [`CODEX_PROJECT_HANDOFF.md`](CODEX_PROJECT_HANDOFF.md).
 These two documents describe current verified guarantees, unresolved proof gaps,
 reproduction commands, proof-reuse heuristics, and a feature-addition protocol.
 No transition-system source or SMT proof obligation changed in v1.2.
+
+## v1.3: compositional contracts, no cache model change
+
+The new [`docs/COMPOSITIONAL_VERIFICATION.md`](docs/COMPOSITIONAL_VERIFICATION.md)
+explains the seven typed interface contracts for the *existing* speculative
+ordering behavior, automatic SMT-LIB2 `define-fun` layering, dependency-sliced
+proof caches, and an incremental proof manifest. The cache protocol and all
+historical experiments are unchanged.
+
+```bash
+python tools/compositional_verify.py --cores 4 --lines 2 --no-cache \
+  --baseline --full-regression --check-mutants \
+  --output-dir artifacts/compositional_4c2l
+```
+
+There is a separate [quickstart](docs/COMPOSITIONAL_QUICKSTART.md).
+The 29 modular contract checks complement—not replace—baseline induction,
+full-system induction, or the as-yet-unmechanized SC trace refinement.

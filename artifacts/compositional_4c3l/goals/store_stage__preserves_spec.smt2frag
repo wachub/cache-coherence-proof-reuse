@@ -1,0 +1,5 @@
+; store_stage__preserves_spec
+(push 1)
+(assert (and (and (and msi_inv spec_inv) delta_store_stage) (not spec_inv_next)))
+(check-sat)
+(pop 1)
