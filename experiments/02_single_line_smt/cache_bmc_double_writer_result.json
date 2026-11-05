@@ -1,0 +1,318 @@
+{
+  "result": "COUNTEREXAMPLE",
+  "first_depth": 9,
+  "checks": [
+    {
+      "depth": 0,
+      "result": "unsat",
+      "seconds": 0.012
+    },
+    {
+      "depth": 1,
+      "result": "unsat",
+      "seconds": 0.011
+    },
+    {
+      "depth": 2,
+      "result": "unsat",
+      "seconds": 0.018
+    },
+    {
+      "depth": 3,
+      "result": "unsat",
+      "seconds": 0.019
+    },
+    {
+      "depth": 4,
+      "result": "unsat",
+      "seconds": 0.026
+    },
+    {
+      "depth": 5,
+      "result": "unsat",
+      "seconds": 0.037
+    },
+    {
+      "depth": 6,
+      "result": "unsat",
+      "seconds": 0.038
+    },
+    {
+      "depth": 7,
+      "result": "unsat",
+      "seconds": 0.045
+    },
+    {
+      "depth": 8,
+      "result": "unsat",
+      "seconds": 0.058
+    },
+    {
+      "depth": 9,
+      "result": "sat",
+      "seconds": 0.064
+    }
+  ],
+  "witness_states": [
+    {
+      "step": 0,
+      "transaction": "(- 1)",
+      "kind": "0",
+      "phase": "0",
+      "directory_owner": "(- 1)",
+      "directory_memory": "0",
+      "latest": "0",
+      "cores": [
+        {
+          "cache": 0,
+          "mode": "I",
+          "value": "0",
+          "pending": "false",
+          "sharer": "false"
+        },
+        {
+          "cache": 1,
+          "mode": "I",
+          "value": "0",
+          "pending": "false",
+          "sharer": "false"
+        }
+      ],
+      "event": "Initial state"
+    },
+    {
+      "step": 1,
+      "transaction": "(- 1)",
+      "kind": "0",
+      "phase": "0",
+      "directory_owner": "(- 1)",
+      "directory_memory": "0",
+      "latest": "0",
+      "cores": [
+        {
+          "cache": 0,
+          "mode": "I",
+          "value": "0",
+          "pending": "false",
+          "sharer": "false"
+        },
+        {
+          "cache": 1,
+          "mode": "I",
+          "value": "0",
+          "pending": "true",
+          "sharer": "false"
+        }
+      ],
+      "event": "Core issues read/write request"
+    },
+    {
+      "step": 2,
+      "transaction": "(- 1)",
+      "kind": "0",
+      "phase": "0",
+      "directory_owner": "(- 1)",
+      "directory_memory": "0",
+      "latest": "0",
+      "cores": [
+        {
+          "cache": 0,
+          "mode": "I",
+          "value": "0",
+          "pending": "true",
+          "sharer": "false"
+        },
+        {
+          "cache": 1,
+          "mode": "I",
+          "value": "0",
+          "pending": "true",
+          "sharer": "false"
+        }
+      ],
+      "event": "Core issues read/write request"
+    },
+    {
+      "step": 3,
+      "transaction": "1",
+      "kind": "2",
+      "phase": "0",
+      "directory_owner": "(- 1)",
+      "directory_memory": "0",
+      "latest": "0",
+      "cores": [
+        {
+          "cache": 0,
+          "mode": "I",
+          "value": "0",
+          "pending": "true",
+          "sharer": "false"
+        },
+        {
+          "cache": 1,
+          "mode": "I",
+          "value": "0",
+          "pending": "true",
+          "sharer": "false"
+        }
+      ],
+      "event": "Directory begins a request transaction"
+    },
+    {
+      "step": 4,
+      "transaction": "1",
+      "kind": "2",
+      "phase": "1",
+      "directory_owner": "1",
+      "directory_memory": "0",
+      "latest": "0",
+      "cores": [
+        {
+          "cache": 0,
+          "mode": "I",
+          "value": "0",
+          "pending": "true",
+          "sharer": "false"
+        },
+        {
+          "cache": 1,
+          "mode": "I",
+          "value": "0",
+          "pending": "true",
+          "sharer": "false"
+        }
+      ],
+      "event": "Directory issues grant"
+    },
+    {
+      "step": 5,
+      "transaction": "1",
+      "kind": "2",
+      "phase": "1",
+      "directory_owner": "1",
+      "directory_memory": "0",
+      "latest": "0",
+      "cores": [
+        {
+          "cache": 0,
+          "mode": "I",
+          "value": "0",
+          "pending": "true",
+          "sharer": "false"
+        },
+        {
+          "cache": 1,
+          "mode": "M",
+          "value": "0",
+          "pending": "false",
+          "sharer": "false"
+        }
+      ],
+      "event": "Core receives Modified grant"
+    },
+    {
+      "step": 6,
+      "transaction": "(- 1)",
+      "kind": "0",
+      "phase": "0",
+      "directory_owner": "1",
+      "directory_memory": "0",
+      "latest": "0",
+      "cores": [
+        {
+          "cache": 0,
+          "mode": "I",
+          "value": "0",
+          "pending": "true",
+          "sharer": "false"
+        },
+        {
+          "cache": 1,
+          "mode": "M",
+          "value": "0",
+          "pending": "false",
+          "sharer": "false"
+        }
+      ],
+      "event": "Directory receives grant acknowledgment"
+    },
+    {
+      "step": 7,
+      "transaction": "0",
+      "kind": "2",
+      "phase": "0",
+      "directory_owner": "1",
+      "directory_memory": "0",
+      "latest": "0",
+      "cores": [
+        {
+          "cache": 0,
+          "mode": "I",
+          "value": "0",
+          "pending": "true",
+          "sharer": "false"
+        },
+        {
+          "cache": 1,
+          "mode": "M",
+          "value": "0",
+          "pending": "false",
+          "sharer": "false"
+        }
+      ],
+      "event": "Directory begins a request transaction"
+    },
+    {
+      "step": 8,
+      "transaction": "0",
+      "kind": "2",
+      "phase": "1",
+      "directory_owner": "0",
+      "directory_memory": "0",
+      "latest": "0",
+      "cores": [
+        {
+          "cache": 0,
+          "mode": "I",
+          "value": "0",
+          "pending": "true",
+          "sharer": "false"
+        },
+        {
+          "cache": 1,
+          "mode": "M",
+          "value": "0",
+          "pending": "false",
+          "sharer": "false"
+        }
+      ],
+      "event": "Directory issues grant"
+    },
+    {
+      "step": 9,
+      "transaction": "0",
+      "kind": "2",
+      "phase": "1",
+      "directory_owner": "0",
+      "directory_memory": "0",
+      "latest": "0",
+      "cores": [
+        {
+          "cache": 0,
+          "mode": "M",
+          "value": "0",
+          "pending": "false",
+          "sharer": "false"
+        },
+        {
+          "cache": 1,
+          "mode": "M",
+          "value": "0",
+          "pending": "false",
+          "sharer": "false"
+        }
+      ],
+      "event": "Core receives Modified grant"
+    }
+  ]
+}
