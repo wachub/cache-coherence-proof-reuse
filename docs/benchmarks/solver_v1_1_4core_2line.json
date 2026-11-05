@@ -1,0 +1,32 @@
+{
+  "cores": 4,
+  "lines": 2,
+  "repeats": 3,
+  "solver_version": "4.13.3.0",
+  "goal_count": 7,
+  "samples_seconds": {
+    "isolated": [
+      0.8522,
+      0.605,
+      0.5519
+    ],
+    "batch": [
+      0.4926,
+      0.3423,
+      0.3707
+    ],
+    "cache_hit": [
+      0.0085,
+      0.0067,
+      0.0056
+    ]
+  },
+  "medians_seconds": {
+    "isolated": 0.605,
+    "batch": 0.3707,
+    "cache_hit": 0.0067
+  },
+  "isolated_over_batch_speedup": 1.63,
+  "batch_over_cache_hit_speedup": 55.33,
+  "disclaimer": "Machine, workload and cache dependent; cached check not a new solver execution"
+}

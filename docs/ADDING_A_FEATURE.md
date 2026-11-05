@@ -25,3 +25,7 @@ results.json
 ```
 
 A valid proof of a restricted frontend does not automatically imply progress or fairness. If a performance optimization changes the interface or the set of enabled transactions, treat the old proof assumptions as suspect until re-established.
+
+## Faster v1.1 verification loop
+
+Before editing the MSI protocol, consult [`FAST_SOLVER_PLAYBOOK.md`](FAST_SOLVER_PLAYBOOK.md). The current model exposes `CombinedSpec.proof_goals()` as pure named expressions; a shared Z3 context and content-hashed proof cache make unchanged checks effectively immediate. `--verify-baseline`, `--full-regression`, and `--check-mutants` are the standard release gate; `--localize` identifies SAT delta transition schemas if a property fails. Keep a fresh `--no-cache` run as an independent smoke check.

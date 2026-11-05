@@ -79,3 +79,23 @@ The verified claim concerns abstract safety invariants and local read/ordering
 contracts. The global sequential-consistency trace-refinement argument is not
 separately mechanized; progress and hardware/RTL behavior are not verified.
 
+
+## v1.1: Fast incremental SAT/SMT verification toolkit
+
+The previous experimental models and proof tags remain intact. New development utilities:
+
+- [`docs/FAST_SOLVER_PLAYBOOK.md`](docs/FAST_SOLVER_PLAYBOOK.md) — step-by-step incremental formal-verification workflow and problem-specific SAT heuristics.
+- [`tools/fast_verify.py`](tools/fast_verify.py) — checks the **exact existing combined-speculation SMT formulas** using one shared Z3 context, an exact-formula cache, predecessor MSI proof reuse, full-induction cross-check, and automatic failing-transition localization.
+- [`tools/benchmark_solver.py`](tools/benchmark_solver.py) — compares isolated, shared-context and cached solver sessions.
+- [`tools/invariant_core_hints.py`](tools/invariant_core_hints.py) — diagnostic UNSAT-core mining with an independent reduced-formula recheck.
+- [`tests/test_fast_verify.py`](tests/test_fast_verify.py) — guards against assertion leakage, unsound cached reuse, missed mutants, and SMT formula changes.
+
+For a full safety recheck of the current 4-core, 2-line configuration:
+
+```bash
+python tools/fast_verify.py --cores 4 --lines 2 \
+  --verify-baseline --full-regression --check-mutants
+python -m unittest discover -s tests -v
+```
+
+The cache does not establish new proofs; it reuses prior Z3 answers only for an **identical** SMT obligation and solver configuration. The proof still excludes arbitrary queue bounds, full trace-level SC refinement, and liveness.

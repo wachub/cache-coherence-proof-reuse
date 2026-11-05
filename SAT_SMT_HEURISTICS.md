@@ -232,3 +232,31 @@ The v1.0 source and SMT-LIB queries are in
 `experiments/09_combined_speculative_reads_writes/`. All of these arguments
 concern a fixed four-core abstract model; full trace-refinement and
 parameterized queue-length proofs remain separate tasks.
+
+## 11. v1.1 — implemented performance and diagnostic heuristics
+
+The runnable tools and commands are documented in [`docs/FAST_SOLVER_PLAYBOOK.md`](docs/FAST_SOLVER_PLAYBOOK.md). Unlike hypothetical advice, these were added to the repository and exercised against the combined four-core model:
+
+1. **Persistent SMT context within a proof suite:** declare each state variable once, and check each goal with `push/assert/check-sat/pop`. No property is omitted; goal bodies are byte-for-byte identical to the archived formulas.
+2. **Solver-result memoization by exact formula:** SHA-256 key over declarations, goal, solver version, timeout, and seed. On an unchanged model, avoid resolving proof obligations. This is reuse of a prior result for an identical formula, not a new independent check.
+3. **Layered proof scheduling:** check the original MSI `Init/Induction/Safety` as reusable dependencies; check delta invariants and interface separately; rerun full combined induction occasionally as a guard against an incorrect frame/refinement assumption.
+4. **Failing-transition diagnosis:** for a SAT aggregate obligation, recheck the individual `Δ_j` transition schemas. Unlike casually testing only one core, enumerate all four cores unless a symmetry argument is actually proved.
+5. **Mutation sensitivity:** deliberately allow unvalidated speculative-read retirement and retirement before older stores. Both must turn the corresponding refinement obligation SAT, otherwise investigate missing assertions or vacuity.
+6. **UNSAT-core hints:** name individual speculative-invariant conjuncts and ask Z3 for a minimized core. Recheck the resulting weaker query with the solver. Such a core is local to this exact query and is not automatically an inductive invariant for later versions.
+7. **Performance measurement:** benchmark both cold and cached runs, record solver version, and check that a supposed optimization did not simply weaken the formula. Current exact-query shared-context speedup is ~1.63× in a small three-run sample; cache hits avoid solving entirely.
+
+### Protocol for new feature branches
+
+- Modify `CombinedSpec`-style pure goal generation, not the preverified MSI transition definitions, unless specifically needed.
+- Start with 2 cache lines, 4 cores, and the smallest feature bound; compare 3 lines next.
+- Run `python tools/fast_verify.py --verify-baseline --full-regression --check-mutants` before a tagged release.
+- Store SAT witnesses and exact `.smt2` obligations, not only an `UNSAT` label.
+- If either proof fails, use `--localize`, inspect all SAT cases, strengthen the new invariant or repair the optimization, and rerun from scratch (`--no-cache`) once before release.
+
+### Explicitly NOT justified shortcuts
+
+- Replacing a four-core proof by only one core's cases because they *look* symmetric.
+- Dropping invariant clauses just because one old goal's UNSAT core omitted them; the transition relation or the bad-state predicate may change next time.
+- Reusing a cached theorem when the generated SMT text, solver version or options changed.
+- Treating `unknown`, a bounded-depth UNSAT result, a successful witness, or a stale archived JSON result as a fresh unbounded proof.
+- Inferring arbitrary queue capacity, general memory-model trace refinement, or liveness from fixed-model induction.

@@ -199,8 +199,12 @@ class CombinedSpec(System):
     def _expected_read_value(self,c,l):
         return f'(select payload_{l} {self.v(f"ref_{l}")})'
 
-    def proof(self,out_dir,include_init=True):
-        os.makedirs(out_dir,exist_ok=True)
+    def proof_goals(self):
+        """Pure named delta obligations: no solver calls or output side effects.
+
+        Keeping generation separate lets the fast harness share declarations,
+        cache exact formulas, and localize failing transition schemas.
+        """
         oldinv=super().inv();qinv=self.new_inv()
         deltasteps=self.delta_steps()
         delta=o(*(s for _,s in deltasteps))
@@ -230,6 +234,12 @@ class CombinedSpec(System):
                              neg(self.x(c,'load_confirmed'))))
                     for (c,l),st in fast_events.items())))
         }
+        return goals
+
+    def proof(self,out_dir,include_init=True):
+        os.makedirs(out_dir,exist_ok=True)
+        goals=self.proof_goals()
+        deltasteps=self.delta_steps()
         results={}
         for label,goal in goals.items():
             text=self.declarations()+ '\n(assert '+goal+')\n(check-sat)\n'

@@ -6,3 +6,6 @@ venv/
 .DS_Store
 /tmp/
 *.log
+# Generated proof cache and fast-verification run outputs
+.proof_cache/
+.fast_verify_outputs/
