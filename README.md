@@ -64,3 +64,18 @@ python speculative_store_delta.py --cores 4 --lines 2 --out-dir /tmp/store_delta
 This is **abstract finite-configuration protocol verification**, not signoff of commercial processors or RTL. UNSAT inductive-step checks imply unbounded execution *depth for each checked finite configuration*; they do **not** by themselves prove arbitrary cache counts, all memory programs, liveness, RTL correctness, or any full ISA memory model. Some trace-refinement/SC claims have supporting paper-level arguments rather than separate mechanized end-to-end proofs. See the individual reports and `docs/PROOF_STATUS.md`.
 
 No new hardware verification claim is made merely by packaging these files in Git.
+
+
+## v1.0 — Combined bounded speculative reads and writes (2026-11-05)
+
+The latest snapshot lives at `experiments/09_combined_speculative_reads_writes/`.
+It combines one speculative load with up to two earlier private speculative
+stores per core, validates forwarded and cached reads, and recovers by replay.
+Four-core configurations with two and three independent cache lines passed
+incremental SMT proof obligations **and** independent full-system induction;
+concrete positive and negative SAT traces are bundled.
+
+The verified claim concerns abstract safety invariants and local read/ordering
+contracts. The global sequential-consistency trace-refinement argument is not
+separately mechanized; progress and hardware/RTL behavior are not verified.
+

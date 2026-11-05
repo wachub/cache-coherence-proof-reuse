@@ -1,0 +1,32 @@
+{
+  "cores": 4,
+  "lines": 3,
+  "programs": "nondeterministic command streams; one in-flight op per core",
+  "values": "unbounded integers: symbolic payload(version) permits arbitrary and repeated data values; a successful write constrains its new version to requested data",
+  "internal_protocol_actions": 132,
+  "frontend_actions": 96,
+  "proof": "UNBOUNDED_INDUCTION_PASS",
+  "checks": [
+    {
+      "obligation": "initial",
+      "result": "unsat",
+      "seconds": 0.02,
+      "smt_bytes": 61588,
+      "file": "initial.smt2"
+    },
+    {
+      "obligation": "induction",
+      "result": "unsat",
+      "seconds": 0.806,
+      "smt_bytes": 1767639,
+      "file": "induction.smt2"
+    },
+    {
+      "obligation": "safety",
+      "result": "unsat",
+      "seconds": 0.004,
+      "smt_bytes": 56971,
+      "file": "safety.smt2"
+    }
+  ]
+}

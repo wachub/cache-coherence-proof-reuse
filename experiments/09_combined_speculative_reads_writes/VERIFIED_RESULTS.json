@@ -1,0 +1,364 @@
+{
+  "baseline_4cores_2lines.json": {
+    "cores": 4,
+    "lines": 2,
+    "programs": "nondeterministic command streams; one in-flight op per core",
+    "values": "unbounded integers: symbolic payload(version) permits arbitrary and repeated data values; a successful write constrains its new version to requested data",
+    "internal_protocol_actions": 88,
+    "frontend_actions": 64,
+    "proof": "UNBOUNDED_INDUCTION_PASS",
+    "checks": [
+      {
+        "obligation": "initial",
+        "result": "unsat",
+        "seconds": 0.084,
+        "smt_bytes": 42005,
+        "file": "initial.smt2"
+      },
+      {
+        "obligation": "induction",
+        "result": "unsat",
+        "seconds": 0.614,
+        "smt_bytes": 855816,
+        "file": "induction.smt2"
+      },
+      {
+        "obligation": "safety",
+        "result": "unsat",
+        "seconds": 0.006,
+        "smt_bytes": 38765,
+        "file": "safety.smt2"
+      }
+    ]
+  },
+  "baseline_4cores_3lines.json": {
+    "cores": 4,
+    "lines": 3,
+    "programs": "nondeterministic command streams; one in-flight op per core",
+    "values": "unbounded integers: symbolic payload(version) permits arbitrary and repeated data values; a successful write constrains its new version to requested data",
+    "internal_protocol_actions": 132,
+    "frontend_actions": 96,
+    "proof": "UNBOUNDED_INDUCTION_PASS",
+    "checks": [
+      {
+        "obligation": "initial",
+        "result": "unsat",
+        "seconds": 0.02,
+        "smt_bytes": 61588,
+        "file": "initial.smt2"
+      },
+      {
+        "obligation": "induction",
+        "result": "unsat",
+        "seconds": 0.806,
+        "smt_bytes": 1767639,
+        "file": "induction.smt2"
+      },
+      {
+        "obligation": "safety",
+        "result": "unsat",
+        "seconds": 0.004,
+        "smt_bytes": 56971,
+        "file": "safety.smt2"
+      }
+    ]
+  },
+  "delta_4cores_2lines.json": {
+    "cores": 4,
+    "cache_lines": 2,
+    "max_spec_stores_per_core": 2,
+    "max_spec_reads_per_core": 1,
+    "new_transition_schemas": 76,
+    "inherited_proof": "requires old four-core MSI invariant and its induction result",
+    "checks": {
+      "new_invariant_initial": {
+        "result": "unsat",
+        "seconds": 0.062,
+        "smt_bytes": 22276,
+        "smt_file": "new_invariant_initial.smt2"
+      },
+      "new_transition_preserves_new_invariant": {
+        "result": "unsat",
+        "seconds": 0.16,
+        "smt_bytes": 592001,
+        "smt_file": "new_transition_preserves_new_invariant.smt2"
+      },
+      "new_transition_preserves_MSI_invariant": {
+        "result": "unsat",
+        "seconds": 0.285,
+        "smt_bytes": 624118,
+        "smt_file": "new_transition_preserves_MSI_invariant.smt2"
+      },
+      "new_transition_obeys_interface": {
+        "result": "unsat",
+        "seconds": 0.112,
+        "smt_bytes": 717629,
+        "smt_file": "new_transition_obeys_interface.smt2"
+      },
+      "fast_read_returns_current_value": {
+        "result": "unsat",
+        "seconds": 0.025,
+        "smt_bytes": 104521,
+        "smt_file": "fast_read_returns_current_value.smt2"
+      },
+      "forwarding_uses_youngest_prior_store": {
+        "result": "unsat",
+        "seconds": 0.009,
+        "smt_bytes": 159761,
+        "smt_file": "forwarding_uses_youngest_prior_store.smt2"
+      },
+      "fast_read_not_before_prior_memory_ops": {
+        "result": "unsat",
+        "seconds": 0.009,
+        "smt_bytes": 104625,
+        "smt_file": "fast_read_not_before_prior_memory_ops.smt2"
+      }
+    },
+    "passed": true
+  },
+  "delta_4cores_3lines.json": {
+    "cores": 4,
+    "cache_lines": 3,
+    "max_spec_stores_per_core": 2,
+    "max_spec_reads_per_core": 1,
+    "new_transition_schemas": 108,
+    "inherited_proof": "requires old four-core MSI invariant and its induction result",
+    "checks": {
+      "new_invariant_initial": {
+        "result": "unsat",
+        "seconds": 0.015,
+        "smt_bytes": 29024,
+        "smt_file": "new_invariant_initial.smt2"
+      },
+      "new_transition_preserves_new_invariant": {
+        "result": "unsat",
+        "seconds": 0.223,
+        "smt_bytes": 1070731,
+        "smt_file": "new_transition_preserves_new_invariant.smt2"
+      },
+      "new_transition_preserves_MSI_invariant": {
+        "result": "unsat",
+        "seconds": 0.524,
+        "smt_bytes": 1119573,
+        "smt_file": "new_transition_preserves_MSI_invariant.smt2"
+      },
+      "new_transition_obeys_interface": {
+        "result": "unsat",
+        "seconds": 0.217,
+        "smt_bytes": 1336392,
+        "smt_file": "new_transition_obeys_interface.smt2"
+      },
+      "fast_read_returns_current_value": {
+        "result": "unsat",
+        "seconds": 0.047,
+        "smt_bytes": 178499,
+        "smt_file": "fast_read_returns_current_value.smt2"
+      },
+      "forwarding_uses_youngest_prior_store": {
+        "result": "unsat",
+        "seconds": 0.014,
+        "smt_bytes": 286907,
+        "smt_file": "forwarding_uses_youngest_prior_store.smt2"
+      },
+      "fast_read_not_before_prior_memory_ops": {
+        "result": "unsat",
+        "seconds": 0.012,
+        "smt_bytes": 178655,
+        "smt_file": "fast_read_not_before_prior_memory_ops.smt2"
+      }
+    },
+    "passed": true
+  },
+  "full_4cores_2lines.json": {
+    "init": {
+      "result": "unsat",
+      "seconds": 0.075,
+      "bytes": 49508
+    },
+    "induction": {
+      "result": "unsat",
+      "seconds": 0.905,
+      "bytes": 1709360
+    },
+    "safety": {
+      "result": "unsat",
+      "seconds": 0.004,
+      "bytes": 45174
+    }
+  },
+  "full_4cores_3lines.json": {
+    "init": {
+      "result": "unsat",
+      "seconds": 0.015,
+      "bytes": 69639
+    },
+    "induction": {
+      "result": "unsat",
+      "seconds": 1.782,
+      "bytes": 3231863
+    },
+    "safety": {
+      "result": "unsat",
+      "seconds": 0.005,
+      "bytes": 63928
+    }
+  },
+  "witness_smt/results.json": {
+    "two_same_line_stores_forward_youngest": {
+      "result": "sat",
+      "seconds": 0.097,
+      "events": [
+        "core0:stage0_line0",
+        "core0:stage1_line0",
+        "core0:spec_forward_slot1_line0",
+        "core0:confirm",
+        "core0:issue_confirmed_store_line0",
+        "core0:ask_write_line0",
+        "l0::dir:start_rqW_c0",
+        "l0::dir:grant_M_c0",
+        "l0::net:deliver_grM_c0",
+        "core0:complete_store_line0",
+        "l0::dir:accept_gack_c0",
+        "core0:issue_confirmed_store_line0",
+        "core0:complete_store_line0",
+        "core0:spec_retire_fast_line0"
+      ],
+      "smt_file": "two_same_line_stores_forward_youngest.smt2"
+    },
+    "two_different_line_stores_forward_oldest_matching": {
+      "result": "sat",
+      "seconds": 0.043,
+      "events": [
+        "core0:stage0_line0",
+        "core0:stage1_line1",
+        "core0:spec_forward_slot0_line0",
+        "core0:confirm",
+        "core0:issue_confirmed_store_line0",
+        "core0:ask_write_line0",
+        "l0::dir:start_rqW_c0",
+        "l0::dir:grant_M_c0",
+        "l0::net:deliver_grM_c0",
+        "core0:complete_store_line0",
+        "l0::dir:accept_gack_c0",
+        "core0:issue_confirmed_store_line1",
+        "core0:ask_write_line1",
+        "l1::dir:start_rqW_c0",
+        "l1::dir:grant_M_c0",
+        "l1::net:deliver_grM_c0",
+        "core0:complete_store_line1",
+        "l1::dir:accept_gack_c0",
+        "core0:spec_retire_fast_line0"
+      ],
+      "smt_file": "two_different_line_stores_forward_oldest_matching.smt2"
+    },
+    "squash_store_and_younger_read": {
+      "result": "sat",
+      "seconds": 0.017,
+      "events": [
+        "core0:stage0_line0",
+        "core0:spec_forward_slot0_line0",
+        "core0:squash_suffix",
+        "core1:issue_1_line0",
+        "core1:ask_read_line0",
+        "l0::dir:start_rqR_c1",
+        "l0::dir:grant_S_c1",
+        "l0::net:deliver_grS_c1",
+        "core1:complete_read_line0"
+      ],
+      "smt_file": "squash_store_and_younger_read.smt2"
+    },
+    "stale_forward_replayed_to_current_value": {
+      "result": "sat",
+      "seconds": 0.049,
+      "events": [
+        "core0:stage0_line0",
+        "core0:spec_forward_slot0_line0",
+        "core0:confirm",
+        "core0:issue_confirmed_store_line0",
+        "core0:ask_write_line0",
+        "l0::dir:start_rqW_c0",
+        "l0::dir:grant_M_c0",
+        "l0::net:deliver_grM_c0",
+        "core0:complete_store_line0",
+        "l0::dir:accept_gack_c0",
+        "core1:issue_2_line0",
+        "core1:ask_write_line0",
+        "l0::dir:start_rqW_c1",
+        "l0::net:deliver_recall_c0",
+        "l0::dir:accept_wb_c0",
+        "l0::dir:grant_M_c1",
+        "l0::net:deliver_grM_c1",
+        "core1:complete_store_line0",
+        "l0::dir:accept_gack_c1",
+        "core0:spec_replay_line0",
+        "core0:ask_read_line0",
+        "l0::dir:start_rqR_c0",
+        "l0::net:deliver_recall_c1",
+        "l0::dir:accept_wb_c1",
+        "l0::dir:grant_S_c0",
+        "l0::net:deliver_grS_c0",
+        "core0:complete_read_line0"
+      ],
+      "smt_file": "stale_forward_replayed_to_current_value.smt2"
+    },
+    "BUG_stale_forward_without_validation": {
+      "result": "sat",
+      "seconds": 0.034,
+      "events": [
+        "core0:stage0_line0",
+        "core0:spec_forward_slot0_line0",
+        "core0:confirm",
+        "core0:issue_confirmed_store_line0",
+        "core0:ask_write_line0",
+        "l0::dir:start_rqW_c0",
+        "l0::dir:grant_M_c0",
+        "l0::net:deliver_grM_c0",
+        "core0:complete_store_line0",
+        "l0::dir:accept_gack_c0",
+        "core1:issue_2_line0",
+        "core1:ask_write_line0",
+        "l0::dir:start_rqW_c1",
+        "l0::net:deliver_recall_c0",
+        "l0::dir:accept_wb_c0",
+        "l0::dir:grant_M_c1",
+        "l0::net:deliver_grM_c1",
+        "core1:complete_store_line0",
+        "l0::dir:accept_gack_c1",
+        "core0:spec_retire_fast_line0"
+      ],
+      "smt_file": "BUG_stale_forward_without_validation.smt2"
+    },
+    "BUG_read_retires_with_older_store_queued": {
+      "result": "sat",
+      "seconds": 0.019,
+      "events": [
+        "core0:issue_1_line1",
+        "core0:ask_read_line1",
+        "l1::dir:start_rqR_c0",
+        "l1::dir:grant_S_c0",
+        "l1::net:deliver_grS_c0",
+        "core0:complete_read_line1",
+        "l1::dir:accept_gack_c0",
+        "core0:stage0_line0",
+        "core0:spec_cache_line1",
+        "core0:confirm",
+        "core0:spec_retire_fast_line1"
+      ],
+      "smt_file": "BUG_read_retires_with_older_store_queued.smt2"
+    }
+  },
+  "mutants_smt/results.json": {
+    "unvalidated_read": {
+      "result": "sat",
+      "seconds": 0.143,
+      "interpretation": "stale value can be retired",
+      "file": "unvalidated_read.smt2"
+    },
+    "premature_read": {
+      "result": "sat",
+      "seconds": 0.096,
+      "interpretation": "younger read can retire before older memory operations",
+      "file": "premature_read.smt2"
+    }
+  }
+}

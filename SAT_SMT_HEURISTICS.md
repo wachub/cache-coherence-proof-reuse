@@ -198,3 +198,37 @@ Other relevant sources: `experiments/02_single_line_smt/cache_smt_verifier.py`, 
 ### Suggested next proof boundary
 
 An honest next feature is **load forwarding from still-pending speculative stores**, or a *realistic multi-entry reorder buffer* whose speculative writes can be confirmed independently but retire in order. The invariant needs to relate frontend program-order tags and the MSI abstract memory order; preserving coherence alone will not be enough.
+
+
+## v1.0 addendum: verifying load/store speculation together
+
+**Do not conflate coherence and instruction ordering.** The original MSI
+invariant can remain perfectly valid even while a speculative read retires
+before an older speculative write. Add a separate interface/refinement contract
+that allows only (a) stutters on old state, (b) the oldest confirmed store
+entering the old frontend, (c) replay through the original read interface,
+and (d) a fast read whose result equals the current abstract reference value.
+
+**Capture a relational ghost invariant.** If a speculative cache read records
+`version=v` and `value=x`, carry the invariant
+`active ∧ from_cache ⇒ x = payload[v]`. Merely checking that the captured
+version remains valid is insufficient when the read payload is unconstrained
+in the inductive hypothesis. Prove that every new transition preserves this
+relation and that old transitions frame the speculative fields.
+
+**Forward from the youngest older store.** For two pending writes to the same
+line, the read must see the second write, even if neither has reached MSI.
+At read retirement require the queue to be empty **and** the old `busy` bit
+to be false, because the queue entry disappears when issued but the write
+becomes coherent only when the old frontend completes it.
+
+**Validate or replay.** If an intervening coherence transaction invalidated
+the source cache line or changed its version/value, do not return the captured
+result; reissue the read through the old protocol. Two deliberately broken
+mutants—unvalidated retirement and premature retirement—must produce SAT
+counterexamples; check actual reachable traces too.
+
+The v1.0 source and SMT-LIB queries are in
+`experiments/09_combined_speculative_reads_writes/`. All of these arguments
+concern a fixed four-core abstract model; full trace-refinement and
+parameterized queue-length proofs remain separate tasks.

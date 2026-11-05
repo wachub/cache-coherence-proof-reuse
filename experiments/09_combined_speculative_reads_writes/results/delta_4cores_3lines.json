@@ -1,0 +1,53 @@
+{
+  "cores": 4,
+  "cache_lines": 3,
+  "max_spec_stores_per_core": 2,
+  "max_spec_reads_per_core": 1,
+  "new_transition_schemas": 108,
+  "inherited_proof": "requires old four-core MSI invariant and its induction result",
+  "checks": {
+    "new_invariant_initial": {
+      "result": "unsat",
+      "seconds": 0.015,
+      "smt_bytes": 29024,
+      "smt_file": "new_invariant_initial.smt2"
+    },
+    "new_transition_preserves_new_invariant": {
+      "result": "unsat",
+      "seconds": 0.223,
+      "smt_bytes": 1070731,
+      "smt_file": "new_transition_preserves_new_invariant.smt2"
+    },
+    "new_transition_preserves_MSI_invariant": {
+      "result": "unsat",
+      "seconds": 0.524,
+      "smt_bytes": 1119573,
+      "smt_file": "new_transition_preserves_MSI_invariant.smt2"
+    },
+    "new_transition_obeys_interface": {
+      "result": "unsat",
+      "seconds": 0.217,
+      "smt_bytes": 1336392,
+      "smt_file": "new_transition_obeys_interface.smt2"
+    },
+    "fast_read_returns_current_value": {
+      "result": "unsat",
+      "seconds": 0.047,
+      "smt_bytes": 178499,
+      "smt_file": "fast_read_returns_current_value.smt2"
+    },
+    "forwarding_uses_youngest_prior_store": {
+      "result": "unsat",
+      "seconds": 0.014,
+      "smt_bytes": 286907,
+      "smt_file": "forwarding_uses_youngest_prior_store.smt2"
+    },
+    "fast_read_not_before_prior_memory_ops": {
+      "result": "unsat",
+      "seconds": 0.012,
+      "smt_bytes": 178655,
+      "smt_file": "fast_read_not_before_prior_memory_ops.smt2"
+    }
+  },
+  "passed": true
+}

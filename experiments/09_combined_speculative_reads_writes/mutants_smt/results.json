@@ -1,0 +1,14 @@
+{
+  "unvalidated_read": {
+    "result": "sat",
+    "seconds": 0.143,
+    "interpretation": "stale value can be retired",
+    "file": "unvalidated_read.smt2"
+  },
+  "premature_read": {
+    "result": "sat",
+    "seconds": 0.096,
+    "interpretation": "younger read can retire before older memory operations",
+    "file": "premature_read.smt2"
+  }
+}

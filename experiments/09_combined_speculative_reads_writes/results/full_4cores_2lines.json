@@ -1,0 +1,17 @@
+{
+  "init": {
+    "result": "unsat",
+    "seconds": 0.075,
+    "bytes": 49508
+  },
+  "induction": {
+    "result": "unsat",
+    "seconds": 0.905,
+    "bytes": 1709360
+  },
+  "safety": {
+    "result": "unsat",
+    "seconds": 0.004,
+    "bytes": 45174
+  }
+}
