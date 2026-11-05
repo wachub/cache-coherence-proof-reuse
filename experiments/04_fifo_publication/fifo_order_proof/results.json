@@ -1,0 +1,53 @@
+{
+  "tool": "Z3 4.x via libz3.so.4",
+  "scope": "2 cores, 3 lines (A,B,F), 2-entry FIFO, 2 stores + 1 release CAS; arbitrary transition count",
+  "correct": {
+    "init": {
+      "result": "unsat",
+      "seconds": 0.071,
+      "bytes": 28767
+    },
+    "step_buffer": {
+      "result": "unsat",
+      "seconds": 0.097,
+      "bytes": 307941
+    },
+    "safety": {
+      "result": "unsat",
+      "seconds": 0.007,
+      "bytes": 26704
+    },
+    "step_full": {
+      "result": "unsat",
+      "seconds": 0.21,
+      "bytes": 331944
+    },
+    "bad_trace": {
+      "result": "unsat",
+      "length": 23,
+      "seconds": 0.015
+    },
+    "good_trace": {
+      "result": "sat",
+      "length": 45,
+      "seconds": 0.037
+    },
+    "stale_copy_good_trace": {
+      "result": "sat",
+      "length": 52,
+      "seconds": 0.043
+    }
+  },
+  "mutant": {
+    "step_buffer": {
+      "result": "sat",
+      "seconds": 0.092,
+      "bytes": 307929
+    },
+    "bad_trace": {
+      "result": "sat",
+      "length": 23,
+      "seconds": 0.029
+    }
+  }
+}
