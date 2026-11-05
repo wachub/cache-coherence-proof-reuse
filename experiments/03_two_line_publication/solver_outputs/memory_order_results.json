@@ -1,0 +1,46 @@
+{
+  "correct": {
+    "initial": {
+      "result": "unsat",
+      "seconds": 0.01,
+      "bytes": 6957
+    },
+    "step": {
+      "result": "unsat",
+      "seconds": 0.033,
+      "bytes": 144534
+    },
+    "safety": {
+      "result": "unsat",
+      "seconds": 0.004,
+      "bytes": 17556
+    },
+    "full_step": {
+      "result": "unsat",
+      "seconds": 0.066,
+      "bytes": 160540
+    },
+    "counterexample_trace": {
+      "result": "unsat",
+      "seconds": 0.007,
+      "steps": 22
+    },
+    "positive_trace": {
+      "result": "sat",
+      "seconds": 0.018,
+      "steps": 37
+    }
+  },
+  "mutant": {
+    "step": {
+      "result": "sat",
+      "seconds": 0.029,
+      "bytes": 144521
+    },
+    "counterexample_trace": {
+      "result": "sat",
+      "seconds": 0.013,
+      "steps": 22
+    }
+  }
+}
