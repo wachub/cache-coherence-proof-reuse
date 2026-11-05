@@ -1,0 +1,127 @@
+{
+  "coherence_2cores": {
+    "cores": 2,
+    "max_writes": 2,
+    "mutant": false,
+    "result": "PASS",
+    "states": 549,
+    "transitions": 990
+  },
+  "coherence_3cores": {
+    "cores": 3,
+    "max_writes": 2,
+    "mutant": false,
+    "result": "PASS",
+    "states": 10194,
+    "transitions": 25689
+  },
+  "coherence_4cores": {
+    "cores": 4,
+    "max_writes": 2,
+    "mutant": false,
+    "result": "PASS",
+    "states": 159897,
+    "transitions": 523956
+  },
+  "publication_2cores_2lines_migration": {
+    "result": "PASS",
+    "cores": 2,
+    "lines": 2,
+    "reorder_release": false,
+    "states": 43135,
+    "transitions": 126582,
+    "completed_states": 6962,
+    "sample_trace": [
+      "writer on core0: core0 reqW on data",
+      "data: directory start reqW core0; victims=0",
+      "data: directory GRANT core0 (waitmask=0)",
+      "data: core0 receives grantM v=0",
+      "writer on core0: WRITE(data,1)",
+      "writer on core0: core0 reqW on flag",
+      "flag: directory start reqW core0; victims=0",
+      "flag: directory GRANT core0 (waitmask=0)",
+      "flag: core0 receives grantM v=0",
+      "writer on core0: CAS_release(flag,0,1)",
+      "reader on core0: prefetch data -> 1",
+      "reader on core0: load_acquire(flag) -> 1",
+      "reader on core0: load(data) -> 1"
+    ]
+  },
+  "cas_race_2cores": {
+    "result": "PASS",
+    "cores": 2,
+    "states": 178,
+    "transitions": 288,
+    "completed_states": 64
+  },
+  "cas_race_3cores": {
+    "result": "PASS",
+    "cores": 3,
+    "states": 1412,
+    "transitions": 2676,
+    "completed_states": 552
+  },
+  "bug_early_grant": {
+    "cores": 2,
+    "max_writes": 2,
+    "mutant": true,
+    "result": "COUNTEREXAMPLE",
+    "reason": "undocumented sharer",
+    "states": 140,
+    "transitions": 231,
+    "trace": [
+      "core0 issue reqR",
+      "core1 issue reqW",
+      "directory start reqR core0; victims=0",
+      "directory GRANT core0 (waitmask=0)",
+      "core0 receives grantS v=0",
+      "directory receives grant-ack core0",
+      "directory start reqW core1; victims=1",
+      "directory GRANT core1 (waitmask=1)"
+    ],
+    "bad_state": "Line(mem=0, latest=0, owner=1, sharers=0, modes=(1, 0), values=(0, 0), pending=2, tx=(1, 1, 1, 1), messages=((2, 0, -1), (7, 1, 0)))"
+  },
+  "bug_lost_writeback": {
+    "cores": 2,
+    "max_writes": 2,
+    "mutant": false,
+    "result": "COUNTEREXAMPLE",
+    "reason": "memory stale without owner",
+    "states": 183,
+    "transitions": 317,
+    "trace": [
+      "core0 issue reqR",
+      "core1 issue reqW",
+      "directory start reqW core1; victims=0",
+      "directory GRANT core1 (waitmask=0)",
+      "core1 receives grantM v=0",
+      "core1 write version 1",
+      "directory receives grant-ack core1",
+      "directory start reqR core0; victims=10",
+      "core1 receives RECALL; sends dirty writeback v=1",
+      "directory receives writeback core1 v=1"
+    ],
+    "bad_state": "Line(mem=0, latest=1, owner=-1, sharers=0, modes=(0, 0), values=(0, 1), pending=1, tx=(0, 0, 0, 0), messages=())"
+  },
+  "bug_release_before_data": {
+    "result": "COUNTEREXAMPLE",
+    "reorder_release": true,
+    "reason": "reader obtained 0 after observing flag=1",
+    "states": 2567,
+    "transitions": 6314,
+    "trace": [
+      "writer on core0: core0 reqW on flag",
+      "flag: directory start reqW core0; victims=0",
+      "flag: directory GRANT core0 (waitmask=0)",
+      "flag: core0 receives grantM v=0",
+      "writer on core0: CAS_release(flag,0,1)",
+      "writer on core0: core0 reqW on data",
+      "data: directory start reqW core0; victims=0",
+      "data: directory GRANT core0 (waitmask=0)",
+      "data: core0 receives grantM v=0",
+      "reader on core0: prefetch data -> 0",
+      "reader on core0: load_acquire(flag) -> 1",
+      "reader on core0: load(data) -> 0"
+    ]
+  }
+}
