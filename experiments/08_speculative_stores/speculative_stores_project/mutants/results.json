@@ -1,0 +1,14 @@
+{
+  "unresolved": {
+    "query_result": "sat",
+    "elapsed_seconds": 0.0926,
+    "file": "unresolved_violates_program_order.smt2",
+    "interpretation": "SAT here means a candidate transition breaks the verified queue-retirement contract"
+  },
+  "tail_first": {
+    "query_result": "sat",
+    "elapsed_seconds": 0.0315,
+    "file": "tail_first_violates_program_order.smt2",
+    "interpretation": "SAT here means a candidate transition breaks the verified queue-retirement contract"
+  }
+}

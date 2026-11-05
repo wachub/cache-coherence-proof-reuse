@@ -1,0 +1,34 @@
+{
+  "cores": 2,
+  "lines": 2,
+  "max_speculative_stores_per_core": 2,
+  "old_MSI_SC_lemma": "reused: baseline inductive MSI invariants and SC refinement",
+  "new_transitions": 16,
+  "results": {
+    "initial_queues": {
+      "result": "unsat",
+      "seconds": 0.063,
+      "file": "initial_queues.smt2",
+      "bytes": 9468
+    },
+    "new_transitions_preserve_queue_invariants": {
+      "result": "unsat",
+      "seconds": 0.033,
+      "file": "new_transitions_preserve_queue_invariants.smt2",
+      "bytes": 72295
+    },
+    "new_transitions_refine_old_msi": {
+      "result": "unsat",
+      "seconds": 0.024,
+      "file": "new_transitions_refine_old_msi.smt2",
+      "bytes": 85444
+    },
+    "new_transitions_preserve_old_invariant": {
+      "result": "unsat",
+      "seconds": 0.062,
+      "file": "new_transitions_preserve_old_invariant.smt2",
+      "bytes": 90024
+    }
+  },
+  "success": true
+}

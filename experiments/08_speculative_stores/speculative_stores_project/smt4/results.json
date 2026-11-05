@@ -1,0 +1,34 @@
+{
+  "cores": 4,
+  "lines": 2,
+  "max_speculative_stores_per_core": 2,
+  "old_MSI_SC_lemma": "reused: baseline inductive MSI invariants; SC follows from atomic completions in program order (trace theorem not separately mechanized)",
+  "new_transitions": 32,
+  "results": {
+    "initial_queues": {
+      "result": "unsat",
+      "seconds": 0.068,
+      "file": "initial_queues.smt2",
+      "bytes": 17624
+    },
+    "new_transitions_preserve_queue_invariants": {
+      "result": "unsat",
+      "seconds": 0.076,
+      "file": "new_transitions_preserve_queue_invariants.smt2",
+      "bytes": 229345
+    },
+    "new_transitions_obey_program_order": {
+      "result": "unsat",
+      "seconds": 0.065,
+      "file": "new_transitions_obey_program_order.smt2",
+      "bytes": 274169
+    },
+    "new_transitions_preserve_old_invariant": {
+      "result": "unsat",
+      "seconds": 0.145,
+      "file": "new_transitions_preserve_old_invariant.smt2",
+      "bytes": 263682
+    }
+  },
+  "success": true
+}
