@@ -125,3 +125,15 @@ python tools/compositional_verify.py --cores 4 --lines 2 --no-cache \
 There is a separate [quickstart](docs/COMPOSITIONAL_QUICKSTART.md).
 The 29 modular contract checks complement—not replace—baseline induction,
 full-system induction, or the as-yet-unmechanized SC trace refinement.
+
+## v1.4 — Automatic generation and reuse of speculative-ordering contracts
+
+**No changes to cache models.** `tools/infer_ordering_contracts.py` learns each
+speculative transition family's allowed architectural effects from a reusable
+four-event vocabulary, emits portable SMT-LIB2 proof queries, checks against
+v1.3 manually written contracts, and can prove that newly inferred contracts
+preserve previously certified interfaces. For details and examples see
+[`docs/AUTOMATIC_ORDERING_CONTRACTS.md`](docs/AUTOMATIC_ORDERING_CONTRACTS.md)
+and [`docs/CONTRACT_SYNTHESIS_QUICKSTART.md`](docs/CONTRACT_SYNTHESIS_QUICKSTART.md).
+This is template-based contract inference, **not** arbitrary contract discovery,
+and it does not close the outstanding trace-level sequential-consistency proof.

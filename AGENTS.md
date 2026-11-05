@@ -52,3 +52,12 @@ source SHA-256 manifest, regression output, and negative controls. Always
 recheck both 4-core / 2-line and 4-core / 3-line models with `--no-cache
 --baseline --full-regression --check-mutants` before release. Neither `UNSAT`
 nor formula sharing by itself proves an end-to-end SC trace refinement.
+
+## v1.4 — inferred ordering contracts, no cache implementation changes
+
+- First read `docs/AUTOMATIC_ORDERING_CONTRACTS.md` and `docs/CONTRACT_SYNTHESIS_QUICKSTART.md`.
+- Use `tools/infer_ordering_contracts.py` to **infer** the transition-family-to-architectural-event classification from the actual unchanged transition formulas. Never guess it from family names alone.
+- The four architectural-effect templates are an explicit specification and are not synthesized from nothing. An inferred contract is a solver-checked one-step **overapproximation** of actual architectural effects within the supplied effect vocabulary only under the inherited invariants; it does not by itself establish sequential consistency.
+- Always use `--previous-contracts` for extension compatibility; don't silently broaden a previously certified contract. A changed shared abstraction requires rebuilding/revalidating the reference contracts.
+- An exact old proof may be reused only when its local SMT context, obligation and solver settings remain unchanged. New/changed deltas always require fresh Z3 checks and the full combined induction as a release gate.
+- Continue to run the deliberately broken load-retirement and store-issue tests. Do not modify any historical files under `experiments/` to improve contract synthesis.

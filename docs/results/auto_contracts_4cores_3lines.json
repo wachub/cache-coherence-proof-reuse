@@ -1,0 +1,611 @@
+{
+  "format": "smt-inferred-contracts-v1",
+  "scope": "one-step safety under inherited MSI+speculation invariants, not trace refinement",
+  "configuration": {
+    "cores": 4,
+    "lines": 3,
+    "max_speculative_stores": 2,
+    "max_speculative_reads": 1
+  },
+  "engine": "Z3 SMT-LIB via libz3",
+  "solver_version": "4.13.3.0",
+  "model_hashes": {
+    "experiments/09_combined_speculative_reads_writes/combined_speculative_model.py": "05ee328437b98acfbf677d2c6c3ad741b4416359daee9cde3f4f316fb81bd1cf",
+    "experiments/09_combined_speculative_reads_writes/sc_msi_4core_verifier.py": "e69d4e28c547c8e32fa383a4602ed9eb41b1a5b8374f049ac07c6c454d83491c",
+    "experiments/09_combined_speculative_reads_writes/cache_smt_verifier.py": "26adc36cc8d01cfd56dfd14a66818e309bc914a52e3b0b56027d82078216ec3c"
+  },
+  "abstraction_events": [
+    "stutter",
+    "issue_store",
+    "retire_read",
+    "replay_read"
+  ],
+  "shared_abstraction_sha256": "95640b91fccb45272952e4a27fa66c5ca8fedaab16ba4f8841eb73b8ce7decb1",
+  "all_passed": true,
+  "families": {
+    "store_stage": {
+      "selected_events": [
+        "stutter"
+      ],
+      "actions": 24,
+      "transition_labels": [
+        "core0:stage0_line0",
+        "core0:stage1_line0",
+        "core0:stage0_line1",
+        "core0:stage1_line1",
+        "core0:stage0_line2",
+        "core0:stage1_line2",
+        "core1:stage0_line0",
+        "core1:stage1_line0",
+        "core1:stage0_line1",
+        "core1:stage1_line1",
+        "core1:stage0_line2",
+        "core1:stage1_line2",
+        "core2:stage0_line0",
+        "core2:stage1_line0",
+        "core2:stage0_line1",
+        "core2:stage1_line1",
+        "core2:stage0_line2",
+        "core2:stage1_line2",
+        "core3:stage0_line0",
+        "core3:stage1_line0",
+        "core3:stage0_line1",
+        "core3:stage1_line1",
+        "core3:stage0_line2",
+        "core3:stage1_line2"
+      ],
+      "feasibility": {
+        "status": "sat",
+        "source": "solver",
+        "hash": "660b8e1c7f0848b3"
+      },
+      "grammar_coverage": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "b80bc08174359d39"
+      },
+      "elimination": {
+        "remove_stutter": {
+          "status": "sat",
+          "source": "solver",
+          "hash": "0ce86adbc55aeae1",
+          "key": "0ce86adbc55aeae196042b6b05ca578d458c9b497d5a87484b53f484978ccfec"
+        },
+        "remove_issue_store": {
+          "status": "unsat",
+          "source": "solver",
+          "hash": "75cdae3c5541eddf",
+          "key": "75cdae3c5541eddf9b34d3358958ac7c5de58e8ba7d30ddde3a3d7b6878c6754"
+        },
+        "remove_retire_read": {
+          "status": "unsat",
+          "source": "solver",
+          "hash": "83e449ae205bae76",
+          "key": "83e449ae205bae766b6eb88f36c948100580d2b81a3fbfda2b27d7acd94f2987"
+        },
+        "remove_replay_read": {
+          "status": "unsat",
+          "source": "solver",
+          "hash": "7563d807f59caba4",
+          "key": "7563d807f59caba4020099037486339928a5e985e0ad22d764166f1e4e23c6a9"
+        }
+      },
+      "final_coverage": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "7563d807f59caba4"
+      },
+      "certificate_key": "7563d807f59caba4020099037486339928a5e985e0ad22d764166f1e4e23c6a9",
+      "context_sha256": "f0d0364ac902c4dd73cab74d50f9502a31524c22989be37df6ccf032870abe05",
+      "oracle": {
+        "equivalent_under_invariants": true,
+        "goals": {
+          "learned_implies_manual": {
+            "status": "unsat",
+            "source": "solver",
+            "hash": "d784d25f709402b8"
+          },
+          "manual_implies_learned": {
+            "status": "unsat",
+            "source": "solver",
+            "hash": "c92f1de879835ae8"
+          }
+        }
+      },
+      "reuse_assessment": null,
+      "passed": true
+    },
+    "resolve_speculation": {
+      "selected_events": [
+        "stutter"
+      ],
+      "actions": 12,
+      "transition_labels": [
+        "core0:confirm",
+        "core0:squash_suffix",
+        "core0:squash_read",
+        "core1:confirm",
+        "core1:squash_suffix",
+        "core1:squash_read",
+        "core2:confirm",
+        "core2:squash_suffix",
+        "core2:squash_read",
+        "core3:confirm",
+        "core3:squash_suffix",
+        "core3:squash_read"
+      ],
+      "feasibility": {
+        "status": "sat",
+        "source": "solver",
+        "hash": "9d463a65a7e3db96"
+      },
+      "grammar_coverage": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "59cd1ab7a13e1d07"
+      },
+      "elimination": {
+        "remove_stutter": {
+          "status": "sat",
+          "source": "solver",
+          "hash": "45ea29d7b06e59c0",
+          "key": "45ea29d7b06e59c0a24c4f999ed08196906ba619985f91cb152e299091500470"
+        },
+        "remove_issue_store": {
+          "status": "unsat",
+          "source": "solver",
+          "hash": "36075e2e326e499e",
+          "key": "36075e2e326e499eb32d861a05927f9f86ca5bcaa6f17cc16d58c68ca07d515a"
+        },
+        "remove_retire_read": {
+          "status": "unsat",
+          "source": "solver",
+          "hash": "da602eb282d01f19",
+          "key": "da602eb282d01f19cff6ee81ffa5d947432cd6711591ae34f2d60cab54fb25d6"
+        },
+        "remove_replay_read": {
+          "status": "unsat",
+          "source": "solver",
+          "hash": "3ec883ab9a308e98",
+          "key": "3ec883ab9a308e9880a075fdf5525ba700cb38bd5fdbd00d9686d3e314ad4fdb"
+        }
+      },
+      "final_coverage": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "3ec883ab9a308e98"
+      },
+      "certificate_key": "3ec883ab9a308e9880a075fdf5525ba700cb38bd5fdbd00d9686d3e314ad4fdb",
+      "context_sha256": "7fce5351ff248f8715a73284058184cf04d89027123fd34c51efd0ecda48f43f",
+      "oracle": {
+        "equivalent_under_invariants": true,
+        "goals": {
+          "learned_implies_manual": {
+            "status": "unsat",
+            "source": "solver",
+            "hash": "4f182ec6a8093e76"
+          },
+          "manual_implies_learned": {
+            "status": "unsat",
+            "source": "solver",
+            "hash": "3a55d280369adc70"
+          }
+        }
+      },
+      "reuse_assessment": null,
+      "passed": true
+    },
+    "store_issue": {
+      "selected_events": [
+        "issue_store"
+      ],
+      "actions": 12,
+      "transition_labels": [
+        "core0:issue_confirmed_store_line0",
+        "core0:issue_confirmed_store_line1",
+        "core0:issue_confirmed_store_line2",
+        "core1:issue_confirmed_store_line0",
+        "core1:issue_confirmed_store_line1",
+        "core1:issue_confirmed_store_line2",
+        "core2:issue_confirmed_store_line0",
+        "core2:issue_confirmed_store_line1",
+        "core2:issue_confirmed_store_line2",
+        "core3:issue_confirmed_store_line0",
+        "core3:issue_confirmed_store_line1",
+        "core3:issue_confirmed_store_line2"
+      ],
+      "feasibility": {
+        "status": "sat",
+        "source": "solver",
+        "hash": "a7e74bb6976ec9db"
+      },
+      "grammar_coverage": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "856305e59321f263"
+      },
+      "elimination": {
+        "remove_stutter": {
+          "status": "unsat",
+          "source": "solver",
+          "hash": "7bff2efe7ac0a10b",
+          "key": "7bff2efe7ac0a10b40d980532d6ac27972b23a7c73aba28718b5bbaf1f95b611"
+        },
+        "remove_issue_store": {
+          "status": "sat",
+          "source": "solver",
+          "hash": "277171b0d6015cae",
+          "key": "277171b0d6015cae86087e64534f76a1e649ca46c26d91f32c3a80d43f74c487"
+        },
+        "remove_retire_read": {
+          "status": "unsat",
+          "source": "solver",
+          "hash": "28adfede722f76bc",
+          "key": "28adfede722f76bc93eb2bc7ba92f9edd3df2213b7bba98aa0fe014e5cf7730e"
+        },
+        "remove_replay_read": {
+          "status": "unsat",
+          "source": "solver",
+          "hash": "16d46958997a8b11",
+          "key": "16d46958997a8b116f56e0f8b023f1ae768ace36ab0cd8f615d58ae6af4d20db"
+        }
+      },
+      "final_coverage": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "16d46958997a8b11"
+      },
+      "certificate_key": "16d46958997a8b116f56e0f8b023f1ae768ace36ab0cd8f615d58ae6af4d20db",
+      "context_sha256": "9feec62d2416478974e40ca20b4c9291566a74d97ec2da6cdbb0309064fa2f48",
+      "oracle": {
+        "equivalent_under_invariants": true,
+        "goals": {
+          "learned_implies_manual": {
+            "status": "unsat",
+            "source": "solver",
+            "hash": "a8e4ed9955a6e74f"
+          },
+          "manual_implies_learned": {
+            "status": "unsat",
+            "source": "solver",
+            "hash": "b6aae7e2dc282f21"
+          }
+        }
+      },
+      "reuse_assessment": null,
+      "passed": true
+    },
+    "load_forward": {
+      "selected_events": [
+        "stutter"
+      ],
+      "actions": 24,
+      "transition_labels": [
+        "core0:spec_forward_slot0_line0",
+        "core0:spec_forward_slot1_line0",
+        "core0:spec_forward_slot0_line1",
+        "core0:spec_forward_slot1_line1",
+        "core0:spec_forward_slot0_line2",
+        "core0:spec_forward_slot1_line2",
+        "core1:spec_forward_slot0_line0",
+        "core1:spec_forward_slot1_line0",
+        "core1:spec_forward_slot0_line1",
+        "core1:spec_forward_slot1_line1",
+        "core1:spec_forward_slot0_line2",
+        "core1:spec_forward_slot1_line2",
+        "core2:spec_forward_slot0_line0",
+        "core2:spec_forward_slot1_line0",
+        "core2:spec_forward_slot0_line1",
+        "core2:spec_forward_slot1_line1",
+        "core2:spec_forward_slot0_line2",
+        "core2:spec_forward_slot1_line2",
+        "core3:spec_forward_slot0_line0",
+        "core3:spec_forward_slot1_line0",
+        "core3:spec_forward_slot0_line1",
+        "core3:spec_forward_slot1_line1",
+        "core3:spec_forward_slot0_line2",
+        "core3:spec_forward_slot1_line2"
+      ],
+      "feasibility": {
+        "status": "sat",
+        "source": "solver",
+        "hash": "fe5d95893c55171a"
+      },
+      "grammar_coverage": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "7d52994adda0bb01"
+      },
+      "elimination": {
+        "remove_stutter": {
+          "status": "sat",
+          "source": "solver",
+          "hash": "c5facff44e9f4932",
+          "key": "c5facff44e9f4932ad741ad6c58c34280bcc68af58a483783c839fa81e3505bd"
+        },
+        "remove_issue_store": {
+          "status": "unsat",
+          "source": "solver",
+          "hash": "e45be6b15fa2fe8a",
+          "key": "e45be6b15fa2fe8a11b1a20f738c932a3826abbb8329e68cfc09a9c0044fd374"
+        },
+        "remove_retire_read": {
+          "status": "unsat",
+          "source": "solver",
+          "hash": "2e3e925ee96c1d1c",
+          "key": "2e3e925ee96c1d1c916cbd28047fb7128e7068b88346449fa433d7b5094aea0f"
+        },
+        "remove_replay_read": {
+          "status": "unsat",
+          "source": "solver",
+          "hash": "e8c3374f89fe69a7",
+          "key": "e8c3374f89fe69a7f0e4aa3c2b9426958b6e9268014e4c19deb670c082c48aa4"
+        }
+      },
+      "final_coverage": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "e8c3374f89fe69a7"
+      },
+      "certificate_key": "e8c3374f89fe69a7f0e4aa3c2b9426958b6e9268014e4c19deb670c082c48aa4",
+      "context_sha256": "d72129cb0023bb1fa022a9e9040e0f10d7d3e8dc4abc98ebed5fbf6c61896f0e",
+      "oracle": {
+        "equivalent_under_invariants": true,
+        "goals": {
+          "learned_implies_manual": {
+            "status": "unsat",
+            "source": "solver",
+            "hash": "97c26fa14af275b7"
+          },
+          "manual_implies_learned": {
+            "status": "unsat",
+            "source": "solver",
+            "hash": "49b09f0d9c8253bb"
+          }
+        }
+      },
+      "reuse_assessment": null,
+      "passed": true
+    },
+    "load_cache_capture": {
+      "selected_events": [
+        "stutter"
+      ],
+      "actions": 12,
+      "transition_labels": [
+        "core0:spec_cache_line0",
+        "core0:spec_cache_line1",
+        "core0:spec_cache_line2",
+        "core1:spec_cache_line0",
+        "core1:spec_cache_line1",
+        "core1:spec_cache_line2",
+        "core2:spec_cache_line0",
+        "core2:spec_cache_line1",
+        "core2:spec_cache_line2",
+        "core3:spec_cache_line0",
+        "core3:spec_cache_line1",
+        "core3:spec_cache_line2"
+      ],
+      "feasibility": {
+        "status": "sat",
+        "source": "solver",
+        "hash": "de6ca66ccd1af9b7"
+      },
+      "grammar_coverage": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "95a99588ffeea218"
+      },
+      "elimination": {
+        "remove_stutter": {
+          "status": "sat",
+          "source": "solver",
+          "hash": "8312d6046f51c9d3",
+          "key": "8312d6046f51c9d365f478dc595237b02ad8869e0c89ae5e15e1bc3b4268e51c"
+        },
+        "remove_issue_store": {
+          "status": "unsat",
+          "source": "solver",
+          "hash": "fa66d9be9163772c",
+          "key": "fa66d9be9163772c104bb32fb02d7acb83d280829a706d65ffacdcd03161ceda"
+        },
+        "remove_retire_read": {
+          "status": "unsat",
+          "source": "solver",
+          "hash": "49afe56fff9c3b7a",
+          "key": "49afe56fff9c3b7a6566133bad33392bc283db41111ed32b49740a07bfff5689"
+        },
+        "remove_replay_read": {
+          "status": "unsat",
+          "source": "solver",
+          "hash": "15a27d937593806c",
+          "key": "15a27d937593806c7468bff7f32bf51defd5747449ef0d11cbe6e9a817d4f290"
+        }
+      },
+      "final_coverage": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "15a27d937593806c"
+      },
+      "certificate_key": "15a27d937593806c7468bff7f32bf51defd5747449ef0d11cbe6e9a817d4f290",
+      "context_sha256": "ca225c574564064bb5ada48f2aa7dd9dc6a06516bbd9d2afe1b156d0f7122288",
+      "oracle": {
+        "equivalent_under_invariants": true,
+        "goals": {
+          "learned_implies_manual": {
+            "status": "unsat",
+            "source": "solver",
+            "hash": "0dea5962a08908d0"
+          },
+          "manual_implies_learned": {
+            "status": "unsat",
+            "source": "solver",
+            "hash": "b2ecb28bda71c7a4"
+          }
+        }
+      },
+      "reuse_assessment": null,
+      "passed": true
+    },
+    "load_retire": {
+      "selected_events": [
+        "retire_read"
+      ],
+      "actions": 12,
+      "transition_labels": [
+        "core0:spec_retire_fast_line0",
+        "core0:spec_retire_fast_line1",
+        "core0:spec_retire_fast_line2",
+        "core1:spec_retire_fast_line0",
+        "core1:spec_retire_fast_line1",
+        "core1:spec_retire_fast_line2",
+        "core2:spec_retire_fast_line0",
+        "core2:spec_retire_fast_line1",
+        "core2:spec_retire_fast_line2",
+        "core3:spec_retire_fast_line0",
+        "core3:spec_retire_fast_line1",
+        "core3:spec_retire_fast_line2"
+      ],
+      "feasibility": {
+        "status": "sat",
+        "source": "solver",
+        "hash": "4b1173f81adbe46c"
+      },
+      "grammar_coverage": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "10c911be51aea1ac"
+      },
+      "elimination": {
+        "remove_stutter": {
+          "status": "unsat",
+          "source": "solver",
+          "hash": "8f7d8e62b2999a43",
+          "key": "8f7d8e62b2999a43c135d8b036c7803c7eafc8b1e1bf411e8bace1dc3b59e34f"
+        },
+        "remove_issue_store": {
+          "status": "unsat",
+          "source": "solver",
+          "hash": "cb1d613c9cf2cc34",
+          "key": "cb1d613c9cf2cc341f1719946b5eaf10566c2f2598e72de3f7a1692e9117420a"
+        },
+        "remove_retire_read": {
+          "status": "sat",
+          "source": "solver",
+          "hash": "c3c44c31d27c0ac6",
+          "key": "c3c44c31d27c0ac6d1c79f7b74ea9abbda9835b9d0ddbd50a20cec41634c08bd"
+        },
+        "remove_replay_read": {
+          "status": "unsat",
+          "source": "solver",
+          "hash": "84ecfd860f069cd6",
+          "key": "84ecfd860f069cd667d731df212df6d4a4f24e47875048dc625d1d1db9ab7bb3"
+        }
+      },
+      "final_coverage": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "84ecfd860f069cd6"
+      },
+      "certificate_key": "84ecfd860f069cd667d731df212df6d4a4f24e47875048dc625d1d1db9ab7bb3",
+      "context_sha256": "217458a1ae886f29b6f29c59ebd37a4a4d6d526c9989c5fe0094ac62d45284c1",
+      "oracle": {
+        "equivalent_under_invariants": true,
+        "goals": {
+          "learned_implies_manual": {
+            "status": "unsat",
+            "source": "solver",
+            "hash": "9487296bfebb87c6"
+          },
+          "manual_implies_learned": {
+            "status": "unsat",
+            "source": "solver",
+            "hash": "21ba657ad08a3e22"
+          }
+        }
+      },
+      "reuse_assessment": null,
+      "passed": true
+    },
+    "load_replay": {
+      "selected_events": [
+        "replay_read"
+      ],
+      "actions": 12,
+      "transition_labels": [
+        "core0:spec_replay_line0",
+        "core0:spec_replay_line1",
+        "core0:spec_replay_line2",
+        "core1:spec_replay_line0",
+        "core1:spec_replay_line1",
+        "core1:spec_replay_line2",
+        "core2:spec_replay_line0",
+        "core2:spec_replay_line1",
+        "core2:spec_replay_line2",
+        "core3:spec_replay_line0",
+        "core3:spec_replay_line1",
+        "core3:spec_replay_line2"
+      ],
+      "feasibility": {
+        "status": "sat",
+        "source": "solver",
+        "hash": "c4e58a66afbd0c7a"
+      },
+      "grammar_coverage": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "c84f62c0097d20ef"
+      },
+      "elimination": {
+        "remove_stutter": {
+          "status": "unsat",
+          "source": "solver",
+          "hash": "f2272a08c1e7147a",
+          "key": "f2272a08c1e7147a5629e6059ad6db82c94de321a06800abb715194713dd27cb"
+        },
+        "remove_issue_store": {
+          "status": "unsat",
+          "source": "solver",
+          "hash": "725341dd0e6080ff",
+          "key": "725341dd0e6080ff83bb41b53e9368352a880f44e729e329665a292b0db40f4a"
+        },
+        "remove_retire_read": {
+          "status": "unsat",
+          "source": "solver",
+          "hash": "b434ced529f87bbd",
+          "key": "b434ced529f87bbd0b4bcc0bdd64fc42202e3a8e6217a77426ef1107399b92b6"
+        },
+        "remove_replay_read": {
+          "status": "sat",
+          "source": "solver",
+          "hash": "3e659cc85f435848",
+          "key": "3e659cc85f435848adb5ee2e549eabf8e9d6b9ac72a446df335c4da01e465269"
+        }
+      },
+      "final_coverage": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "b434ced529f87bbd"
+      },
+      "certificate_key": "b434ced529f87bbd0b4bcc0bdd64fc42202e3a8e6217a77426ef1107399b92b6",
+      "context_sha256": "877650ce2bd2f217c10d89e99d9151e5562a51c9f3ca42a7532be6260e8fbba5",
+      "oracle": {
+        "equivalent_under_invariants": true,
+        "goals": {
+          "learned_implies_manual": {
+            "status": "unsat",
+            "source": "solver",
+            "hash": "cd7632dde23ab524"
+          },
+          "manual_implies_learned": {
+            "status": "unsat",
+            "source": "solver",
+            "hash": "ff7a5ca7938c4fca"
+          }
+        }
+      },
+      "reuse_assessment": null,
+      "passed": true
+    }
+  }
+}
