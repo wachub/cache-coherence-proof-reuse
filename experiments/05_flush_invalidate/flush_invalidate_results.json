@@ -1,0 +1,68 @@
+[
+  {
+    "cores": 2,
+    "addresses": 2,
+    "value_domain": [
+      0,
+      1
+    ],
+    "status": "PASS_EXHAUSTIVE",
+    "states": 2528,
+    "transitions": 9952
+  },
+  {
+    "cores": 3,
+    "addresses": 2,
+    "value_domain": [
+      0,
+      1
+    ],
+    "status": "PASS_EXHAUSTIVE",
+    "states": 33520,
+    "transitions": 135552
+  },
+  {
+    "cores": 2,
+    "addresses": 3,
+    "value_domain": [
+      0,
+      1
+    ],
+    "status": "PASS_EXHAUSTIVE",
+    "states": 58240,
+    "transitions": 327296
+  },
+  {
+    "cores": 2,
+    "addresses": 2,
+    "value_domain": [
+      0,
+      1,
+      2
+    ],
+    "status": "PASS_EXHAUSTIVE",
+    "states": 15408,
+    "transitions": 76608
+  },
+  {
+    "cores": 2,
+    "addresses": 2,
+    "broken_no_self_invalidation": true,
+    "status": "VIOLATION",
+    "reason": "Owner has stale read-capable cache entry",
+    "states": 865,
+    "transitions": 2782,
+    "trace": [
+      "core0: CAS acquire and SKIP invalidation",
+      "core0: read address0 -> 0",
+      "core0: begin release (flush all dirty lines)",
+      "core0: release mutex",
+      "core1: CAS acquire and SKIP invalidation",
+      "core1: write address0=1",
+      "core1: begin release (flush all dirty lines)",
+      "core1: write back address0",
+      "core1: release mutex",
+      "core0: CAS acquire and SKIP invalidation"
+    ]
+  }
+]
