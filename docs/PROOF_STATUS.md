@@ -16,3 +16,19 @@ This index is deliberately conservative. Each entry describes **what the accompa
 **Major omitted obligations across the archive**: parameterized cache/line counts; formal complete trace refinement from a real ISA; realistic RTL and physical implementation; progress (deadlock/livelock/starvation); cache replacement, TLBs, coherence bypasses, DMA/GPU traffic, interrupts, power failures, finite-width token wraparound. The model is intended as an incremental proof experiment rather than a validated production hardware specification.
 
 **Recorded results vs newly rerun checks.** The stage-specific JSON files are archived outputs from previous work. `tools/verify_representative.py` reruns a small selection against the locally available Z3 library and reports fresh results. A successful replay does not independently audit the correctness of all modeling assumptions.
+
+## v1.5 progress / deadlock / livelock / starvation analysis
+
+No model transitions changed. `tools/liveness_verify.py` and
+`docs/LIVENESS_PROGRESS_ANALYSIS.md` machine-check local transaction-enabledness, persistence of enabled servicing guards,
+well-founded rank descent, speculative frontend enabledness, conditional combined
+system enabledness, and whole-model rank framing for four cores and two/three
+lines. The 4-core rank is positive and at most 24 while a transaction is active.
+
+**Do not claim full starvation freedom or unconditional liveness.** Z3 found
+reachable repeating 18-step cycles in **both full combined models** where a
+queued request is bypassed indefinitely under weak fairness of *internal*
+protocol scheduling. A distinct reachable write-completion stall follows from
+the inherited immutable payload-version representation. See the proof report
+for assumptions and separate results. The full safety regression and 24 unit
+tests passed without modifying historical models.

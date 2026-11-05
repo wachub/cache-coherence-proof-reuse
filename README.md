@@ -137,3 +137,12 @@ preserve previously certified interfaces. For details and examples see
 and [`docs/CONTRACT_SYNTHESIS_QUICKSTART.md`](docs/CONTRACT_SYNTHESIS_QUICKSTART.md).
 This is template-based contract inference, **not** arbitrary contract discovery,
 and it does not close the outstanding trace-level sequential-consistency proof.
+
+## v1.5: protocol progress, deadlock, livelock, and starvation analysis
+
+No cache or speculative-execution transitions were modified. The new `tools/liveness_verify.py` and [`docs/LIVENESS_PROGRESS_ANALYSIS.md`](docs/LIVENESS_PROGRESS_ANALYSIS.md) add four-core local progress checks, a decreasing rank for every active coherence transaction, conditional combined-system enabledness checks, and two machine-checked reachable negative examples: a symbolic-payload store stall and weakly fair starvation of a queued request. **Neither unconditional global liveness nor starvation freedom is claimed.**
+
+```bash
+python tools/liveness_verify.py --cores 4 --lines 2 3 --output-dir /tmp/cache_liveness
+python -m unittest discover -s tests -v
+```

@@ -1,0 +1,124 @@
+{
+  "passed": true,
+  "solver_version": "4.13.3.0",
+  "mode": "batch",
+  "seconds": 0.4869,
+  "cache_hits": 0,
+  "solved": 7,
+  "goals": {
+    "new_invariant_initial": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "afc3f31fb37324fc"
+    },
+    "new_transition_preserves_new_invariant": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "55d42422c1dd597b"
+    },
+    "new_transition_preserves_MSI_invariant": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "0e6dc99e2ca98d43"
+    },
+    "new_transition_obeys_interface": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "54d7f3dde0ace145"
+    },
+    "fast_read_returns_current_value": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "656bbeebf406c772"
+    },
+    "forwarding_uses_youngest_prior_store": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "42ca497a4b654d51"
+    },
+    "fast_read_not_before_prior_memory_ops": {
+      "status": "unsat",
+      "source": "solver",
+      "hash": "5333969fd46d8d7f"
+    }
+  },
+  "configuration": {
+    "cores": 4,
+    "lines": 2,
+    "store_slots_per_core": 2,
+    "speculative_loads_per_core": 1
+  },
+  "scope": "Inductive delta obligations; predecessor MSI proof assumed unless --verify-baseline; not a full SC trace-refinement theorem",
+  "baseline": {
+    "passed": true,
+    "solver_version": "4.13.3.0",
+    "mode": "batch",
+    "seconds": 0.4587,
+    "cache_hits": 0,
+    "solved": 3,
+    "goals": {
+      "initial": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "ba914f5ebcecd70f"
+      },
+      "induction": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "24a3cab36417e92e"
+      },
+      "safety": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "755afa1de5671980"
+      }
+    }
+  },
+  "full_regression": {
+    "passed": true,
+    "solver_version": "4.13.3.0",
+    "mode": "batch",
+    "seconds": 0.6236,
+    "cache_hits": 0,
+    "solved": 3,
+    "goals": {
+      "initial": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "8df6ef1ab836bd5d"
+      },
+      "induction": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "129869b5729bc7b6"
+      },
+      "safety": {
+        "status": "unsat",
+        "source": "solver",
+        "hash": "93a9793e932980a9"
+      }
+    }
+  },
+  "all_requested_proofs_passed": true,
+  "mutants": {
+    "passed": false,
+    "solver_version": "4.13.3.0",
+    "mode": "batch",
+    "seconds": 0.0391,
+    "cache_hits": 0,
+    "solved": 2,
+    "goals": {
+      "unvalidated_read": {
+        "status": "sat",
+        "source": "solver",
+        "hash": "528754790134e383"
+      },
+      "premature_read": {
+        "status": "sat",
+        "source": "solver",
+        "hash": "d8493c68c8dc4ced"
+      }
+    },
+    "detected": true
+  }
+}

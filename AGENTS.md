@@ -61,3 +61,13 @@ nor formula sharing by itself proves an end-to-end SC trace refinement.
 - Always use `--previous-contracts` for extension compatibility; don't silently broaden a previously certified contract. A changed shared abstraction requires rebuilding/revalidating the reference contracts.
 - An exact old proof may be reused only when its local SMT context, obligation and solver settings remain unchanged. New/changed deltas always require fresh Z3 checks and the full combined induction as a release gate.
 - Continue to run the deliberately broken load-retirement and store-issue tests. Do not modify any historical files under `experiments/` to improve contract synthesis.
+
+## v1.5 — progress and fairness analysis (unchanged cache model)
+
+Read `docs/LIVENESS_PROGRESS_ANALYSIS.md`. Run `python tools/liveness_verify.py --cores 4 --lines 2 3 --output-dir /tmp/liveness_checks`. The new verifier checks enabledness and a decreasing transaction rank; it does NOT prove unconditional eventual request completion. Keep these distinctions explicit:
+
+- Deadlock freedom / enabled progress requires excluding fresh client issues so the property is nonvacuous.
+- Internal transaction rank descent proves no infinite *servicing-only* livelock, but scheduler fairness is needed for temporal progress.
+- There is a **reachable symbolic-payload completion stall** in the inherited immutable `payload(version)` abstraction. Do not claim full read/write/CAS termination.
+- There is a **reachable weak-fair starvation lasso** for a queued read while two other cores alternate ownership. Do not claim starvation freedom under weak fairness; strong fairness of arbitration or a fair directory algorithm is needed.
+- Use generated SMT-LIB proofs, negative controls, and exact 4-core/2-line and 4-core/3-line configurations. Historical source files under `experiments/` must not be changed as part of this verification-only task.

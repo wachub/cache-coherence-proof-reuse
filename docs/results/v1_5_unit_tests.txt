@@ -1,0 +1,29 @@
+test_bundle_manifest_tracks_exact_hashes (test_compositional_verify.CompositionalTests.test_bundle_manifest_tracks_exact_hashes) ... ok
+test_full_contract_checks_unsat (test_compositional_verify.CompositionalTests.test_full_contract_checks_unsat) ... ok
+test_partition_all_actions_no_implicit_symmetry (test_compositional_verify.CompositionalTests.test_partition_all_actions_no_implicit_symmetry) ... ok
+test_sliced_proof_context_has_no_unrelated_family (test_compositional_verify.CompositionalTests.test_sliced_proof_context_has_no_unrelated_family) ... ok
+test_typed_contracts_detect_all_mutants (test_compositional_verify.CompositionalTests.test_typed_contracts_detect_all_mutants) ... ok
+test_batch_isolated_agree_and_no_push_leak (test_fast_verify.FastVerifyTests.test_batch_isolated_agree_and_no_push_leak) ... ok
+test_cache_keys_include_semantics_and_options (test_fast_verify.FastVerifyTests.test_cache_keys_include_semantics_and_options) ... ok
+test_failed_interface_localizes_bad_retirement (test_fast_verify.FastVerifyTests.test_failed_interface_localizes_bad_retirement) ... ok
+test_full_four_core_delta_and_mutant_sensitivity (test_fast_verify.FastVerifyTests.test_full_four_core_delta_and_mutant_sensitivity) ... ok
+test_generated_queries_unchanged (test_fast_verify.FastVerifyTests.test_generated_queries_unchanged) ... ok
+test_bad_retirement_mutants_fail_coverage (test_infer_ordering_contracts.InferContractsTests.test_bad_retirement_mutants_fail_coverage) ... ok
+test_exact_reuse_and_localized_changed_transition (test_infer_ordering_contracts.InferContractsTests.test_exact_reuse_and_localized_changed_transition) ... ok
+test_export_independently_checkable_smtlib (test_infer_ordering_contracts.InferContractsTests.test_export_independently_checkable_smtlib) ... ok
+test_incompatible_shared_assumptions_fail_closed (test_infer_ordering_contracts.InferContractsTests.test_incompatible_shared_assumptions_fail_closed) ... ok
+test_inferred_all_families_and_oracle_equivalence (test_infer_ordering_contracts.InferContractsTests.test_inferred_all_families_and_oracle_equivalence) ... ok
+test_stuttering_store_issue_rejected_by_previous_contract (test_infer_ordering_contracts.InferContractsTests.test_stuttering_store_issue_rejected_by_previous_contract) ... ok
+test_combined_four_core_starvation_lasso_is_reachable (test_liveness_verify.ProgressProofTests.test_combined_four_core_starvation_lasso_is_reachable) ... ok
+test_conditional_no_terminal_stall_both_configurations (test_liveness_verify.ProgressProofTests.test_conditional_no_terminal_stall_both_configurations) ... ok
+test_four_core_speculative_frontend_progress (test_liveness_verify.ProgressProofTests.test_four_core_speculative_frontend_progress) ... ok
+test_four_core_transaction_progress_rank_and_enabling (test_liveness_verify.ProgressProofTests.test_four_core_transaction_progress_rank_and_enabling) ... ok
+test_negative_controls_are_sat (test_liveness_verify.ProgressProofTests.test_negative_controls_are_sat) ... ok
+test_rank_is_framed_by_other_lines_and_frontends (test_liveness_verify.ProgressProofTests.test_rank_is_framed_by_other_lines_and_frontends) ... ok
+test_symbolic_payload_stall_is_reachable (test_liveness_verify.ProgressProofTests.test_symbolic_payload_stall_is_reachable) ... ok
+test_weak_fair_starvation_lasso_is_reachable (test_liveness_verify.ProgressProofTests.test_weak_fair_starvation_lasso_is_reachable) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 11.506s
+
+OK

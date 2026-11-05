@@ -1,0 +1,713 @@
+{
+  "model_version": "v1.4 cache transitions unchanged",
+  "cores": 4,
+  "configurations": [
+    2,
+    3
+  ],
+  "scope": "local transaction progress and speculative enabling only, NOT global starvation freedom",
+  "protocol_meta": {
+    "per_line_protocol_transition_schemas": 56,
+    "service_transition_schemas": 36,
+    "rank": "idle=0; phase0=8+3*wait_count+undelivered_inval_or_recall; phase1=2+undelivered_grant_count",
+    "assumption": "All servicing actions are scheduled weakly fairly; request arbitration needs stronger fairness for starvation freedom."
+  },
+  "local_protocol": {
+    "active_transaction_has_service_step": {
+      "result": "unsat",
+      "expected": "unsat",
+      "pass": true,
+      "seconds": 0.0779,
+      "sha256": "77c451dc378aa48176b0ef1c1eff5a1347e740abc1007ad6b913ff07a3e7d4e1",
+      "query_bytes": 15379
+    },
+    "idle_queued_request_can_start": {
+      "result": "unsat",
+      "expected": "unsat",
+      "pass": true,
+      "seconds": 0.0095,
+      "sha256": "123eac8aeb0fbaea7ffc4d8a15249b3b799bea671dd5dade7c83af47dffde68e",
+      "query_bytes": 14314
+    },
+    "service_strictly_decreases_rank": {
+      "result": "unsat",
+      "expected": "unsat",
+      "pass": true,
+      "seconds": 0.0468,
+      "sha256": "c3df9c1bd6ce680dd67b631c2714c3118f3aad9c50806f2b43993c49acffdf1b",
+      "query_bytes": 71895
+    },
+    "active_transaction_rank_never_increases": {
+      "result": "unsat",
+      "expected": "unsat",
+      "pass": true,
+      "seconds": 0.0421,
+      "sha256": "e7d956041f0439be67f8a4698e1d52b2c8d22f219bf786eff8b51db5e631eca5",
+      "query_bytes": 104536
+    },
+    "active_transaction_rank_is_positive": {
+      "result": "unsat",
+      "expected": "unsat",
+      "pass": true,
+      "seconds": 0.0101,
+      "sha256": "1ca09b0728b8fbf76dded312b7012f95064622cd606fb17cb81faacd4dd2cda0",
+      "query_bytes": 14439
+    },
+    "active_transaction_rank_bounded": {
+      "result": "unsat",
+      "expected": "unsat",
+      "pass": true,
+      "seconds": 0.0092,
+      "sha256": "4aef8643efe8a0655380ccf3bfe068409a0b1452ffe3d470e7413a6aba282d9f",
+      "query_bytes": 14434
+    },
+    "enabled_service_guard_persists_without_service": {
+      "result": "unsat",
+      "expected": "unsat",
+      "pass": true,
+      "seconds": 0.0184,
+      "sha256": "18b99e09d67afb2e44674a83f9f387fa77a001de99ff6a80c7c90aa1ff35cecc",
+      "query_bytes": 50302
+    }
+  },
+  "negative_controls": {
+    "mutant_drop_grants_can_block_active_transaction": {
+      "result": "sat",
+      "expected": "sat",
+      "pass": true,
+      "seconds": 0.0084,
+      "sha256": "7facf9b5834b42d1bedfdd93d6bc11431bfd7d2474c21f125c1dffd4eda1dbd8",
+      "query_bytes": 14611
+    },
+    "mutant_wait_only_rank_fails_strict_descent": {
+      "result": "sat",
+      "expected": "sat",
+      "pass": true,
+      "seconds": 0.0135,
+      "sha256": "2f36a9357f9d77fa0d5108a5554aa408ada960337168f264e98515acb0ce9397",
+      "query_bytes": 26827
+    }
+  },
+  "frontends": {
+    "2": {
+      "notes": {
+        "cores": 4,
+        "lines": 2,
+        "speculative_obligations": 12
+      },
+      "checks": {
+        "core0_unresolved_speculation_has_resolution": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0055,
+          "sha256": "3e00f9454a484655adb46a91aee0c5e52b5840bd8752752e83cbca4ac8fd69dc",
+          "query_bytes": 45437
+        },
+        "core0_confirmed_store_head_can_issue_when_idle": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0146,
+          "sha256": "a1e6806ee8a3a5fcf03ae57745a139567b11c0e6ab74883f5cc2979a101f70e0",
+          "query_bytes": 45327
+        },
+        "core0_confirmed_load_can_retire_or_replay_when_idle": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0121,
+          "sha256": "4b4c9195e04856b7c55adda306043a6446dfbe07cc43e6f30f603cff9679ffd3",
+          "query_bytes": 46685
+        },
+        "core1_unresolved_speculation_has_resolution": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.004,
+          "sha256": "c5ec601a9d2d2fe40243b2c455180be78f5390caf3112c23a082ff99a6786c01",
+          "query_bytes": 45437
+        },
+        "core1_confirmed_store_head_can_issue_when_idle": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0114,
+          "sha256": "182ecb430d10200f69b70837b1ffbda5b7d918f65292e7ca993d893c5543c755",
+          "query_bytes": 45327
+        },
+        "core1_confirmed_load_can_retire_or_replay_when_idle": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0137,
+          "sha256": "2050db26a29e1836ebc11e6d94f2cf4303419933e16824477f48d8a89eaa0fc0",
+          "query_bytes": 46685
+        },
+        "core2_unresolved_speculation_has_resolution": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.004,
+          "sha256": "748915b0e984e32686d1b4cd833d3fba84b0a538a95bb6e553a00ea15f92427c",
+          "query_bytes": 45437
+        },
+        "core2_confirmed_store_head_can_issue_when_idle": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0143,
+          "sha256": "23643ef56551b827e9b52afb8d8f3db4ccc1c113c2c8e456dbc49ee082a3c4ca",
+          "query_bytes": 45327
+        },
+        "core2_confirmed_load_can_retire_or_replay_when_idle": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0121,
+          "sha256": "498b7f7e4ff15d9d0fe22c617316e8709e863830976166a2ec0853ecaf6d1a13",
+          "query_bytes": 46685
+        },
+        "core3_unresolved_speculation_has_resolution": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0037,
+          "sha256": "67b0086c6213c9fdcb24e04586b302fdd3f6bf5d8d27fed19d64c0d467e648c7",
+          "query_bytes": 45437
+        },
+        "core3_confirmed_store_head_can_issue_when_idle": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0125,
+          "sha256": "e1a80465d08e3ec147c2be8143a2192383c452f0345d662b58918c2c57aa459f",
+          "query_bytes": 45327
+        },
+        "core3_confirmed_load_can_retire_or_replay_when_idle": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0171,
+          "sha256": "b011dfe7542fb927416403979bff6ca66dec5f72caf93d6b50332194fb0a91c6",
+          "query_bytes": 46685
+        }
+      }
+    },
+    "3": {
+      "notes": {
+        "cores": 4,
+        "lines": 3,
+        "speculative_obligations": 12
+      },
+      "checks": {
+        "core0_unresolved_speculation_has_resolution": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.007,
+          "sha256": "a896eda43cef03306998f8c41d590f4a1f59cb7a3aeb7e4fd8d38278672175a0",
+          "query_bytes": 64191
+        },
+        "core0_confirmed_store_head_can_issue_when_idle": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0219,
+          "sha256": "6c4153eae69d6137e32f6fa6a1b706cd0978d87979ab4be3c99fb01a0024e53f",
+          "query_bytes": 64138
+        },
+        "core0_confirmed_load_can_retire_or_replay_when_idle": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0208,
+          "sha256": "0efc260b1d13fd2a68c0f71695760eb4a3d5a553aeb62242718bcd990f3ba260",
+          "query_bytes": 66155
+        },
+        "core1_unresolved_speculation_has_resolution": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0051,
+          "sha256": "147839c04fb01e0a4a1dbb33113302bb8c2d1cdb671c74fc2e707781457e5eee",
+          "query_bytes": 64191
+        },
+        "core1_confirmed_store_head_can_issue_when_idle": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0193,
+          "sha256": "e586f51b413e83541594c3101a31f5f2790e0bc520e020edcfacce3f315c58cf",
+          "query_bytes": 64138
+        },
+        "core1_confirmed_load_can_retire_or_replay_when_idle": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0202,
+          "sha256": "f111b40ba5e90e559869326fcaa4b672d257a682c827281f87271a081d45892d",
+          "query_bytes": 66155
+        },
+        "core2_unresolved_speculation_has_resolution": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0055,
+          "sha256": "ec419dbb8ecf8aed6b1aaa1b63a652f3c0565d5c8bde3fc7079c7f23ed0c064a",
+          "query_bytes": 64191
+        },
+        "core2_confirmed_store_head_can_issue_when_idle": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0247,
+          "sha256": "51b8e0a23c941e386f7754121bffc8bf7c4005f1484587444b6277b7d54c3b59",
+          "query_bytes": 64138
+        },
+        "core2_confirmed_load_can_retire_or_replay_when_idle": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0218,
+          "sha256": "752180ee9bd39d5fa9e07ed2338913706796214838a413ec5a94c9c0ad178792",
+          "query_bytes": 66155
+        },
+        "core3_unresolved_speculation_has_resolution": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0068,
+          "sha256": "f37308aec2d8f6bcb6ebd9ff91640868b64a83bd3facec46bf60a48937cc690e",
+          "query_bytes": 64191
+        },
+        "core3_confirmed_store_head_can_issue_when_idle": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0165,
+          "sha256": "2531d77e9b142c3b3f424bf1517cdbd81f97fb11fcf9504417609c81d7fc72de",
+          "query_bytes": 64138
+        },
+        "core3_confirmed_load_can_retire_or_replay_when_idle": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0193,
+          "sha256": "2fcc73c22464cc104e5bd47628bb65d655904b96757a84bca7fc52205d44a591",
+          "query_bytes": 66155
+        }
+      }
+    }
+  },
+  "architectural_frontends": {
+    "2": {
+      "notes": {
+        "cores": 4,
+        "lines": 2,
+        "assumption": "The immutable payload at the next version equals the requested write value for any locally executable store or successful CAS."
+      },
+      "checks": {
+        "core0_busy_not_pending_has_ask_or_completion_if_payload_available": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0149,
+          "sha256": "4c989d837ccee59fdd2093da2f106be33e7b108f6587b150563203f97f34ec82",
+          "query_bytes": 40705
+        },
+        "core0_pending_has_protocol_work": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0125,
+          "sha256": "3f8561f994e4126a1cc985a89fcda9908fc0711de1ce42d0be33e74471ce0911",
+          "query_bytes": 38962
+        },
+        "core1_busy_not_pending_has_ask_or_completion_if_payload_available": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0133,
+          "sha256": "6a4657861fe5719d0a6e86c9a1ecbdda225ff464a9a08d13bc5e64a83c747a46",
+          "query_bytes": 40705
+        },
+        "core1_pending_has_protocol_work": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0142,
+          "sha256": "a7a89c8bad3f318ce61c1fb1c20a1dbd25e5adb38c6f61ea1b2e909f3e991283",
+          "query_bytes": 38962
+        },
+        "core2_busy_not_pending_has_ask_or_completion_if_payload_available": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.016,
+          "sha256": "caf83e999f02810a645104319c441fa2d1475d839eeef1d682aab5873dd86446",
+          "query_bytes": 40705
+        },
+        "core2_pending_has_protocol_work": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0142,
+          "sha256": "5389f82c4a5b91e9ae05b1826cb22a292dc7635f54b7790ab0faa71adb7bd073",
+          "query_bytes": 38962
+        },
+        "core3_busy_not_pending_has_ask_or_completion_if_payload_available": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0129,
+          "sha256": "12e4b8061735349637b5c3be677d929579e335a5a7b601bd4343884be49519fc",
+          "query_bytes": 40705
+        },
+        "core3_pending_has_protocol_work": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0141,
+          "sha256": "ff855e5eb8ad761888bb5e426a0776d8527dabfee565259ad1ba7a99d10115ac",
+          "query_bytes": 38962
+        }
+      }
+    },
+    "3": {
+      "notes": {
+        "cores": 4,
+        "lines": 3,
+        "assumption": "The immutable payload at the next version equals the requested write value for any locally executable store or successful CAS."
+      },
+      "checks": {
+        "core0_busy_not_pending_has_ask_or_completion_if_payload_available": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0195,
+          "sha256": "a7412dda9421cf000ffe6299737b225bc0781d89f090e76d78ad46c49ff5b7bb",
+          "query_bytes": 59867
+        },
+        "core0_pending_has_protocol_work": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0246,
+          "sha256": "94095c8509845b440a016b63840d6c043ca9904c683d50948dd732b3adbe72c1",
+          "query_bytes": 57262
+        },
+        "core1_busy_not_pending_has_ask_or_completion_if_payload_available": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0196,
+          "sha256": "34790fc3053aa047d2d0432d2a629b8e7c65730bcd2deff4505cd6daa5104f56",
+          "query_bytes": 59867
+        },
+        "core1_pending_has_protocol_work": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0185,
+          "sha256": "555b296cc708fa9c04cfaf55c384d8eb945e2cd35e7c555945509375a6b787e3",
+          "query_bytes": 57262
+        },
+        "core2_busy_not_pending_has_ask_or_completion_if_payload_available": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0184,
+          "sha256": "aeaacba3cc8ea89a6c1b807485df60b5747cdc305f26f8f044a2b06726cd2b99",
+          "query_bytes": 59867
+        },
+        "core2_pending_has_protocol_work": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0165,
+          "sha256": "b00ef9caa73fe3496723b61445bf243e12e3b7f9c6ab3010f6c788c66e76aeac",
+          "query_bytes": 57262
+        },
+        "core3_busy_not_pending_has_ask_or_completion_if_payload_available": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0206,
+          "sha256": "5ae4b780095bac4cd08c1350f4b972a178df76f5de5a506d6c7c64e72c1ae4b2",
+          "query_bytes": 59867
+        },
+        "core3_pending_has_protocol_work": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0173,
+          "sha256": "708692b96f5b31b678a1e188d9a380989c3a1252b656790715bd95d37099a0ad",
+          "query_bytes": 57262
+        }
+      }
+    }
+  },
+  "combined_deadlock_checks": {
+    "2": {
+      "notes": {
+        "cores": 4,
+        "lines": 2,
+        "protocol_guards": 56,
+        "captured_frontend_guards": 140,
+        "assumptions": "inherited invariants; compatible next-version data representation; external speculation resolution allowed",
+        "qualification": "Existence of an enabled action, NOT eventual completion under all schedules."
+      },
+      "checks": {
+        "combined_busy_system_has_some_progress_action_if_payload_available": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.0253,
+          "sha256": "13fa7fcd00587f975719bd429ed64fea5945011fe20c94e1058260b91fb489eb",
+          "query_bytes": 63822
+        }
+      }
+    },
+    "3": {
+      "notes": {
+        "cores": 4,
+        "lines": 3,
+        "protocol_guards": 56,
+        "captured_frontend_guards": 204,
+        "assumptions": "inherited invariants; compatible next-version data representation; external speculation resolution allowed",
+        "qualification": "Existence of an enabled action, NOT eventual completion under all schedules."
+      },
+      "checks": {
+        "combined_busy_system_has_some_progress_action_if_payload_available": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.035,
+          "sha256": "e9cd15c9f3ec2d1b324597f36ef6334d8ff811ec2511428e740692965d9640a9",
+          "query_bytes": 91463
+        }
+      }
+    }
+  },
+  "rank_frame_checks": {
+    "2": {
+      "notes": {
+        "cores": 4,
+        "lines": 2,
+        "step_schemas": 228,
+        "assumption": "Both inherited inductive invariants; all active model transitions enumerated."
+      },
+      "checks": {
+        "line0_all_foreign_and_frontend_steps_frame_transaction_rank": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.2495,
+          "sha256": "81160bfca25f4e8d2b403fbb3e6773bce14c478543922b3d59296307016b51c7",
+          "query_bytes": 1359993
+        },
+        "line1_all_foreign_and_frontend_steps_frame_transaction_rank": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.257,
+          "sha256": "6d16772943cbc2abf798a0973edc89c20bddbaafe5de7cc45b47ca779d8531a6",
+          "query_bytes": 1359993
+        }
+      }
+    },
+    "3": {
+      "notes": {
+        "cores": 4,
+        "lines": 3,
+        "step_schemas": 336,
+        "assumption": "Both inherited inductive invariants; all active model transitions enumerated."
+      },
+      "checks": {
+        "line0_all_foreign_and_frontend_steps_frame_transaction_rank": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.5162,
+          "sha256": "1a911ba1b13017a5c22f99fc943fe7dd38bc93b2a5454adac77e4fca036c5023",
+          "query_bytes": 2770799
+        },
+        "line1_all_foreign_and_frontend_steps_frame_transaction_rank": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.4531,
+          "sha256": "d61bb9c60f759f0df3606c89e81935b2ac17c56a3e77ffe419483c9d56e75e79",
+          "query_bytes": 2770799
+        },
+        "line2_all_foreign_and_frontend_steps_frame_transaction_rank": {
+          "result": "unsat",
+          "expected": "unsat",
+          "pass": true,
+          "seconds": 0.4861,
+          "sha256": "6b2a262c541d004004d4fe07cc38acb4c1505a346ae8a5c4fe8c0691720adcca",
+          "query_bytes": 2770799
+        }
+      }
+    }
+  },
+  "reachable_payload_stall": {
+    "result": "sat",
+    "expected": "sat",
+    "pass": true,
+    "steps": [
+      "core0:issue_2_line0",
+      "core0:ask_write_line0",
+      "l0::dir:start_rqW_c0",
+      "l0::dir:grant_M_c0",
+      "l0::net:deliver_grM_c0",
+      "l0::dir:accept_gack_c0"
+    ],
+    "seconds": 0.0145,
+    "explanation": "Reachable state: the immutable payload array is constantly zero at every version while the pending store requests one. The completion guard can never become true, regardless of subsequent version increments. This is a representation artifact, not a real cache protocol failure.",
+    "smt_file": "reachable_symbolic_payload_stall.smt2"
+  },
+  "weak_fair_request_starvation": {
+    "result": "sat",
+    "expected": "sat",
+    "pass": true,
+    "prefix_steps": [
+      "c0:issue_read",
+      "c1:issue_write",
+      "dir:start_rqW_c1",
+      "dir:grant_M_c1",
+      "net:deliver_grM_c1",
+      "dir:accept_gack_c1",
+      "c2:issue_write",
+      "dir:start_rqW_c2",
+      "net:deliver_recall_c1",
+      "dir:accept_wb_c1",
+      "dir:grant_M_c2",
+      "net:deliver_grM_c2",
+      "dir:accept_gack_c2"
+    ],
+    "cycle_steps": [
+      "c1:issue_write",
+      "dir:start_rqW_c1",
+      "net:deliver_recall_c2",
+      "dir:accept_wb_c2",
+      "dir:grant_M_c1",
+      "net:deliver_grM_c1",
+      "dir:accept_gack_c1",
+      "c2:issue_write",
+      "dir:start_rqW_c2",
+      "net:deliver_recall_c1",
+      "dir:accept_wb_c1",
+      "dir:grant_M_c2",
+      "net:deliver_grM_c2",
+      "dir:accept_gack_c2"
+    ],
+    "seconds": 0.0202,
+    "explanation": "One queued read is bypassed indefinitely by two other cores alternating ownership. A weak-fair scheduler can repeat this cycle because the skipped directory start is only intermittently enabled; strong fairness or fair arbitration is needed for starvation freedom.",
+    "smt_file": "reachable_weak_fair_starvation_lasso.smt2"
+  },
+  "combined_weak_fair_starvation": {
+    "2": {
+      "result": "sat",
+      "expected": "sat",
+      "pass": true,
+      "prefix_length": 18,
+      "cycle_length": 18,
+      "prefix_steps": [
+        "core0:issue_1_line0",
+        "core0:ask_read_line0",
+        "core1:issue_3_line0",
+        "core1:ask_write_line0",
+        "l0::dir:start_rqW_c1",
+        "l0::dir:grant_M_c1",
+        "l0::net:deliver_grM_c1",
+        "l0::dir:accept_gack_c1",
+        "core1:complete_cas_line0",
+        "core2:issue_3_line0",
+        "core2:ask_write_line0",
+        "l0::dir:start_rqW_c2",
+        "l0::net:deliver_recall_c1",
+        "l0::dir:accept_wb_c1",
+        "l0::dir:grant_M_c2",
+        "l0::net:deliver_grM_c2",
+        "l0::dir:accept_gack_c2",
+        "core2:complete_cas_line0"
+      ],
+      "cycle_steps": [
+        "core1:issue_3_line0",
+        "core1:ask_write_line0",
+        "l0::dir:start_rqW_c1",
+        "l0::net:deliver_recall_c2",
+        "l0::dir:accept_wb_c2",
+        "l0::dir:grant_M_c1",
+        "l0::net:deliver_grM_c1",
+        "l0::dir:accept_gack_c1",
+        "core1:complete_cas_line0",
+        "core2:issue_3_line0",
+        "core2:ask_write_line0",
+        "l0::dir:start_rqW_c2",
+        "l0::net:deliver_recall_c1",
+        "l0::dir:accept_wb_c1",
+        "l0::dir:grant_M_c2",
+        "l0::net:deliver_grM_c2",
+        "l0::dir:accept_gack_c2",
+        "core2:complete_cas_line0"
+      ],
+      "seconds": 0.1325,
+      "qualification": "Weak fairness of INTERNAL protocol scheduling only; fresh CPU issues are environmental actions.",
+      "smt_file": "reachable_combined_4core_2line_starvation_lasso.smt2"
+    },
+    "3": {
+      "result": "sat",
+      "expected": "sat",
+      "pass": true,
+      "prefix_length": 18,
+      "cycle_length": 18,
+      "prefix_steps": [
+        "core0:issue_1_line0",
+        "core0:ask_read_line0",
+        "core1:issue_3_line0",
+        "core1:ask_write_line0",
+        "l0::dir:start_rqW_c1",
+        "l0::dir:grant_M_c1",
+        "l0::net:deliver_grM_c1",
+        "l0::dir:accept_gack_c1",
+        "core1:complete_cas_line0",
+        "core2:issue_3_line0",
+        "core2:ask_write_line0",
+        "l0::dir:start_rqW_c2",
+        "l0::net:deliver_recall_c1",
+        "l0::dir:accept_wb_c1",
+        "l0::dir:grant_M_c2",
+        "l0::net:deliver_grM_c2",
+        "l0::dir:accept_gack_c2",
+        "core2:complete_cas_line0"
+      ],
+      "cycle_steps": [
+        "core1:issue_3_line0",
+        "core1:ask_write_line0",
+        "l0::dir:start_rqW_c1",
+        "l0::net:deliver_recall_c2",
+        "l0::dir:accept_wb_c2",
+        "l0::dir:grant_M_c1",
+        "l0::net:deliver_grM_c1",
+        "l0::dir:accept_gack_c1",
+        "core1:complete_cas_line0",
+        "core2:issue_3_line0",
+        "core2:ask_write_line0",
+        "l0::dir:start_rqW_c2",
+        "l0::net:deliver_recall_c1",
+        "l0::dir:accept_wb_c1",
+        "l0::dir:grant_M_c2",
+        "l0::net:deliver_grM_c2",
+        "l0::dir:accept_gack_c2",
+        "core2:complete_cas_line0"
+      ],
+      "seconds": 0.0844,
+      "qualification": "Weak fairness of INTERNAL protocol scheduling only; fresh CPU issues are environmental actions.",
+      "smt_file": "reachable_combined_4core_3line_starvation_lasso.smt2"
+    }
+  },
+  "passed": true
+}

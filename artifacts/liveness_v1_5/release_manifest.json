@@ -1,0 +1,8 @@
+{
+  "historical_experiment_tree_sha": "edc91a1ffb295f6a912f72682dffb5c3c36cfab5",
+  "historical_files_unchanged": true,
+  "verification_script_sha256": "63c29f5d411062c13943eb241a9450941dda04956375ee29a43cf4b4f890d9a0",
+  "positive_obligations": 54,
+  "expected_sat_queries": 6,
+  "Z3": "4.13.3.0"
+}
