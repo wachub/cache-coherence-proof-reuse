@@ -1,0 +1,38 @@
+{
+  "n_cores": 2,
+  "n_lines": 2,
+  "baseline_lemma": "reuse the previous OLD_INV & OLD_T => OLD_INV_next SMT proof",
+  "delta_actions": 12,
+  "new_actions": "early speculative L1 load, validated retirement, replay through MSI",
+  "results": [
+    {
+      "obligation": "delta_init",
+      "result": "unsat",
+      "seconds": 0.074,
+      "smt_bytes": 22820,
+      "file": "delta_init.smt2"
+    },
+    {
+      "obligation": "delta_induction",
+      "result": "unsat",
+      "seconds": 0.091,
+      "smt_bytes": 76358,
+      "file": "delta_induction.smt2"
+    },
+    {
+      "obligation": "delta_bad",
+      "result": "unsat",
+      "seconds": 0.005,
+      "smt_bytes": 20936,
+      "file": "delta_bad.smt2"
+    },
+    {
+      "obligation": "retire_stale_impossible",
+      "result": "unsat",
+      "seconds": 0.021,
+      "smt_bytes": 33534,
+      "file": "retire_stale_impossible.smt2"
+    }
+  ],
+  "success": true
+}
