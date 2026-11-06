@@ -1,0 +1,375 @@
+{
+  "release": "v2.1",
+  "branch": "experiment/hierarchical-cache-width-v2.1",
+  "model": "new atomic abstract cache hierarchy; separate from v2.0 asynchronous protocol",
+  "total_checks_and_witnesses": 5271,
+  "groups": {
+    "fixed_configuration": {
+      "checks": 2916,
+      "runs": [
+        {
+          "manifest_path": "artifacts/hierarchy_v21/mesi2_2/summary.json",
+          "sha256": "b2725b2e2b252507a3042a5e186cfbdcbccca38c06def590cf62ce3ca577fbe8",
+          "checks": 137,
+          "variant": "MESI",
+          "configuration": {
+            "fanouts": [
+              2,
+              2
+            ],
+            "cores": 4,
+            "directory_nodes": 3,
+            "max_cache_levels": 3
+          }
+        },
+        {
+          "manifest_path": "artifacts/hierarchy_v21/mesi2_2_2/summary.json",
+          "sha256": "c373ee4e10acab0d1c2a0b4d568fa2a027bf8f0774b41865f69247bc00ace4c2",
+          "checks": 289,
+          "variant": "MESI",
+          "configuration": {
+            "fanouts": [
+              2,
+              2,
+              2
+            ],
+            "cores": 8,
+            "directory_nodes": 7,
+            "max_cache_levels": 4
+          }
+        },
+        {
+          "manifest_path": "artifacts/hierarchy_v21/mesi2_4/summary.json",
+          "sha256": "e7b2d6e8884f706bc90433cf942b74c8f1d3d0669530b1cf940508a51b841526",
+          "checks": 273,
+          "variant": "MESI",
+          "configuration": {
+            "fanouts": [
+              2,
+              4
+            ],
+            "cores": 8,
+            "directory_nodes": 3,
+            "max_cache_levels": 3
+          }
+        },
+        {
+          "manifest_path": "artifacts/hierarchy_v21/mesi4_2/summary.json",
+          "sha256": "4f95a14f55361c5249a62c3c2fecd607124f9a8b3debc795f3186bdd05da6fe2",
+          "checks": 273,
+          "variant": "MESI",
+          "configuration": {
+            "fanouts": [
+              4,
+              2
+            ],
+            "cores": 8,
+            "directory_nodes": 5,
+            "max_cache_levels": 3
+          }
+        },
+        {
+          "manifest_path": "artifacts/hierarchy_v21/moesi2_2/summary.json",
+          "sha256": "e15bae981b4f11a105847852efd7dc82e5bf111e0f1a54c18ac6dea1b9d8c315",
+          "checks": 137,
+          "variant": "MOESI",
+          "configuration": {
+            "fanouts": [
+              2,
+              2
+            ],
+            "cores": 4,
+            "directory_nodes": 3,
+            "max_cache_levels": 3
+          }
+        },
+        {
+          "manifest_path": "artifacts/hierarchy_v21/moesi2_2_2/summary.json",
+          "sha256": "b948947c0bf41c7f797984f0686e017afe7911adbcca703fbcea45d699650348",
+          "checks": 289,
+          "variant": "MOESI",
+          "configuration": {
+            "fanouts": [
+              2,
+              2,
+              2
+            ],
+            "cores": 8,
+            "directory_nodes": 7,
+            "max_cache_levels": 4
+          }
+        },
+        {
+          "manifest_path": "artifacts/hierarchy_v21/moesi2_4/summary.json",
+          "sha256": "ca40b50a232cb1253d3e4e07aa30dcca1c8fa295871e583ff05574a3d3811b24",
+          "checks": 273,
+          "variant": "MOESI",
+          "configuration": {
+            "fanouts": [
+              2,
+              4
+            ],
+            "cores": 8,
+            "directory_nodes": 3,
+            "max_cache_levels": 3
+          }
+        },
+        {
+          "manifest_path": "artifacts/hierarchy_v21/moesi4_2/summary.json",
+          "sha256": "5ef323fdb2273bcc437dfe3a30f74f77c7f70d7b9fbb11d1e2989be4f49a1e1a",
+          "checks": 273,
+          "variant": "MOESI",
+          "configuration": {
+            "fanouts": [
+              4,
+              2
+            ],
+            "cores": 8,
+            "directory_nodes": 5,
+            "max_cache_levels": 3
+          }
+        },
+        {
+          "manifest_path": "artifacts/hierarchy_v21/msi2_2/summary.json",
+          "sha256": "345b16cbda5de522c3f8fec3e66a95a76e5637d323ad37999f067a822b116e7a",
+          "checks": 137,
+          "variant": "MSI",
+          "configuration": {
+            "fanouts": [
+              2,
+              2
+            ],
+            "cores": 4,
+            "directory_nodes": 3,
+            "max_cache_levels": 3
+          }
+        },
+        {
+          "manifest_path": "artifacts/hierarchy_v21/msi2_2_2/summary.json",
+          "sha256": "7ea75a2620f50df60f587fd538cf43ac47d8ac7f84b7a47758246fbf85cbaf00",
+          "checks": 289,
+          "variant": "MSI",
+          "configuration": {
+            "fanouts": [
+              2,
+              2,
+              2
+            ],
+            "cores": 8,
+            "directory_nodes": 7,
+            "max_cache_levels": 4
+          }
+        },
+        {
+          "manifest_path": "artifacts/hierarchy_v21/msi2_4/summary.json",
+          "sha256": "f04961ba49c679c56d6c032be5ed0d8447171583ecb54010169927976b8d4891",
+          "checks": 273,
+          "variant": "MSI",
+          "configuration": {
+            "fanouts": [
+              2,
+              4
+            ],
+            "cores": 8,
+            "directory_nodes": 3,
+            "max_cache_levels": 3
+          }
+        },
+        {
+          "manifest_path": "artifacts/hierarchy_v21/msi4_2/summary.json",
+          "sha256": "2bcf72ba9492319fd7b0caed07fbda25fd195dbee99200186e4d31584274e1dc",
+          "checks": 273,
+          "variant": "MSI",
+          "configuration": {
+            "fanouts": [
+              4,
+              2
+            ],
+            "cores": 8,
+            "directory_nodes": 5,
+            "max_cache_levels": 3
+          }
+        }
+      ]
+    },
+    "topology_equivalence": {
+      "checks": 1098,
+      "runs": [
+        {
+          "manifest_path": "artifacts/hierarchy_v21_equivalence/mesi_2_2_2__2_4/summary.json",
+          "sha256": "2fe44ff7df7473b6fe31a03d19895413d780924a2f7698687db42690d21bb4d5",
+          "checks": 146,
+          "variant": "MESI",
+          "configuration": null
+        },
+        {
+          "manifest_path": "artifacts/hierarchy_v21_equivalence/mesi_4_2__2_4/summary.json",
+          "sha256": "654a7cac976cba9869e70949e81253c90f4741ad67209c52c73e7cb5c862d0e0",
+          "checks": 146,
+          "variant": "MESI",
+          "configuration": null
+        },
+        {
+          "manifest_path": "artifacts/hierarchy_v21_equivalence/mesi_4__2_2/summary.json",
+          "sha256": "162e4463ba46d7d1746c187ca39fc3161d11754654fc881016eff3bb25eeafcb",
+          "checks": 74,
+          "variant": "MESI",
+          "configuration": null
+        },
+        {
+          "manifest_path": "artifacts/hierarchy_v21_equivalence/moesi_2_2_2__2_4/summary.json",
+          "sha256": "cb88fbb4099a23fa76bff33d20bba0b79940c5a244e44f0e979778c478cea748",
+          "checks": 146,
+          "variant": "MOESI",
+          "configuration": null
+        },
+        {
+          "manifest_path": "artifacts/hierarchy_v21_equivalence/moesi_4_2__2_4/summary.json",
+          "sha256": "e4895829c21483ca7607b4d89ddc4030148fb3479f5aa47b095ae5e05562b9d9",
+          "checks": 146,
+          "variant": "MOESI",
+          "configuration": null
+        },
+        {
+          "manifest_path": "artifacts/hierarchy_v21_equivalence/moesi_4__2_2/summary.json",
+          "sha256": "2222e504351b329cf184fd49151808bc4f42e4c5ba421c035d405f776528819a",
+          "checks": 74,
+          "variant": "MOESI",
+          "configuration": null
+        },
+        {
+          "manifest_path": "artifacts/hierarchy_v21_equivalence/msi_2_2_2__2_4/summary.json",
+          "sha256": "6a37dd9e09f6ff744c9e93a76c778f22f1b3a3185302a9067fc013e884e09940",
+          "checks": 146,
+          "variant": "MSI",
+          "configuration": null
+        },
+        {
+          "manifest_path": "artifacts/hierarchy_v21_equivalence/msi_4_2__2_4/summary.json",
+          "sha256": "5f04b914feda3d75fa738f2d1bb149bcb5a8646c4ffad6fe3dedfdf9c5220add",
+          "checks": 146,
+          "variant": "MSI",
+          "configuration": null
+        },
+        {
+          "manifest_path": "artifacts/hierarchy_v21_equivalence/msi_4__2_2/summary.json",
+          "sha256": "dc6df873d239473f08f16e3a943d64257dd2f96db9ba2934946da4174df4946a",
+          "checks": 74,
+          "variant": "MSI",
+          "configuration": null
+        }
+      ]
+    },
+    "atomic_progress": {
+      "checks": 1028,
+      "runs": [
+        {
+          "manifest_path": "artifacts/hierarchy_v21_progress/mesi_2_2/summary.json",
+          "sha256": "e98e0f70200e7313378a7abb311a498d4a7418a129c6a5aca09ccf29b74a4a0d",
+          "checks": 148,
+          "variant": "MESI",
+          "configuration": {
+            "fanouts": [
+              2,
+              2
+            ],
+            "cores": 4,
+            "directory_nodes": 3,
+            "max_cache_levels": 3
+          }
+        },
+        {
+          "manifest_path": "artifacts/hierarchy_v21_progress/moesi_2_2/summary.json",
+          "sha256": "496df1cd9e70545982d1100e32a5f3f62bf93846eee40e4b65aedd6074cbe95a",
+          "checks": 148,
+          "variant": "MOESI",
+          "configuration": {
+            "fanouts": [
+              2,
+              2
+            ],
+            "cores": 4,
+            "directory_nodes": 3,
+            "max_cache_levels": 3
+          }
+        },
+        {
+          "manifest_path": "artifacts/hierarchy_v21_progress/moesi_2_2_2/summary.json",
+          "sha256": "51272286e0cfe4e095432cefd5985a44c7f1cf82e0bb385c13c5da89af646359",
+          "checks": 584,
+          "variant": "MOESI",
+          "configuration": {
+            "fanouts": [
+              2,
+              2,
+              2
+            ],
+            "cores": 8,
+            "directory_nodes": 7,
+            "max_cache_levels": 4
+          }
+        },
+        {
+          "manifest_path": "artifacts/hierarchy_v21_progress/msi_2_2/summary.json",
+          "sha256": "94db947527722d3175274475339368992b5bbadfc52bd02c6a875af6302a30cd",
+          "checks": 148,
+          "variant": "MSI",
+          "configuration": {
+            "fanouts": [
+              2,
+              2
+            ],
+            "cores": 4,
+            "directory_nodes": 3,
+            "max_cache_levels": 3
+          }
+        }
+      ]
+    },
+    "width_extension": {
+      "checks": 222,
+      "runs": [
+        {
+          "manifest_path": "artifacts/hierarchy_v21_width_extension/mesi_2_2__2_4/summary.json",
+          "sha256": "102ec4faa852154cbbb2ec53faa067e08b5ca1c280ec8c4c9aed11bc142dd52d",
+          "checks": 74,
+          "variant": "MESI",
+          "configuration": null
+        },
+        {
+          "manifest_path": "artifacts/hierarchy_v21_width_extension/moesi_2_2__2_4/summary.json",
+          "sha256": "4a9110d46a19174398d9ddb91b442f701ab654416707f3d2c3f701848aa83a42",
+          "checks": 74,
+          "variant": "MOESI",
+          "configuration": null
+        },
+        {
+          "manifest_path": "artifacts/hierarchy_v21_width_extension/msi_2_2__2_4/summary.json",
+          "sha256": "f76f3fa8ba5f9f78dd2cfda171fb181e68f144f597b31caea76e8c6782252cb4",
+          "checks": 74,
+          "variant": "MSI",
+          "configuration": null
+        }
+      ]
+    },
+    "witnesses": {
+      "checks": 7,
+      "runs": [
+        {
+          "manifest_path": "artifacts/hierarchy_v21_witnesses/summary.json",
+          "sha256": "369fbaef07e827401aed69a79752ce07957dc575b3275542996e65394f9d47e5",
+          "checks": 7,
+          "variant": null,
+          "configuration": null
+        }
+      ]
+    }
+  },
+  "claim_boundaries": [
+    "fixed topology not arbitrary all N",
+    "one cache line",
+    "atomic transactions",
+    "no previous MSI/MESI/MOESI SMT certificate reuse",
+    "no asynchronous temporal liveness certificate"
+  ]
+}

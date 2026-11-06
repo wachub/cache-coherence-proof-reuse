@@ -98,3 +98,7 @@ independent global temporal model-checker certificate. The separate finite
 abstract lasso checker is not a machine-checked refinement of the full model.
 Do not claim that the original concrete infinite-state temporal theorem has
 already been independently machine checked.
+
+## v2.1 hierarchy experiment
+
+See `HIERARCHICAL_COHERENCE_v2_1.md`. The `experiments/13_hierarchy` directory is a new atomic service-level abstraction; do **not** claim it reuses old v2.0 asynchronous coherence proof certificates. SMT proofs over generated tree shapes are reproducible with `tools/verify_hierarchy_v21.py`, `tools/verify_hierarchy_equivalence_v21.py`, and `tools/verify_width_extension_v21.py`; results are per fixed topology, not parametric-N. Keep v2.0 asynchronous model unchanged.

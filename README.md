@@ -1,3 +1,9 @@
+# v2.1 new experimental branch: configurable cache hierarchy
+
+For independently variable cache fan-out and depth, see **[HIERARCHICAL_COHERENCE_v2_1.md](HIERARCHICAL_COHERENCE_v2_1.md)**. This introduces an **atomic abstract hierarchy**, not yet an asynchronous hierarchical replacement for the existing v2.0 MESI/MOESI implementation. Source: `experiments/13_hierarchy/hierarchy.py`; proof tools: `tools/verify_*_v21.py`, `tools/verify_width_extension_v21.py`. The original v2.0 implementation and regression tests are retained.
+
+---
+
 > **v2.0 MESI/MOESI extension:** See [MESI_MOESI_EXTENSION_v2_0.md](MESI_MOESI_EXTENSION_v2_0.md) for new abstract coherence variants, verified 4-core safety, progress premises and reproducible scripts. The full global temporal theorem is still open.
 
 # Cache concurrency / coherence formal verification experiments

@@ -19,3 +19,9 @@ artifacts/minimized_temporal_progress_v1_9/*cores_*lines/
 artifacts/minimized_temporal_progress_v1_9/concrete_trace_witnesses/
 artifacts/minimized_temporal_progress_v1_9/symbolic_arithmetic/
 artifacts/minimized_temporal_progress_v1_9_smoke/
+# v2.1 regenerable SMT queries distributed in dedicated artifact archive
+artifacts/hierarchy_v21/
+artifacts/hierarchy_v21_equivalence/
+artifacts/hierarchy_v21_progress/
+artifacts/hierarchy_v21_width_extension/
+artifacts/hierarchy_v21_witnesses/
