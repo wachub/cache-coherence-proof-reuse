@@ -12,3 +12,5 @@ venv/
 # Regenerable large single-file and per-obligation SMT proof exports
 artifacts/**/sliced_queries/
 artifacts/**/all_contract_queries.smt2
+# Regenerated v1.7 large SMT-LIB queries are distributed in a separate proof archive
+artifacts/temporal_fairness_v1_7/*cores_*lines*/

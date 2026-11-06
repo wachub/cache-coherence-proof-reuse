@@ -156,3 +156,12 @@ obligations, arbitrary-value store execution, starvation negative controls, and
 symbolic-`N` rank/arbitration lemmas. Conditional fairness assumptions and proof
 limits are documented in [`docs/FAIR_PROGRESS_V1_6.md`](docs/FAIR_PROGRESS_V1_6.md).
 Run `python tools/progress_v16_verify.py --cores 4 --lines 2 3`.
+
+### v1.7 experimental temporal-fairness branch
+
+Branch `proof/temporal-fairness-v1.7` adds a proof-only confirmed-load invariant,
+290 concrete SMT progress/induction obligations, and an exhaustive fair-lasso
+checker for a finite request-progress abstraction. Fair liveness is reasoned
+about under explicit weak/strong fairness assumptions; **a native machine-checked
+global temporal proof of the original infinite-state model is not yet supplied**.
+See [`TEMPORAL_FAIRNESS_v1_7.md`](TEMPORAL_FAIRNESS_v1_7.md).

@@ -71,3 +71,21 @@ Read `docs/LIVENESS_PROGRESS_ANALYSIS.md`. Run `python tools/liveness_verify.py 
 - There is a **reachable symbolic-payload completion stall** in the inherited immutable `payload(version)` abstraction. Do not claim full read/write/CAS termination.
 - There is a **reachable weak-fair starvation lasso** for a queued read while two other cores alternate ownership. Do not claim starvation freedom under weak fairness; strong fairness of arbitration or a fair directory algorithm is needed.
 - Use generated SMT-LIB proofs, negative controls, and exact 4-core/2-line and 4-core/3-line configurations. Historical source files under `experiments/` must not be changed as part of this verification-only task.
+
+## Fair-progress experimental branch (v1.7)
+
+The `proof/temporal-fairness-v1.7` branch retains all previous commits and
+keeps the v1.6 transition semantics unchanged. Read `TEMPORAL_FAIRNESS_v1_7.md`
+before extending liveness. Reproduce with:
+
+```bash
+python tools/temporal_v17_verify.py --cores 4 --lines 2 3
+python tools/fair_lasso_v17.py --max-cores 4
+python -m unittest discover -s tests -q
+```
+
+The checked SMT queries are concrete one-step liveness premises, not an
+independent global temporal model-checker certificate. The separate finite
+abstract lasso checker is not a machine-checked refinement of the full model.
+Do not claim that the original concrete infinite-state temporal theorem has
+already been independently machine checked.

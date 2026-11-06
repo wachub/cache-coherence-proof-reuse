@@ -1,0 +1,1761 @@
+{
+  "version": "v1.7",
+  "branch": "proof/temporal-fairness-v1.7",
+  "type": "concrete-transition SMT premises for compositional temporal fairness theorem",
+  "fairness": "weak event fairness for servicing, starts, unconfirmed-store resolution, unconfirmed-read resolution, confirmed-store issue, load settlement; strong per-action fairness for CPU ask and completion",
+  "configurations": {
+    "4cores_2lines": {
+      "passed": true,
+      "queries": 124,
+      "checks": {
+        "initial_establishes_inductive_invariant": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0126,
+          "sha256": "f902de16aafb5ff6df0088ee6ab0f189841db2b1e51e6db035fc8ef49a908251"
+        },
+        "all_transitions_preserve_inductive_invariant": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.7646,
+          "sha256": "20cf8f182f47a20053f538bb8f85904eee4f2b0e7198f21efa86c831a97b3e22"
+        },
+        "bad_state_unreachable_under_invariant": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0036,
+          "sha256": "3a4084d9406ca341ac74c0e57cb5bc04b2d8c2c81ba0e828a7f24debb0b50e81"
+        },
+        "speculative_delta_preserves_architectural_effect_contract": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.1026,
+          "sha256": "778f0cc28a18407243ca4dbd7a379d9e498ffd3cfb593168d8a758d65100e217"
+        },
+        "line0__idle_queued_persists_until_some_start": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.2124,
+          "sha256": "da24cfeece3f8a1f61c2e1df75d8ddd02a7063794fb76bb816010cf49f64f194"
+        },
+        "line0_core0__start_installs_active_transaction": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0506,
+          "sha256": "c0e24e6ab84e043280236a54f21c94ce54d4bc36ec1dbdbb450106f738449547"
+        },
+        "line0_core0__grant_clears_pending_and_sets_permission": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0393,
+          "sha256": "ac3587da742a03d5b5f5d4c598abfb16de0fa8487df18bae9884e442faea05ba"
+        },
+        "line0_core0__ask_enqueues_pending_request": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0443,
+          "sha256": "365c5494c65e503fa8a629fc117b088606fd70ccbe66ffd02adc8320facc3bbc"
+        },
+        "line0_core0__completion_clears_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0056,
+          "sha256": "85e9f2afa45781bfd3090282324f133c7907b866f951b3b7ddf319ef3ab503fa"
+        },
+        "line0_core0__pending_persists_until_grant": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0474,
+          "sha256": "1998727e157dd162ddec6a2e7bbd6aaed4c46119b36babb3f79940911926c9a0"
+        },
+        "line0_core0__pending_belongs_to_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0041,
+          "sha256": "94e45a504bacdf9b00e2e7fccd934992a7a9b52526ed34f0d8bc9bc3cde71125"
+        },
+        "line0_core0__busy_persists_until_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0483,
+          "sha256": "87cbc9f9303fb1abfbce5fea6dc126a58acf2655fab14725b8a3d1652ee77459"
+        },
+        "line0_core0__read_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0036,
+          "sha256": "6e65fd850f1da551945844e04de5df9c73f8451b03a663bc312afa84d42d4f77"
+        },
+        "line0_core0__store_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0036,
+          "sha256": "0c1433635a0ab271a765854eebaadfefa027ac8dbd165a7fcef9768e8b213c13"
+        },
+        "line0_core0__cas_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.004,
+          "sha256": "d0fb656378703501becc88944bc30908af853e9e58827cb837eed989cb2963d4"
+        },
+        "line0_core1__start_installs_active_transaction": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0423,
+          "sha256": "0501fae609cc30820cddfa0b3cc1737167160eeef0b22d3ff15c727edbc9d44e"
+        },
+        "line0_core1__grant_clears_pending_and_sets_permission": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0396,
+          "sha256": "b4818681c9eb9c9e7466aa2101d234b927a3cd47fafed4c6a4a6da41b210c247"
+        },
+        "line0_core1__ask_enqueues_pending_request": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0436,
+          "sha256": "1124e271d8737671e71a80297f5202077eea15b9fad3d07fc5aade05e71df9e5"
+        },
+        "line0_core1__completion_clears_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0053,
+          "sha256": "ae85fb2eadc41fe2b04e39db0d303d52d1186d7bc7a9f4c18d7681f2003091dc"
+        },
+        "line0_core1__pending_persists_until_grant": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0571,
+          "sha256": "93ea522283b28f0a645e980a71eebed3ba10f7fa134edff74bd8273c0170511b"
+        },
+        "line0_core1__pending_belongs_to_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0047,
+          "sha256": "ce8c92effb1918f70bd38f35d93abd6b7d1be244279f813e94674ae8a77e5e2b"
+        },
+        "line0_core1__busy_persists_until_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0534,
+          "sha256": "71da037002670826860fb78b7be0f088400a73180a9b3e08bd241167aa6d63f8"
+        },
+        "line0_core1__read_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0048,
+          "sha256": "cca7d32d953d4b00f69a492c3b29d147e0de2d94918edcb1fbfb09774b9cf35f"
+        },
+        "line0_core1__store_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0042,
+          "sha256": "3501b5dce315311d365d29ed881a4d452a5b392ada4b61cc0e76ee900bc885bd"
+        },
+        "line0_core1__cas_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0039,
+          "sha256": "583609dece546cedcb2732ce1325bf2899098bc5aa277ff7b8de480aa993a903"
+        },
+        "line0_core2__start_installs_active_transaction": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.048,
+          "sha256": "2fa1cf6ae7bae22a09db6a23ca2f5471fd7dfc8a636f3f8cfed8874ca1e3f44b"
+        },
+        "line0_core2__grant_clears_pending_and_sets_permission": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0415,
+          "sha256": "c15b21cadedf48dbfa82a2868af01dfa2e8f8db9d5a60ebe01e43526a95adff1"
+        },
+        "line0_core2__ask_enqueues_pending_request": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.052,
+          "sha256": "5def8d62a836140097345795cf8ad9fc4949d629beb970a5135a78843041438b"
+        },
+        "line0_core2__completion_clears_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0068,
+          "sha256": "d569910ccfa0d459de22f52468f63a032ef6e762af3e33624d81b32dab7615d8"
+        },
+        "line0_core2__pending_persists_until_grant": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0482,
+          "sha256": "046724e0b80489d399eded30390077dfeb1a77caa83cfa85c6cde321526b86bb"
+        },
+        "line0_core2__pending_belongs_to_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0075,
+          "sha256": "b77a345072ffb95eebe12add313e3f8fe149b162b23c6b6bf6d1b7ca80d9138a"
+        },
+        "line0_core2__busy_persists_until_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0565,
+          "sha256": "21d55d8fac62db4e60d405b32fb4fbef017422e5235343c1a679c67ad819df38"
+        },
+        "line0_core2__read_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.004,
+          "sha256": "6764c343823ed2ec601689ffc7ced313fd69368f5876ef61f54ec40e033e36bd"
+        },
+        "line0_core2__store_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0037,
+          "sha256": "2dc1ed3b8644cc985b35a4b5dafaac49cd0f130ee29de70fd754cb3170485645"
+        },
+        "line0_core2__cas_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0047,
+          "sha256": "bf78f73eabcc7af9e5cf555626584e8e543acd5abc7bfc76d013ec26b4e5bb93"
+        },
+        "line0_core3__start_installs_active_transaction": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0506,
+          "sha256": "c1adb18d5ac738e550b663d81eb1370c75fb0f8ae1cb600d3e3da8025fdd2cd5"
+        },
+        "line0_core3__grant_clears_pending_and_sets_permission": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0456,
+          "sha256": "caf6e69a91ce402c9b233f82d041bf2866577045b331a6337dd969d823300f09"
+        },
+        "line0_core3__ask_enqueues_pending_request": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0438,
+          "sha256": "f4017bfe754bc4d006079d1e17c160511f7f69c9333fbda42f91b6fef8847c1f"
+        },
+        "line0_core3__completion_clears_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0067,
+          "sha256": "1dd7b6c00edf8f73b805008b8ad7f3c54a1840af3c123de4da4bd02f294be929"
+        },
+        "line0_core3__pending_persists_until_grant": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0579,
+          "sha256": "59db2949743d506367611cd1708af9eb9384b8471226f3b26abeab621925f9af"
+        },
+        "line0_core3__pending_belongs_to_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0046,
+          "sha256": "9bf412b438e7cf5c49f77374ba398f3b86a24fef6db5e7347f56ba6f7fda367c"
+        },
+        "line0_core3__busy_persists_until_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0519,
+          "sha256": "b9961d03e46112b013381eaf50a7f97b3ff6f18b0879eb81c75c31c8aa23b993"
+        },
+        "line0_core3__read_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0052,
+          "sha256": "b7088411030ca94b8c6f04c2f2ee43e122fb7a1aa80d123ee130c7f3b942d417"
+        },
+        "line0_core3__store_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0036,
+          "sha256": "f25ae2db6415172eb1c4c5bcb3d9ed0a1627b313310b94165071a47da4d98ef0"
+        },
+        "line0_core3__cas_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0039,
+          "sha256": "c3c6e7b70b7c909fa36a7b3b9099c8c0cd4ca29084618ecd9891fcd79a27078f"
+        },
+        "line0__active_has_service_enabled": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0154,
+          "sha256": "29a98dd30cc3ca742fb9b6da80ac208fadceee46fb22ce8221dce52cc7bf3a59"
+        },
+        "line1__idle_queued_persists_until_some_start": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.2246,
+          "sha256": "a8751b25947aff44f82509ca71f1ed4c570288d08739ce1296804ed9e220f69c"
+        },
+        "line1_core0__start_installs_active_transaction": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.045,
+          "sha256": "4189877bf863c7fdf6b779b963354caf5fe8e9495674137c9db53dfc4956c2b6"
+        },
+        "line1_core0__grant_clears_pending_and_sets_permission": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0413,
+          "sha256": "8af891be0d39b214613407ba7bb4493ec63febe65762980b1d413e311487a134"
+        },
+        "line1_core0__ask_enqueues_pending_request": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.049,
+          "sha256": "ef39fa8f7325fc7dd2af21b3429118fad41c1e3d3889d2fa73007adcf23b9822"
+        },
+        "line1_core0__completion_clears_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0053,
+          "sha256": "85e9f2afa45781bfd3090282324f133c7907b866f951b3b7ddf319ef3ab503fa"
+        },
+        "line1_core0__pending_persists_until_grant": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0528,
+          "sha256": "c4d4cb0cba34bc6a95fb0f30aacfb47100c6006094047cc48a83ea72ecd113c0"
+        },
+        "line1_core0__pending_belongs_to_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0045,
+          "sha256": "809440a83341544993ddcbb692b0f6d8ae2152612249256f5dbc3d7b78906bed"
+        },
+        "line1_core0__busy_persists_until_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.056,
+          "sha256": "87cbc9f9303fb1abfbce5fea6dc126a58acf2655fab14725b8a3d1652ee77459"
+        },
+        "line1_core0__read_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0052,
+          "sha256": "f631b13a2070972c7c53a2b6fc034984f8013f57eed2d70a6ae310b934da7a8e"
+        },
+        "line1_core0__store_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0043,
+          "sha256": "acf29b033914480648a71dd573b4b5cdc18b399836f23c97387bdd0f7afaab96"
+        },
+        "line1_core0__cas_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0043,
+          "sha256": "5b0658dcceae092f41ff85b7872c8bb73e94a6cb5b62ad1ea0f7e014d3f93f9c"
+        },
+        "line1_core1__start_installs_active_transaction": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0491,
+          "sha256": "a0e2957f4b782feb2fbaac39f9637c4dfa015ade324f0f628dd192e522d1e1fd"
+        },
+        "line1_core1__grant_clears_pending_and_sets_permission": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0421,
+          "sha256": "d1280f83eb801263dbca3ff48af72060cf9bfd539726afe2eb0cdd480d426c6b"
+        },
+        "line1_core1__ask_enqueues_pending_request": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0503,
+          "sha256": "3d7542c35bb86b0e4d387cbae81fb1f2f0e4a1688c626c938469e0c3763bd428"
+        },
+        "line1_core1__completion_clears_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0056,
+          "sha256": "ae85fb2eadc41fe2b04e39db0d303d52d1186d7bc7a9f4c18d7681f2003091dc"
+        },
+        "line1_core1__pending_persists_until_grant": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0556,
+          "sha256": "1a8441edd0ac3a01c238e6bfb536aa26fb37e8252d427a2465f28be18d6e2851"
+        },
+        "line1_core1__pending_belongs_to_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0041,
+          "sha256": "2ad18201a9fe27c729b367187202a3aa24469c2dd46b84bccdeefcfedd9d3206"
+        },
+        "line1_core1__busy_persists_until_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0571,
+          "sha256": "71da037002670826860fb78b7be0f088400a73180a9b3e08bd241167aa6d63f8"
+        },
+        "line1_core1__read_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0047,
+          "sha256": "cac95af5662c6878865a9ee145565ad559c2972bb62fc8994f855cd368bb79f3"
+        },
+        "line1_core1__store_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.005,
+          "sha256": "0498a76546d50516e253bd8f51a5c0af9b45195bb3e62e35fa21b4242cfbdecb"
+        },
+        "line1_core1__cas_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0043,
+          "sha256": "af012222769f76f9453b2ef1d6fcb06f357d4118be8090388f5c6ffb6fd59ece"
+        },
+        "line1_core2__start_installs_active_transaction": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0485,
+          "sha256": "dd845d277a3be76493167323f174250984458d55f355b90f492b059c40091315"
+        },
+        "line1_core2__grant_clears_pending_and_sets_permission": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0434,
+          "sha256": "d66c045c358279afba6352d1d3cd5359675cd92876bf0897491e238e4d3b92ae"
+        },
+        "line1_core2__ask_enqueues_pending_request": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.049,
+          "sha256": "4160647f48a2595db1a6842b5cc84dd4aa9d1c5756413fb86daeca78fcdd0f49"
+        },
+        "line1_core2__completion_clears_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0071,
+          "sha256": "d569910ccfa0d459de22f52468f63a032ef6e762af3e33624d81b32dab7615d8"
+        },
+        "line1_core2__pending_persists_until_grant": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0513,
+          "sha256": "6ff1a5047eec24eae2d5dfecb1fefcad1d7f69c1a2d14a338a706403fc8d6a36"
+        },
+        "line1_core2__pending_belongs_to_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0049,
+          "sha256": "8ec35c3527b0e8f46222c0e37a458f937d192e1cc8c2250f36531caf6645cc9b"
+        },
+        "line1_core2__busy_persists_until_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0513,
+          "sha256": "21d55d8fac62db4e60d405b32fb4fbef017422e5235343c1a679c67ad819df38"
+        },
+        "line1_core2__read_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0048,
+          "sha256": "fc7b00a6e69dbe30e159ddf1209c6ac4b08621007d6a114e85473ab5f28efb53"
+        },
+        "line1_core2__store_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0042,
+          "sha256": "78ec4f544bbca15653405ad8a27cafbbff223d42f37907d8153635ff619a0e61"
+        },
+        "line1_core2__cas_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0036,
+          "sha256": "34bf33fd6936a00d8ae27b7890ff97a08f7ddf3f91f00b5be856e2f8609ad09c"
+        },
+        "line1_core3__start_installs_active_transaction": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.042,
+          "sha256": "4b967b7b9ecf14a1afd796838a2763cb4f9f4b6908158b8805b43bd31e7adfa9"
+        },
+        "line1_core3__grant_clears_pending_and_sets_permission": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0442,
+          "sha256": "094f32549c8f9db70aaf61e4b388240fd24907c4e4c01a48b8b3b411c45fdc16"
+        },
+        "line1_core3__ask_enqueues_pending_request": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0483,
+          "sha256": "8c3972f4c568a43f7ede2f87a17195bcaa659c52a27c77990ce64959409b3858"
+        },
+        "line1_core3__completion_clears_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0054,
+          "sha256": "1dd7b6c00edf8f73b805008b8ad7f3c54a1840af3c123de4da4bd02f294be929"
+        },
+        "line1_core3__pending_persists_until_grant": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0474,
+          "sha256": "5e3a7abd0e90a7b6e26acb5c240166c1c60d052ee3c3d5a5c8b8d42d97e95dad"
+        },
+        "line1_core3__pending_belongs_to_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0039,
+          "sha256": "67de264709518f3ebcc842476ad74177f9696ccfb60b64e489f6e3027e8454ce"
+        },
+        "line1_core3__busy_persists_until_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0543,
+          "sha256": "b9961d03e46112b013381eaf50a7f97b3ff6f18b0879eb81c75c31c8aa23b993"
+        },
+        "line1_core3__read_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0047,
+          "sha256": "6e28b12a3a5d57bd1e24a302e1522972bc46ccdfe7d34f8d4d43741717a884e4"
+        },
+        "line1_core3__store_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0042,
+          "sha256": "fac9018991e74d840890f71d047c82c3d0ace4d764ca57d44a1f614fa0a89230"
+        },
+        "line1_core3__cas_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0038,
+          "sha256": "b1e6cf5a7a32ac00090020d6d756fe2c72e4fb43905712732dd226824dab7b02"
+        },
+        "line1__active_has_service_enabled": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0132,
+          "sha256": "7d3a94114835b31a9a24dadb1996ca28b7b6fbe904b61f99b7c7c4d93d9fae3b"
+        },
+        "core0__unconfirmed_queue_can_resolve": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0035,
+          "sha256": "f8f372d2c00ffc29964f784f853242de33d64402f917268d6f34f4764df72058"
+        },
+        "core0__unconfirmed_queue_stable_until_resolution": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.2464,
+          "sha256": "24755b8e287b185e7c1eb354a3f235bf2aaded27ee7bbc6b3f5ec52c2b0c08da"
+        },
+        "core0__unconfirmed_read_can_resolve": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0047,
+          "sha256": "3cc2c681541bc0afdd9a6aa41e92e35bf6aac2ddb23d71ae7ee9ecb85133bd6e"
+        },
+        "core0__unconfirmed_read_stable_until_resolution": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.2274,
+          "sha256": "bb05a9e499ced84928ae623012700ad9d690a10f124bda68cad7b3b7b02c5bdc"
+        },
+        "core0__confirmed_head_issues_when_not_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0118,
+          "sha256": "d98b5211373e5e1670d1c705fdf0cbfe013ab7acf0d3ab6df6f0f67918f586b7"
+        },
+        "core0__confirmed_head_stable_until_issue": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.2332,
+          "sha256": "303ec69e7f0c444ceb1b84d247e1478faea7e3dc0f24f0c4544655764c4af65e"
+        },
+        "core0__confirmed_read_has_settlement": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0146,
+          "sha256": "592dbe1f61be5f7423ef40ed9e991cba1f3a6fa6db6c5331b254cdc4cb05967a"
+        },
+        "core0__confirmed_read_stable_until_settlement": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.2067,
+          "sha256": "38add9792a036dffef0572e6ee328f80536e737ec0ccca76f2948583cde656d9"
+        },
+        "core0__confirmed_read_persists_until_settlement": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.201,
+          "sha256": "8a77ce4d7e09cdef2ca17932688135d9b5ecd5e79063198e975e98ba01e787bd"
+        },
+        "core1__unconfirmed_queue_can_resolve": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0037,
+          "sha256": "592eaf20a1a3a22f5f3a7b2cc2c2646f52b9b45a96d517bf69fb875c59dd03e1"
+        },
+        "core1__unconfirmed_queue_stable_until_resolution": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.2101,
+          "sha256": "22c6c016448b48a03a8abff8f511e7a6caf8e2d584a3068c93e613fda3fed0dc"
+        },
+        "core1__unconfirmed_read_can_resolve": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0034,
+          "sha256": "b1ba8bb5379f0dcfcdd70b3637bdd40875a6b1abc94fb7044dac43943211e719"
+        },
+        "core1__unconfirmed_read_stable_until_resolution": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.2138,
+          "sha256": "099c1131fde1aab857951f12a01a2d2a25ba1b47ee20eaba6ac4e6d47f366b4a"
+        },
+        "core1__confirmed_head_issues_when_not_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0182,
+          "sha256": "02a6b0cc9974597d63223ab1e6983df349b5f625ca6c6e480e26447978e2bf61"
+        },
+        "core1__confirmed_head_stable_until_issue": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.2318,
+          "sha256": "c79ac2f2b936e0a7255e6e336328d3ea5ee23aa356ab6939beade7d5a3fa221c"
+        },
+        "core1__confirmed_read_has_settlement": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0128,
+          "sha256": "99da2007db5385affe0725fdb7412a8e0a76dac60df362724f818260d9a57076"
+        },
+        "core1__confirmed_read_stable_until_settlement": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.202,
+          "sha256": "4541b9f08a38bf496224f9c78a403596b376a0a077294b70aa7ddc431fa09c25"
+        },
+        "core1__confirmed_read_persists_until_settlement": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.2347,
+          "sha256": "4e883f49e54dedd634a3ebc7ea76dfee7d99d4cf2d003e5e7e46bc0a75504044"
+        },
+        "core2__unconfirmed_queue_can_resolve": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0037,
+          "sha256": "4115bfae83eb01378ca5f4c32ff1a2bded4bf52f7594ac8835266fd33fe24727"
+        },
+        "core2__unconfirmed_queue_stable_until_resolution": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.2582,
+          "sha256": "f4bdefb2ad289f9bfb6050c28323c62ad4a435087920e92d56d861c07b7eeaac"
+        },
+        "core2__unconfirmed_read_can_resolve": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0039,
+          "sha256": "1252e1328ce5cda3efaf333a846a4ab6af46fd35888a47d9da2166548a936582"
+        },
+        "core2__unconfirmed_read_stable_until_resolution": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.2402,
+          "sha256": "45f3fdc785c0dfadbbfa56da648ba64db58398be7d50fa5103b041c5feceb0a6"
+        },
+        "core2__confirmed_head_issues_when_not_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0227,
+          "sha256": "4e80593ea2ad95378ce9be23f916927ee99f865982c940b8ab4a2ae06b35a0a0"
+        },
+        "core2__confirmed_head_stable_until_issue": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.2748,
+          "sha256": "569ee4a9ca605a08ae50521f3a1cad2797504c96f8eae7705a201461852e4231"
+        },
+        "core2__confirmed_read_has_settlement": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0225,
+          "sha256": "802dce96f548d89df7470cee1651801139e20c480c989c76fe622f5d76c6f8e5"
+        },
+        "core2__confirmed_read_stable_until_settlement": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.2503,
+          "sha256": "1e3442e68b805ab18125482c631831a8ede0abd8238c3fa3033c49e87c81325d"
+        },
+        "core2__confirmed_read_persists_until_settlement": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.2958,
+          "sha256": "eccc05eab7f1edded6949316d17b412dc7c1d6d6da308a12495cb629e019cfcd"
+        },
+        "core3__unconfirmed_queue_can_resolve": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0039,
+          "sha256": "60ace638ac839e19c59ae753ed283c8e1f36a0e505f553282e9749a326c395d2"
+        },
+        "core3__unconfirmed_queue_stable_until_resolution": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.2838,
+          "sha256": "f4a8e09ee28737703198962f16104f1f1691707e05e174050e4415144ecbc561"
+        },
+        "core3__unconfirmed_read_can_resolve": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0045,
+          "sha256": "f02ed6c3c2849c24a53100c0455b8024231cb14733b004a394b8cff5cc853814"
+        },
+        "core3__unconfirmed_read_stable_until_resolution": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.2836,
+          "sha256": "77a9603eb87f653a1f4ba36b1ec85325f307e351e2abc22114917466d0d8f8ba"
+        },
+        "core3__confirmed_head_issues_when_not_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0178,
+          "sha256": "23b09a375519ab39f8e3db3efde07d52a6993af6ae38e887556968c5dc6affeb"
+        },
+        "core3__confirmed_head_stable_until_issue": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.2174,
+          "sha256": "a2610e87a8c9aa1a74c92c797b045d4ac08a049ac34dfbdbfa5f0f8daf26330c"
+        },
+        "core3__confirmed_read_has_settlement": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0111,
+          "sha256": "47b53a6a255b0de091e3e35ca8f428edcb013d45ea8c8b8e28604ad5e2157718"
+        },
+        "core3__confirmed_read_stable_until_settlement": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.174,
+          "sha256": "d524d3dc9fc94b60413cf7f7a3ebf183b1e5b4042608c67fb0b38dfc93405742"
+        },
+        "core3__confirmed_read_persists_until_settlement": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.1947,
+          "sha256": "4ef28fb347f529121b37654aca10e6575f4dedc4365c1fc255eb3fb077a78ef0"
+        }
+      }
+    },
+    "4cores_3lines": {
+      "passed": true,
+      "queries": 166,
+      "checks": {
+        "initial_establishes_inductive_invariant": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0128,
+          "sha256": "3c273b97395f725e3eae5fd792feaaa5bf29d59d1d52b079c6997075fceb957d"
+        },
+        "all_transitions_preserve_inductive_invariant": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 1.6193,
+          "sha256": "8f2c945aac41b6688121591adece6bf7df0a521b19cbe838f7df541fa57e3154"
+        },
+        "bad_state_unreachable_under_invariant": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0054,
+          "sha256": "cfdeae3a18fab5017e017bfb445bfa35833c6bf302dc5c40aa637a29636d34e7"
+        },
+        "speculative_delta_preserves_architectural_effect_contract": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.1662,
+          "sha256": "a84195fb506b7000a9b603b78d6ce7c77f2b57cc4bd06be1672f5c45c1f61df0"
+        },
+        "line0__idle_queued_persists_until_some_start": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.4285,
+          "sha256": "761b6be1009fd8399aaedf0d4e89fb9f35391cc6c8c61c41246bf36d902c4da5"
+        },
+        "line0_core0__start_installs_active_transaction": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.1079,
+          "sha256": "299f42438f9771b1187460be706511a40c7213c0abb21a28c3d13a176718b3b7"
+        },
+        "line0_core0__grant_clears_pending_and_sets_permission": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0768,
+          "sha256": "38910c51695a96642d8096ed5a177ea531d8eac080774ff721778ed5b8b9e2b4"
+        },
+        "line0_core0__ask_enqueues_pending_request": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0789,
+          "sha256": "8e203153d62ddbbfe0f00b9dc58368d5d241c2644bea2b987d091f674888816a"
+        },
+        "line0_core0__completion_clears_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0094,
+          "sha256": "c0dd17b46767ee1d53503659a0edcab07ab8cf230e3fe29983c07997c2a6bee9"
+        },
+        "line0_core0__pending_persists_until_grant": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0837,
+          "sha256": "8e27ac50a129ac426aabf686669ffd118114f4dc4ca4d610f91b00b2365e00cb"
+        },
+        "line0_core0__pending_belongs_to_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0052,
+          "sha256": "5df593f6c529c1e97a9a3221bfcd0fafd20f688da736bf94c9e74d83fbdc1dec"
+        },
+        "line0_core0__busy_persists_until_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0857,
+          "sha256": "e9ffa17378ef2ce45e3c6d1436548f3e2bcf0cf9be6f0a582401c67777fa6eff"
+        },
+        "line0_core0__read_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0049,
+          "sha256": "076910895dabf25341974f5c8ad0c8cb4f28a93009f4cdbd5813b3672b9fec61"
+        },
+        "line0_core0__store_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0056,
+          "sha256": "62bd0b7aad492b56ab65d04ca07520de3a090a3459b6da7472e319145ff91a3a"
+        },
+        "line0_core0__cas_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0043,
+          "sha256": "78d5d0e0d276684fe2ee07b528256c14855a8793c08d6a253dca77e3d51b04bf"
+        },
+        "line0_core1__start_installs_active_transaction": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0749,
+          "sha256": "e88c994c26d87c2683701762a79e73fd61f72277e9a965de2835df24e028588e"
+        },
+        "line0_core1__grant_clears_pending_and_sets_permission": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0708,
+          "sha256": "5940f88cd8e215ca1e7ef3969e48146d11249090ed4eb85721f4d260fd7ffcd3"
+        },
+        "line0_core1__ask_enqueues_pending_request": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0695,
+          "sha256": "80b670afab9ff98f1ddf6591c412a5e1283f37f049788bc674398f1cb80cde33"
+        },
+        "line0_core1__completion_clears_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0073,
+          "sha256": "bee8609a797e0bf9fe4b53f43349751fa55606c4f76a5ca2973157bcad87bb2a"
+        },
+        "line0_core1__pending_persists_until_grant": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0881,
+          "sha256": "732892efccb5bd8c80f42884eab28d19c2ddbd32ba1a6bf5855d0550ef474071"
+        },
+        "line0_core1__pending_belongs_to_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0051,
+          "sha256": "9201e56877989cda727dbfb4ab4c4a44c11d41a3eaf0c9d76f713ef59fac455f"
+        },
+        "line0_core1__busy_persists_until_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0874,
+          "sha256": "278aabff47c81ada758a9a0bb6488e70bbd2373e01f1f848978831dbcec561c0"
+        },
+        "line0_core1__read_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0045,
+          "sha256": "9329c2d891f049b9196eca30d9fa5022582856833f705907ae60ab0448b02766"
+        },
+        "line0_core1__store_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0039,
+          "sha256": "dd881ac8cc581ba1431ea48376eedb9084f719b0aee09670c4ce1d434fd99461"
+        },
+        "line0_core1__cas_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0037,
+          "sha256": "347a95be0c80b140223e6be788a6a0f44bb437276f1c6795f5b01937ccb0e4da"
+        },
+        "line0_core2__start_installs_active_transaction": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0634,
+          "sha256": "6d6e79dc24826cf96f6324b1433ecacd92ff22a0e0b4e0f4a1dbf26e23cf7287"
+        },
+        "line0_core2__grant_clears_pending_and_sets_permission": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0923,
+          "sha256": "139fa8b774301b8d0489014c4b9577197a52ce871d7037f6d3952f0812087467"
+        },
+        "line0_core2__ask_enqueues_pending_request": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0774,
+          "sha256": "b4505e40ae99d873355b8e1c795bedb3ec1fd4531f8e016c3b33a8af1abdb57f"
+        },
+        "line0_core2__completion_clears_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0077,
+          "sha256": "e7906fdecfc23e85ba4983e469c9269e6a0a6fd5b1aee4fd897e876f14ad89b3"
+        },
+        "line0_core2__pending_persists_until_grant": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0937,
+          "sha256": "ef3d287240e1b455fad4e7db05d125b7065286a738e049916e07c6d0b2d16ed5"
+        },
+        "line0_core2__pending_belongs_to_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0061,
+          "sha256": "b50ac407e2ff2b547e441c698db9a1943945270f91f5a3d831a6161ab9eef573"
+        },
+        "line0_core2__busy_persists_until_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.106,
+          "sha256": "0e3a2cfc5a86dada6bc21ef1ea87024bb4f4e403ceae9c7c797ad76a2ddc5b7d"
+        },
+        "line0_core2__read_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0081,
+          "sha256": "427a9de7395ad7919c492fb9af1073e19b784c052a829847610fd3d81690b6b0"
+        },
+        "line0_core2__store_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0054,
+          "sha256": "c081ac036ec4af0f91216cb14c3d1cbe1e9db1d20a7d07108416558d160b7433"
+        },
+        "line0_core2__cas_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0078,
+          "sha256": "e30728f1b7994779d4509b48ff20c7d6589fb89f89571263fad6e825b29dd00e"
+        },
+        "line0_core3__start_installs_active_transaction": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.1004,
+          "sha256": "3c67d14c95710cdd873c3337445b2c8a7dca1cbb2b73072b7848f8b8557260ff"
+        },
+        "line0_core3__grant_clears_pending_and_sets_permission": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0826,
+          "sha256": "5406ca7f60694a9ef33a90bc1b31d9056295700c664c00bf84633139f60a4cac"
+        },
+        "line0_core3__ask_enqueues_pending_request": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0807,
+          "sha256": "dfe1222df6ffa3d99b5a8e78c831cb7967be527decc285e3502776c4a3d8734c"
+        },
+        "line0_core3__completion_clears_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0087,
+          "sha256": "de9ae3deb9e2d202b44f32a5f258d22d20b55a65a8bbdfe59e686cbe160836f5"
+        },
+        "line0_core3__pending_persists_until_grant": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.1026,
+          "sha256": "27671660c6c128abf04a8eb7d6878764527d0d137dafd6662c3d0eedae152607"
+        },
+        "line0_core3__pending_belongs_to_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0057,
+          "sha256": "6dfe431b6a9a1719fe1fba479e4ae0dc89b2001968d65d3ce94aa34b07457f41"
+        },
+        "line0_core3__busy_persists_until_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.105,
+          "sha256": "f41f4648bcad2ec5b606d0262bfb4e4ddecb8ccc939b9ddbdde37291e65f61a2"
+        },
+        "line0_core3__read_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0074,
+          "sha256": "6ddfe6131b8575af72f35de1ffde3c3f2869717404eba5dcdb6966f083263cc1"
+        },
+        "line0_core3__store_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0046,
+          "sha256": "1537c8774d55d191e0bd131cd9762d166bd682e63109a0b476e60e0e9c70c86d"
+        },
+        "line0_core3__cas_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0046,
+          "sha256": "1318b5bb4503ebe43ccbcbd4ff3a53393446b48e2c0014fc53ed01be23b1f047"
+        },
+        "line0__active_has_service_enabled": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0246,
+          "sha256": "72333efcb9bb5db552888d5527496451ae3a87e4fbe9ade41d62f71753c13975"
+        },
+        "line1__idle_queued_persists_until_some_start": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.4818,
+          "sha256": "6ab57566750a15c6dbe2d7aed3a6b18597f15b3ffcb9a0f898c07ab3aec53a91"
+        },
+        "line1_core0__start_installs_active_transaction": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0815,
+          "sha256": "0ed38ee6c379cf8da9e1ed89cee3cf6fd4c76743fd8c7876c6d5d59cf649dc9e"
+        },
+        "line1_core0__grant_clears_pending_and_sets_permission": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0799,
+          "sha256": "ac21a944dcdb47c72b326bf908810a29c18123f1e0ef7b8a0dff73e5a893d45a"
+        },
+        "line1_core0__ask_enqueues_pending_request": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0976,
+          "sha256": "876bcb3f026a194f0657c35914e930314418623cc1cfb238bc07a375a00f6812"
+        },
+        "line1_core0__completion_clears_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0146,
+          "sha256": "c0dd17b46767ee1d53503659a0edcab07ab8cf230e3fe29983c07997c2a6bee9"
+        },
+        "line1_core0__pending_persists_until_grant": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0942,
+          "sha256": "d02bea1f2f28bdc3f0d5846da6a63f05ba3ee30fd7cb9c730a139beec7718343"
+        },
+        "line1_core0__pending_belongs_to_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0048,
+          "sha256": "b14c5f722cbd18dfbf3d42a3b2b476ae5e7c5738c0de13293439760a61483c6c"
+        },
+        "line1_core0__busy_persists_until_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.1006,
+          "sha256": "e9ffa17378ef2ce45e3c6d1436548f3e2bcf0cf9be6f0a582401c67777fa6eff"
+        },
+        "line1_core0__read_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0051,
+          "sha256": "eb3da799b6fe3fe8606f18c7d17b4f5e7fe27d5206830a6c4a62afe4614e1af6"
+        },
+        "line1_core0__store_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0048,
+          "sha256": "d3d04e9577d45694e32c386ed587dc4d960f5c11bc99b214b284dd993121eda8"
+        },
+        "line1_core0__cas_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0051,
+          "sha256": "794edd5d06aab2733afbf1d104f3bd134f3c23b140b04c375283f2707b68ef47"
+        },
+        "line1_core1__start_installs_active_transaction": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0801,
+          "sha256": "21fd8b883ea9c7b0f386f32209cb31391ee7c66354f66cf0c3280a1f8517a8c8"
+        },
+        "line1_core1__grant_clears_pending_and_sets_permission": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.074,
+          "sha256": "a90196719b042ae65896f993a187fc33f2a06551e4ddb7bd45e624dcaf82a1b0"
+        },
+        "line1_core1__ask_enqueues_pending_request": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0813,
+          "sha256": "0d0c15cc217fe55e9762663e19d66f8e912046e715ee3d7fa17cf79bbfe82025"
+        },
+        "line1_core1__completion_clears_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0101,
+          "sha256": "bee8609a797e0bf9fe4b53f43349751fa55606c4f76a5ca2973157bcad87bb2a"
+        },
+        "line1_core1__pending_persists_until_grant": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.098,
+          "sha256": "186259c15b7c064392ae113fa6ab2b7ce3cae955eb3cda6167ffe06daaddafcd"
+        },
+        "line1_core1__pending_belongs_to_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0055,
+          "sha256": "24ac4684ef081371bbe35cdf30674584e8a0a972bc4a05cd3074f689f20bc1dd"
+        },
+        "line1_core1__busy_persists_until_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.1019,
+          "sha256": "278aabff47c81ada758a9a0bb6488e70bbd2373e01f1f848978831dbcec561c0"
+        },
+        "line1_core1__read_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0048,
+          "sha256": "202ae4d8e240872fd9b38484225924bd986244b756108e9da1706d8130e7f733"
+        },
+        "line1_core1__store_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0045,
+          "sha256": "ba97300360a87d90878d6741f4cdca6aa9be3ac698225aaa0193392ba6202f3e"
+        },
+        "line1_core1__cas_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.004,
+          "sha256": "feed5a86250c81e578f36dee14742ffdc341f7dfbe464f2197ee91ac8d9b61de"
+        },
+        "line1_core2__start_installs_active_transaction": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0784,
+          "sha256": "36db3edae28fd7160e8429069b50a8ac312fb3ae9a37cb3e56da0a75f8f34c8f"
+        },
+        "line1_core2__grant_clears_pending_and_sets_permission": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0807,
+          "sha256": "ba56b08da2c7be033efbc4bf30ad4ce3f793d5a5cac9af27c1b5a87fbfac56d8"
+        },
+        "line1_core2__ask_enqueues_pending_request": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0802,
+          "sha256": "8ea37c7e135be4a4269f4e2e180a4efa7705b29f1c9f617fd840d7ec34e6fbf3"
+        },
+        "line1_core2__completion_clears_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0076,
+          "sha256": "e7906fdecfc23e85ba4983e469c9269e6a0a6fd5b1aee4fd897e876f14ad89b3"
+        },
+        "line1_core2__pending_persists_until_grant": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0989,
+          "sha256": "0c1485da40e57b9ea8f55608bcb043b4dae980b5355c7bd2ea276a0edfb936e2"
+        },
+        "line1_core2__pending_belongs_to_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0056,
+          "sha256": "bd4c8e2447e5592051d5baf9d0639c0a9a7198c15f19d32327f167d159eefc9c"
+        },
+        "line1_core2__busy_persists_until_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.1032,
+          "sha256": "0e3a2cfc5a86dada6bc21ef1ea87024bb4f4e403ceae9c7c797ad76a2ddc5b7d"
+        },
+        "line1_core2__read_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.006,
+          "sha256": "de1d7baf14042efc51fbe5e4af374db20be44feeda213acd5ae5951216b7b772"
+        },
+        "line1_core2__store_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0061,
+          "sha256": "a7c4477161756a1abff3ce47f20d33dbbe4015c10b5d9c157886bb3baf8e5757"
+        },
+        "line1_core2__cas_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0141,
+          "sha256": "98e43c2a53d1ef68e88e4983f4c9410e2d005b26d3933a9179378b99f528d2ab"
+        },
+        "line1_core3__start_installs_active_transaction": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0751,
+          "sha256": "313a5f661f12686c105bbff7820a008678ea4115ed0a0153ce05a7b3d2fd112d"
+        },
+        "line1_core3__grant_clears_pending_and_sets_permission": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0628,
+          "sha256": "82b759bf7b7055540eb77a53422ba746e427b939eabf09dd3e803f3ed78527a1"
+        },
+        "line1_core3__ask_enqueues_pending_request": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0686,
+          "sha256": "d9a90fb1b000c2c5bd564bb52663eac0aba2ce9b584b22543e71f2d9b09f5c69"
+        },
+        "line1_core3__completion_clears_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0074,
+          "sha256": "de9ae3deb9e2d202b44f32a5f258d22d20b55a65a8bbdfe59e686cbe160836f5"
+        },
+        "line1_core3__pending_persists_until_grant": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0799,
+          "sha256": "053a9b81d928b15064536033fcebcc42084da8bc164c0a73becc0c01f4bce07d"
+        },
+        "line1_core3__pending_belongs_to_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0043,
+          "sha256": "60bf81e053ba2b03080b7175ecfdaaa36a0a6b38606c31e4ba08518a94d79b48"
+        },
+        "line1_core3__busy_persists_until_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.087,
+          "sha256": "f41f4648bcad2ec5b606d0262bfb4e4ddecb8ccc939b9ddbdde37291e65f61a2"
+        },
+        "line1_core3__read_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0049,
+          "sha256": "b77400d5dffeec187f796bded04785eb4184d2f5c38eca6ad6c114e99b5a52a1"
+        },
+        "line1_core3__store_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0037,
+          "sha256": "5c203d90a4f94331f9235d300d4aa3f30f8a2aab2d735a3fa2bb25971174128c"
+        },
+        "line1_core3__cas_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0036,
+          "sha256": "fa289dc4093774b99b6964c7c9418dec6973ac1d3f1fe52d804b4bed709f8ab0"
+        },
+        "line1__active_has_service_enabled": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0161,
+          "sha256": "ed4f9b8a045e91edb0dcf3ff71e391307ef3d3715a93ce5ff786421821fb49b0"
+        },
+        "line2__idle_queued_persists_until_some_start": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.3996,
+          "sha256": "2418cccc2bfbbf7a9f173c81317fd7661f9da1f77cc1071be836d0017f6b11b3"
+        },
+        "line2_core0__start_installs_active_transaction": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0671,
+          "sha256": "83e2d9416918ff8169983527cd7310105b261a6dca31a0fb57d1aa47b99ccbcb"
+        },
+        "line2_core0__grant_clears_pending_and_sets_permission": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0639,
+          "sha256": "61514ae9f90948db0510d1260ed95895fc78680b04b601d83402470d39ab3da2"
+        },
+        "line2_core0__ask_enqueues_pending_request": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0653,
+          "sha256": "9e9d7c46f5d710aad8775558183f2c132ea0e2e9497791bf8d27bb0607278bdf"
+        },
+        "line2_core0__completion_clears_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0076,
+          "sha256": "c0dd17b46767ee1d53503659a0edcab07ab8cf230e3fe29983c07997c2a6bee9"
+        },
+        "line2_core0__pending_persists_until_grant": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0823,
+          "sha256": "10eeb6ae2185aff01a5b86a2f54ba4b42daee01748ec15448c1c91884cceb6a3"
+        },
+        "line2_core0__pending_belongs_to_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0049,
+          "sha256": "9ff5adf48870529d85353e127c9751ca2a58412dcb4b027c968ae694ee3c420a"
+        },
+        "line2_core0__busy_persists_until_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0828,
+          "sha256": "e9ffa17378ef2ce45e3c6d1436548f3e2bcf0cf9be6f0a582401c67777fa6eff"
+        },
+        "line2_core0__read_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0046,
+          "sha256": "dcb89b56e628b0bab4ac75b5e6a4f623ea666e7b519ad6e1388cce262eb3c762"
+        },
+        "line2_core0__store_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0038,
+          "sha256": "1fb04d67616e715adcb3bb8267a0ad1ff6d8240047db656c3b8561d431be4bae"
+        },
+        "line2_core0__cas_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0036,
+          "sha256": "e16a6105b98f1b89e697b7c9796bcb34beb46c97d30c0d0148e096c8e17c3c4e"
+        },
+        "line2_core1__start_installs_active_transaction": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0633,
+          "sha256": "b0a9fc2d6fa70af8b3711f072fa382e762dc379b94ac2d46bf0c9785802dce93"
+        },
+        "line2_core1__grant_clears_pending_and_sets_permission": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0649,
+          "sha256": "a703a46069cda02b707ae1f66595007551851192dd1ffe5f60ef17d8ee525cdc"
+        },
+        "line2_core1__ask_enqueues_pending_request": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0631,
+          "sha256": "e8acd77500892024653cc4e04d75409417c2aa3f152ab0a6972cfb88b497c2d1"
+        },
+        "line2_core1__completion_clears_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0067,
+          "sha256": "bee8609a797e0bf9fe4b53f43349751fa55606c4f76a5ca2973157bcad87bb2a"
+        },
+        "line2_core1__pending_persists_until_grant": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0771,
+          "sha256": "b611723d1fc4fe96fe2d0d93a444c91311b4a3c198545577966a7f6a12a67d2b"
+        },
+        "line2_core1__pending_belongs_to_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0042,
+          "sha256": "5f66e225f2af9f2fc1fbc4b874b4875ac38680a26c47c9df96bd70cbae2d012b"
+        },
+        "line2_core1__busy_persists_until_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0787,
+          "sha256": "278aabff47c81ada758a9a0bb6488e70bbd2373e01f1f848978831dbcec561c0"
+        },
+        "line2_core1__read_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0047,
+          "sha256": "b2aaf59647c2369e48fe8d253a338c88481bd9167be881e5a77a895cd721bf85"
+        },
+        "line2_core1__store_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.004,
+          "sha256": "f1a0b7c4117eab82fc2f84007c241c01328f6c2aa2fbff500fefe02cfac72dd7"
+        },
+        "line2_core1__cas_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0039,
+          "sha256": "0146896acb2ad369ceffe65146b2f699db23e997d78a2279c4b0a816b46022d0"
+        },
+        "line2_core2__start_installs_active_transaction": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0657,
+          "sha256": "634e4bce3d48d39d2fac505a3cdbb213bdcb091d987649cf8540f3bf4e8cd6fa"
+        },
+        "line2_core2__grant_clears_pending_and_sets_permission": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0687,
+          "sha256": "c5d709e206a9ebd4f3a8455ffa4e57795a8f4aa42ca084cba1f5ab48cd2b5885"
+        },
+        "line2_core2__ask_enqueues_pending_request": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0703,
+          "sha256": "63ea987e6078a7e0e4ee8b62e96881dcd939fa09c8b91051302d1289ede8813e"
+        },
+        "line2_core2__completion_clears_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0074,
+          "sha256": "e7906fdecfc23e85ba4983e469c9269e6a0a6fd5b1aee4fd897e876f14ad89b3"
+        },
+        "line2_core2__pending_persists_until_grant": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0841,
+          "sha256": "c5ae4b8bd67320893e1779d822e47ff2518dec38d3c2191ccc65819e23c968ab"
+        },
+        "line2_core2__pending_belongs_to_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0044,
+          "sha256": "5e1eea5297356526912b4e133cdaf4b472df2b0e054b2a8c75ac6375162ed9b9"
+        },
+        "line2_core2__busy_persists_until_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0849,
+          "sha256": "0e3a2cfc5a86dada6bc21ef1ea87024bb4f4e403ceae9c7c797ad76a2ddc5b7d"
+        },
+        "line2_core2__read_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0052,
+          "sha256": "cae38c01ecb71f9e34960cf5ad41060d990ce2103f2b256661e3ba2c5646d7b2"
+        },
+        "line2_core2__store_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0041,
+          "sha256": "d197bd3991ea13110732cf958386cae53ed11fc0a3bf37d12e306e98ffcffcc9"
+        },
+        "line2_core2__cas_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.004,
+          "sha256": "65caf3e72cbafffea07a65f03d9795b6948dcf3ccc8714ab40f815f7c9a991d5"
+        },
+        "line2_core3__start_installs_active_transaction": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0645,
+          "sha256": "3572371bad50f396b25145b9f50f3417e6bfdc73ac9a3962805971f3556f252e"
+        },
+        "line2_core3__grant_clears_pending_and_sets_permission": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0645,
+          "sha256": "bfc1166e8ecf8a3f187b3e581fce6318eb26f7e28e980299d209630f844eb1c2"
+        },
+        "line2_core3__ask_enqueues_pending_request": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0624,
+          "sha256": "8a34167f751c0d5b68fdb8dd4b7d1f9943631dad954ebc92f24002c8068240ef"
+        },
+        "line2_core3__completion_clears_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0069,
+          "sha256": "de9ae3deb9e2d202b44f32a5f258d22d20b55a65a8bbdfe59e686cbe160836f5"
+        },
+        "line2_core3__pending_persists_until_grant": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0822,
+          "sha256": "d11f9b8a858abbc853359d2bf33e8c66a9a1fcd62f3f890a4ad755b36316107c"
+        },
+        "line2_core3__pending_belongs_to_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0048,
+          "sha256": "1abb7a690cb4a9104ab04a87e1f475ad3b785465712f9ec30a89a26bea1a5e22"
+        },
+        "line2_core3__busy_persists_until_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0834,
+          "sha256": "f41f4648bcad2ec5b606d0262bfb4e4ddecb8ccc939b9ddbdde37291e65f61a2"
+        },
+        "line2_core3__read_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0046,
+          "sha256": "44f41121b511b52688491b8e8a4e9d2612f5dc309ab400e29bd8431e3148e312"
+        },
+        "line2_core3__store_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0043,
+          "sha256": "be7b0136f780a1a066ba5e9b290545bdb672a7e27a2b227bae9f5a7b3c37ee49"
+        },
+        "line2_core3__cas_permission_enables_completion": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.004,
+          "sha256": "1e8e583e1ed23e5db888f029d61e33a8f9cfda425e35064347e59ec7034b9ff8"
+        },
+        "line2__active_has_service_enabled": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0169,
+          "sha256": "10ca853e33118e156cd4dafde36ac23421d36d369693eac845041a39ec212756"
+        },
+        "core0__unconfirmed_queue_can_resolve": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0042,
+          "sha256": "6faf59b405b6bab467d6b4d4fe5eaa7f6ee1ce42e8c39d383e22df10aad91792"
+        },
+        "core0__unconfirmed_queue_stable_until_resolution": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.4517,
+          "sha256": "a71160fe6c66a2ff905010bc79a28d015ac9c492ba4a540116d8882aba73827f"
+        },
+        "core0__unconfirmed_read_can_resolve": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0047,
+          "sha256": "f303401deca19dac6053384cf6451dce60f1b838c817b02a4abc395b7c946d43"
+        },
+        "core0__unconfirmed_read_stable_until_resolution": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.4066,
+          "sha256": "1e52ab6f62ffa8b358afa7021cffb24aeea0d6f757e35151092e18c0e4215bdd"
+        },
+        "core0__confirmed_head_issues_when_not_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0153,
+          "sha256": "51a524d80657b9bc16904e118c9057d75c9b6363bbac7bc8cd55624f219fa212"
+        },
+        "core0__confirmed_head_stable_until_issue": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.4065,
+          "sha256": "528ed969e453bcaa1307bae6af3a512ca668bbad7e7e22d748581acbce7c71db"
+        },
+        "core0__confirmed_read_has_settlement": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0187,
+          "sha256": "45af8beba7f95e7dfc8882dce3f31fcce3c751a6c0f5eb01039fa7c1d6acfbf9"
+        },
+        "core0__confirmed_read_stable_until_settlement": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.3808,
+          "sha256": "90678ba0c513b52c5f05adc5042aa5d80ec6a2790af286142ea948733fa6233c"
+        },
+        "core0__confirmed_read_persists_until_settlement": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.4131,
+          "sha256": "0c43510e25f0b09a569b08447a301c9bb3da6802d5fa57682b72c87d5564069d"
+        },
+        "core1__unconfirmed_queue_can_resolve": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0042,
+          "sha256": "1735643a0ab1490faa74521106fcba1b1e702bb6778cc02b3ebf80517f15719a"
+        },
+        "core1__unconfirmed_queue_stable_until_resolution": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.4493,
+          "sha256": "98a21aa14179c3c0c335fb42d5553e170a380f3fc5554199a61c696f1e98a06b"
+        },
+        "core1__unconfirmed_read_can_resolve": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0047,
+          "sha256": "4bed0053d18aa4b46f49c78778b96ec7c15b0b6314eda3b3008a5bd3029933c5"
+        },
+        "core1__unconfirmed_read_stable_until_resolution": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.4547,
+          "sha256": "b315dbaee017b1269bde20f1d22f5a1bfe6d527e989b38f4395616d8fad5e0e8"
+        },
+        "core1__confirmed_head_issues_when_not_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.018,
+          "sha256": "b6e3f9fc3b90706b5074cf2f5358d0f5e3b0974c68bb6f198af87fc35228336d"
+        },
+        "core1__confirmed_head_stable_until_issue": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.409,
+          "sha256": "1f30853a8cd84e974d0f5f0ad7eb9f120fa694d8dd8fc939082826e7f9720ff4"
+        },
+        "core1__confirmed_read_has_settlement": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0246,
+          "sha256": "70d149e22446193414c004761d2d522575e51dbf3e7b1cd86ed63a4d51d71a18"
+        },
+        "core1__confirmed_read_stable_until_settlement": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.401,
+          "sha256": "b39c0343933ab7179f968e148035bd88052acb5be651971046b776abb0378fe4"
+        },
+        "core1__confirmed_read_persists_until_settlement": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.4314,
+          "sha256": "9a7f6fabd8606e16204b682611999f09d247b5430e6ef10a67b3ffc3d3c4dc03"
+        },
+        "core2__unconfirmed_queue_can_resolve": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0044,
+          "sha256": "c909c61781d49b7fd0aab512b36e1b41f44af143f7d70df6c906e1bbdb67c156"
+        },
+        "core2__unconfirmed_queue_stable_until_resolution": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.4487,
+          "sha256": "fbf07096950564b04093d72c3715a0cbff32b917401004f34b36545c8c3ac5c7"
+        },
+        "core2__unconfirmed_read_can_resolve": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0049,
+          "sha256": "d3d07f4c0d91e89fb5b2b7224123daa4d93b0aec72f70eaf46df42f4a6fa4d70"
+        },
+        "core2__unconfirmed_read_stable_until_resolution": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.4054,
+          "sha256": "a7ece1e78a4e77ee3a042e54556c299a2a725ab36406363a64ea0df1e6536b25"
+        },
+        "core2__confirmed_head_issues_when_not_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0183,
+          "sha256": "88eb10790dc818e3cd12c343cddba48ff9932c90ed159efa87414605f37e5cb0"
+        },
+        "core2__confirmed_head_stable_until_issue": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.4433,
+          "sha256": "917b46ab98d5ff4369356f085f2e607f78710959aebfb95134839381126760a6"
+        },
+        "core2__confirmed_read_has_settlement": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0178,
+          "sha256": "b21242a8e3340cc67dfefe08423f69aafa50c75c2e9b2211d3cf6c6d0065afcd"
+        },
+        "core2__confirmed_read_stable_until_settlement": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.4133,
+          "sha256": "0493b487afeb8e016503f04f36970fb6612b65e34b5c59e2972259b34abf712a"
+        },
+        "core2__confirmed_read_persists_until_settlement": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.4278,
+          "sha256": "c00bff89dfe1f327171929b540113acdf4a69e512ca423c2eae0487d86e571a7"
+        },
+        "core3__unconfirmed_queue_can_resolve": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0049,
+          "sha256": "5a17a3bc6ed051e0b8ff2bda6bd856a4adb7fac15120499f799929e6ae70d976"
+        },
+        "core3__unconfirmed_queue_stable_until_resolution": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.4576,
+          "sha256": "7f507f3d0c5dffa3a5793480f529c8f0972bd542a1e7204b0d31a62352592d0a"
+        },
+        "core3__unconfirmed_read_can_resolve": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0047,
+          "sha256": "3d986fca7c145aa45179e8fcf72ce951d5a53f6fa3ae0f6d30900527930e91cb"
+        },
+        "core3__unconfirmed_read_stable_until_resolution": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.4481,
+          "sha256": "a678ea2a4d807456e0bef17b70a14790b0d17f9752bde0c04be2a057d613cac1"
+        },
+        "core3__confirmed_head_issues_when_not_busy": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0162,
+          "sha256": "4251adb23149b760b0ec865da82a867aab7b649b52df087fd20fb2c884ea6861"
+        },
+        "core3__confirmed_head_stable_until_issue": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.432,
+          "sha256": "bc75912e71e4b089a2abf032ca30147bede3f2d77c83ebb4df1f4fa85796a280"
+        },
+        "core3__confirmed_read_has_settlement": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.0291,
+          "sha256": "18190dbe68c802e8a76d9cc3f273e2b9197833cc6a53d9e656e62273de7e31d7"
+        },
+        "core3__confirmed_read_stable_until_settlement": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.3895,
+          "sha256": "ad96041624fc675f5f6215e154cdbab825630bef8a4d53a7600e6b95fd4bf7f2"
+        },
+        "core3__confirmed_read_persists_until_settlement": {
+          "result": "unsat",
+          "passed": true,
+          "time_s": 0.405,
+          "sha256": "200414009b49e31909d1484d7be5339dacf3d5d703eddb817f1d895e4a1b63a6"
+        }
+      }
+    }
+  },
+  "passed": true
+}
