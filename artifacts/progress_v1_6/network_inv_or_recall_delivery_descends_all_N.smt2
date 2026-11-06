@@ -1,0 +1,6 @@
+(declare-const N Int)
+(declare-const W Int)
+(declare-const D Int)
+(declare-const G Int)
+(assert (and (and (>= N 1) (<= 0 W) (<= W N) (<= 0 D) (<= D N) (<= 0 G) (<= G 1)) (>= D 1) (not (< (+ 8 (* 3 W) (- D 1)) (+ 8 (* 3 W) D)))))
+(check-sat)

@@ -1,0 +1,8 @@
+Model: experiments/10_fair_progress/fair_progress_model.py
+Full experiment: tools/progress_v16_verify.py --cores 4 --lines 2 3
+Proof summary: artifacts/progress_v1_6/summary.json
+Result: PASS: 4 cores x 2 lines, 4 cores x 3 lines
+Regression: python -m unittest discover -s tests -q
+Result: 29 tests, OK
+Source: docs/FAIR_PROGRESS_V1_6.md
+Caveat: conditional fair-path theorem, not universal all-N machine-checked LTL.

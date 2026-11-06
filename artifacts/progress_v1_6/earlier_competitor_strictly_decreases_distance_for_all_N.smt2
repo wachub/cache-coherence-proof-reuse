@@ -1,0 +1,6 @@
+(declare-const N Int)
+(declare-const T Int)
+(declare-const C Int)
+(declare-const D Int)
+(assert (and (and (>= N 1) (<= 0 T) (< T N) (<= 0 C) (< C N) (<= 0 D) (< D N)) (< (ite (>= D T) (- D T) (+ (- D T) N)) (ite (>= C T) (- C T) (+ (- C T) N))) (not (< (ite (>= C (ite (= D (- N 1)) 0 (+ D 1))) (- C (ite (= D (- N 1)) 0 (+ D 1))) (+ (- C (ite (= D (- N 1)) 0 (+ D 1))) N)) (ite (>= C T) (- C T) (+ (- C T) N))))))
+(check-sat)

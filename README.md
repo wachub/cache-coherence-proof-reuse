@@ -146,3 +146,13 @@ No cache or speculative-execution transitions were modified. The new `tools/live
 python tools/liveness_verify.py --cores 4 --lines 2 3 --output-dir /tmp/cache_liveness
 python -m unittest discover -s tests -v
 ```
+
+### v1.6 revised fair-progress model
+
+The original v1.5 safety/liveness model and its counterexamples are retained. A new
+round-robin directory and mutable symbolic-data model is in
+`experiments/10_fair_progress/`. It checks inductive safety, deadlock/progress
+obligations, arbitrary-value store execution, starvation negative controls, and
+symbolic-`N` rank/arbitration lemmas. Conditional fairness assumptions and proof
+limits are documented in [`docs/FAIR_PROGRESS_V1_6.md`](docs/FAIR_PROGRESS_V1_6.md).
+Run `python tools/progress_v16_verify.py --cores 4 --lines 2 3`.

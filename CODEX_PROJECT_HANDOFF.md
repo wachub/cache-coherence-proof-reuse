@@ -267,3 +267,19 @@ The phrase **“formally correct” must always be qualified by the model, assum
 ### First instruction to give Codex
 
 > Read `AGENTS.md`, `CODEX_PROJECT_HANDOFF.md`, `README.md`, `docs/PROOF_STATUS.md`, `docs/FAST_SOLVER_PLAYBOOK.md`, and the v1.0 combined experiment. Reproduce the four-core, two-line and three-line fresh proof runs before modifying anything. Treat v1.1 as an immutable reference. Work at the abstract transition-system / SMT level, prefer incremental delta proofs with an independent full-induction release check, and never claim a broader proof than the checked formulas support. Propose the smallest rigorous next extension and implement it with a positive witness and a SAT-producing mutant.
+
+## v1.6 amendment (November 2026)
+
+The most recent implementation is now `experiments/10_fair_progress` with
+`tools/progress_v16_verify.py`. It is a **revised transition system** with
+round-robin per-line directory arbitration and mutable symbolic payload ghost
+arrays, intentionally preserving v1.5's counterexamples for the *old* model.
+For the full fairness assumptions, symbolic-N bounds, finite-instance SMT
+results and unproved generalizations read `docs/FAIR_PROGRESS_V1_6.md`.
+
+Run: `python tools/progress_v16_verify.py --cores 4 --lines 2 3` and
+`python -m unittest discover -s tests -q`. The symbolic-N arithmetic rank
+and rotation proofs are NOT a machine-checked parameterized safety invariant
+for arbitrary core counts. The progress theorem is a conditional mathematical
+fairness argument, not an end-to-end temporal model-checker certificate.
+Do not claim that v1.4 contract hashes apply unchanged to v1.6.
