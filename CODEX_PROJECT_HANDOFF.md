@@ -283,3 +283,15 @@ and rotation proofs are NOT a machine-checked parameterized safety invariant
 for arbitrary core counts. The progress theorem is a conditional mathematical
 fairness argument, not an end-to-end temporal model-checker certificate.
 Do not claim that v1.4 contract hashes apply unchanged to v1.6.
+
+## v1.9 continuation — minimized-invariant progress verification
+
+On branch `proof/minimized-invariant-progress-v1.9`, run
+`python tools/verify_temporal_progress_v19.py --cores 4 --lines 2 3`.
+The 10 removed directory schema families remain removed from the asserted
+invariant, not the specification; no transition is changed. The tool proves
+initialization, inductive preservation, no `bad` state, nonterminal-deadlock
+enabledness and local fairness/progress rules; exact-hash reuse revalidates 290
+prior temporal SMT checks. The finite fair-lasso abstraction is **not a sound
+substitute for a concrete LTL proof**. See
+`MINIMIZED_TEMPORAL_PROGRESS_v1_9.md` for exact results and open global theorem.

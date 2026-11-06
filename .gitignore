@@ -14,3 +14,8 @@ artifacts/**/sliced_queries/
 artifacts/**/all_contract_queries.smt2
 # Regenerated v1.7 large SMT-LIB queries are distributed in a separate proof archive
 artifacts/temporal_fairness_v1_7/*cores_*lines*/
+# Reproducible but large v1.9 per-query SMT-LIB exports (separately archived)
+artifacts/minimized_temporal_progress_v1_9/*cores_*lines/
+artifacts/minimized_temporal_progress_v1_9/concrete_trace_witnesses/
+artifacts/minimized_temporal_progress_v1_9/symbolic_arithmetic/
+artifacts/minimized_temporal_progress_v1_9_smoke/

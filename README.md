@@ -165,3 +165,22 @@ checker for a finite request-progress abstraction. Fair liveness is reasoned
 about under explicit weak/strong fairness assumptions; **a native machine-checked
 global temporal proof of the original infinite-state model is not yet supplied**.
 See [`TEMPORAL_FAIRNESS_v1_7.md`](TEMPORAL_FAIRNESS_v1_7.md).
+
+### v1.9: progress and deadlock audit after directory-invariant minimization
+
+Branch `proof/minimized-invariant-progress-v1.9` verifies 459 concrete SMT
+obligations (169 freshly solved; 290 reused by exact SHA-256 matching of prior
+UNSAT proof queries), 10 symbolic-N arithmetic lemmas and 15 finite fair-lasso
+checks for the v1.8 minimized-invariant model. Three actual transition-trace
+witness/mutant checks pass. The entire 41-test regression suite passes.
+
+See `MINIMIZED_TEMPORAL_PROGRESS_v1_9.md` and run:
+
+```bash
+python tools/verify_temporal_progress_v19.py --cores 4 --lines 2 3
+python -m unittest discover -s tests -q
+```
+
+**Limit:** this verifies no-terminal-deadlock enabledness and all local progress
+premises, not a native global temporal liveness certificate for the unbounded
+concrete state system.
