@@ -1,0 +1,874 @@
+{
+  "4cores_2lines": {
+    "config": "4cores_2lines",
+    "model": "TemporalFairSpec_v1.7",
+    "candidate_definitions": {
+      "C01": "directory_sharer_metadata_supported",
+      "C03": "no_simultaneous_read_write_requests",
+      "C04": "read_request_implies_pending_invalid",
+      "C05": "write_request_implies_pending_invalid_or_shared",
+      "C06": "pending_has_queue_or_active_transaction",
+      "C07": "active_phase0_requester_is_pending",
+      "C08": "active_phase0_requester_not_also_queued",
+      "C09": "outstanding_grant_implies_no_queue",
+      "C10": "active_phase0_read_requester_invalid",
+      "C11": "invalidation_message_matches_phase_and_sharer",
+      "C12": "recall_message_matches_phase_and_owner",
+      "C13": "ack_message_matches_phase_and_sharer",
+      "C14": "writeback_message_matches_phase_and_data",
+      "C15": "shared_grant_matches_requester_and_version",
+      "C16": "modified_grant_matches_requester_and_version",
+      "C17": "grant_ack_matches_transaction_and_latest_data",
+      "C18": "phase1_has_some_grant_or_ack",
+      "C19": "write_grant_ack_implies_modified_owner",
+      "C20": "pending_grant_ack_has_a_queued_request",
+      "C21": "read_grant_ack_implies_shared_metadata",
+      "C22": "no_simultaneous_inv_and_recall",
+      "C23": "no_simultaneous_inv_and_ack",
+      "C24": "no_simultaneous_inv_and_writeback",
+      "C25": "no_simultaneous_recall_and_ack",
+      "C26": "no_simultaneous_recall_and_writeback",
+      "C27": "no_simultaneous_ack_and_writeback",
+      "C28": "phase0_owner_must_be_waited_for",
+      "C29": "phase0_writer_waits_for_other_sharer",
+      "C30": "waiter_requires_inflight_message",
+      "C31": "inflight_message_requires_waiter",
+      "G03": "owner_excludes_directory_sharers",
+      "G04": "active_transaction_has_valid_kind",
+      "G05": "owner_during_phase0_retains_dirty_data",
+      "G06": "idle_directory_has_no_inflight_messages",
+      "G07": "grant_phase_has_active_transaction_and_no_waiters"
+    },
+    "meaning": "solver-checked logical equivalence of all retained conjuncts",
+    "results": {
+      "C01": {
+        "status": "sat",
+        "seconds": 0.0155,
+        "sha256": "e7c0cd75085519ea82e14999252837774091a30ef0d576c8497c81195c349466",
+        "model_excerpt": null,
+        "schema": "directory_sharer_metadata_supported",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C03": {
+        "status": "unsat",
+        "seconds": 0.0113,
+        "sha256": "26096c42399f3e96dfa32a5fbe615ec8298c2ac235d738e5edcde388c2aaaf3b",
+        "model_excerpt": null,
+        "schema": "no_simultaneous_read_write_requests",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": true
+      },
+      "C04": {
+        "status": "sat",
+        "seconds": 0.0107,
+        "sha256": "25e6b3d36167647906fd8e533cbb083ececbeb8999acae178399b6762c4d7374",
+        "model_excerpt": null,
+        "schema": "read_request_implies_pending_invalid",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C05": {
+        "status": "sat",
+        "seconds": 0.011,
+        "sha256": "76e8eed0b36edb14f6ec0d978afb9e3aa07c1860f2a9e96a0d2bcca52d3b39f7",
+        "model_excerpt": null,
+        "schema": "write_request_implies_pending_invalid_or_shared",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C06": {
+        "status": "sat",
+        "seconds": 0.0111,
+        "sha256": "bb7bda1085a2c8a26d4c696c1ee2c248d5bd8e79a78ee51a7939c6112cefa091",
+        "model_excerpt": null,
+        "schema": "pending_has_queue_or_active_transaction",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C07": {
+        "status": "sat",
+        "seconds": 0.0108,
+        "sha256": "7cf9c07e1055a7fcc1d27c62690e56a3352d053582a73d290be06b97b03f5068",
+        "model_excerpt": null,
+        "schema": "active_phase0_requester_is_pending",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C08": {
+        "status": "sat",
+        "seconds": 0.0156,
+        "sha256": "0683cc46995d916cf0566436b78a115036410cf1e12264c6b3de1dcd284b8d7c",
+        "model_excerpt": null,
+        "schema": "active_phase0_requester_not_also_queued",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C09": {
+        "status": "sat",
+        "seconds": 0.0111,
+        "sha256": "98b597f3d9e658001206c16ba7563cc9c0e7dfc3477d0ae3222d1974c25f6576",
+        "model_excerpt": null,
+        "schema": "outstanding_grant_implies_no_queue",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C10": {
+        "status": "sat",
+        "seconds": 0.0109,
+        "sha256": "53d73284ffa9e279974206707998473a4fc13aa7e0bdc0bd5565ce84568fe224",
+        "model_excerpt": null,
+        "schema": "active_phase0_read_requester_invalid",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C11": {
+        "status": "sat",
+        "seconds": 0.0104,
+        "sha256": "05950b73edfc7ea457e9be041eaa6129f8fdce2837290376cc88df07b482f23c",
+        "model_excerpt": null,
+        "schema": "invalidation_message_matches_phase_and_sharer",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C12": {
+        "status": "sat",
+        "seconds": 0.0152,
+        "sha256": "7b7ce525f0970892b049368b1a5bf22b3db478676fdadfa1aeb8a003666f4350",
+        "model_excerpt": null,
+        "schema": "recall_message_matches_phase_and_owner",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C13": {
+        "status": "sat",
+        "seconds": 0.0114,
+        "sha256": "f7f9f2ee02c515a4734515831ff1bc9f7651c7e484378bc8deeec9b11da80eac",
+        "model_excerpt": null,
+        "schema": "ack_message_matches_phase_and_sharer",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C14": {
+        "status": "sat",
+        "seconds": 0.0112,
+        "sha256": "e06ad4b05872de2a124be93f52f704c801dc5b457a51b4eb3d499abf3deb4286",
+        "model_excerpt": null,
+        "schema": "writeback_message_matches_phase_and_data",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C15": {
+        "status": "sat",
+        "seconds": 0.0111,
+        "sha256": "11716bf4727c580a1865486be9213e46b582662acbed1399c64e5f27433938fd",
+        "model_excerpt": null,
+        "schema": "shared_grant_matches_requester_and_version",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C16": {
+        "status": "sat",
+        "seconds": 0.0113,
+        "sha256": "4bebcabc91e167921e65420d544c7a72383c5123b22fcc92947c5fcf81fddbfc",
+        "model_excerpt": null,
+        "schema": "modified_grant_matches_requester_and_version",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C17": {
+        "status": "sat",
+        "seconds": 0.0137,
+        "sha256": "f6b81fd116d327108dcc6b4ab4773882033fa7a8f7d4c2c6b8e7a28925255957",
+        "model_excerpt": null,
+        "schema": "grant_ack_matches_transaction_and_latest_data",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C18": {
+        "status": "sat",
+        "seconds": 0.011,
+        "sha256": "0b65a8c56b428097718802e00942831bf7309cd547fe98dbc693e045c882f3e7",
+        "model_excerpt": null,
+        "schema": "phase1_has_some_grant_or_ack",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C19": {
+        "status": "sat",
+        "seconds": 0.0116,
+        "sha256": "dba13924983f02c9ec703a61b85970d471143ca10041b0fc69719bbbd1a07128",
+        "model_excerpt": null,
+        "schema": "write_grant_ack_implies_modified_owner",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C20": {
+        "status": "sat",
+        "seconds": 0.011,
+        "sha256": "495854334d60cb1f3051a526c508d08e08db3ca76f9ff960339b3a4042b12540",
+        "model_excerpt": null,
+        "schema": "pending_grant_ack_has_a_queued_request",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C21": {
+        "status": "sat",
+        "seconds": 0.0114,
+        "sha256": "8f7cedd8078cf626783894fa73a80c7573ab8a71b3e063e047dd092a425fb60b",
+        "model_excerpt": null,
+        "schema": "read_grant_ack_implies_shared_metadata",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C22": {
+        "status": "unsat",
+        "seconds": 0.0105,
+        "sha256": "5eb8026b60b37f54fbc965122fc3618e9c9a586d0b1296d006becaad919f640e",
+        "model_excerpt": null,
+        "schema": "no_simultaneous_inv_and_recall",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": true
+      },
+      "C23": {
+        "status": "unsat",
+        "seconds": 0.0106,
+        "sha256": "276e5ca269d20090970527a901dc35d29389dc6e7654b3253d4e4880a715364b",
+        "model_excerpt": null,
+        "schema": "no_simultaneous_inv_and_ack",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": true
+      },
+      "C24": {
+        "status": "unsat",
+        "seconds": 0.0109,
+        "sha256": "b87b0a58d3ea411b122b9ec38d64377fead2caaf080e06c3db95b1d7d99c7680",
+        "model_excerpt": null,
+        "schema": "no_simultaneous_inv_and_writeback",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": true
+      },
+      "C25": {
+        "status": "unsat",
+        "seconds": 0.0107,
+        "sha256": "c44943c4932c3aa43c38d6533b4cdc7fb046bc2e3bd9a0147996d89211bfe65a",
+        "model_excerpt": null,
+        "schema": "no_simultaneous_recall_and_ack",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": true
+      },
+      "C26": {
+        "status": "unsat",
+        "seconds": 0.0101,
+        "sha256": "c834a31acc07fc66c623c50506012da4ba8dce939d2b0d755d655b4ce99f64b2",
+        "model_excerpt": null,
+        "schema": "no_simultaneous_recall_and_writeback",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": true
+      },
+      "C27": {
+        "status": "unsat",
+        "seconds": 0.0108,
+        "sha256": "eb1c327077b128df79c8b13ff42e3394a400c5c5645e3b8e6211eda498ada645",
+        "model_excerpt": null,
+        "schema": "no_simultaneous_ack_and_writeback",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": true
+      },
+      "C28": {
+        "status": "sat",
+        "seconds": 0.012,
+        "sha256": "0c90cadb8d121183853f5cbe88e244f1648d2f03fc38092d80aaa3df37b00cc9",
+        "model_excerpt": null,
+        "schema": "phase0_owner_must_be_waited_for",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C29": {
+        "status": "sat",
+        "seconds": 0.0105,
+        "sha256": "0b6802fcbcd60c797167fd386ba138ff484089d8eaac65fd8f75a7d6c67d8f36",
+        "model_excerpt": null,
+        "schema": "phase0_writer_waits_for_other_sharer",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C30": {
+        "status": "sat",
+        "seconds": 0.0105,
+        "sha256": "caeff6c1875760d2fe03d31499454eed80f1099033d7b673a02d4415381f754f",
+        "model_excerpt": null,
+        "schema": "waiter_requires_inflight_message",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C31": {
+        "status": "unsat",
+        "seconds": 0.011,
+        "sha256": "9d7f7d67a0c22a7fd6abbf5072f85c059f6ef7437f32e26ae71e5c800f3e6834",
+        "model_excerpt": null,
+        "schema": "inflight_message_requires_waiter",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": true
+      },
+      "G03": {
+        "status": "sat",
+        "seconds": 0.0112,
+        "sha256": "7a5ae7469f914a87938040a0b2fa7c1f16d9b3e5b168b86c6149fc4ac6699784",
+        "model_excerpt": null,
+        "schema": "owner_excludes_directory_sharers",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "G04": {
+        "status": "sat",
+        "seconds": 0.0109,
+        "sha256": "ab13bdda535c266cf0d7d0fbdb77ad38800bb77b0a32f4e5ecfef5906b4de183",
+        "model_excerpt": null,
+        "schema": "active_transaction_has_valid_kind",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "G05": {
+        "status": "unsat",
+        "seconds": 0.0114,
+        "sha256": "8828dcf25c1bb8f3fab4cc96faa9f3dea069b497a901f8c9e2941d3eebb262cc",
+        "model_excerpt": null,
+        "schema": "owner_during_phase0_retains_dirty_data",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": true
+      },
+      "G06": {
+        "status": "sat",
+        "seconds": 0.0108,
+        "sha256": "1656c6af33857a06bcd512d01b6a50442d7a2dae1e03cfd2b4301275adbbfbcd",
+        "model_excerpt": null,
+        "schema": "idle_directory_has_no_inflight_messages",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "G07": {
+        "status": "unsat",
+        "seconds": 0.011,
+        "sha256": "6357688d3174c513edd06e8e5fc2ab140c5a489b27411c7eabe4686cd55fc5ca",
+        "model_excerpt": null,
+        "schema": "grant_phase_has_active_transaction_and_no_waiters",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": true
+      }
+    },
+    "removed": [
+      "C03",
+      "C22",
+      "C23",
+      "C24",
+      "C25",
+      "C26",
+      "C27",
+      "C31",
+      "G05",
+      "G07"
+    ],
+    "retained": [
+      "C01",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C09",
+      "C10",
+      "C11",
+      "C12",
+      "C13",
+      "C14",
+      "C15",
+      "C16",
+      "C17",
+      "C18",
+      "C19",
+      "C20",
+      "C21",
+      "C28",
+      "C29",
+      "C30",
+      "G03",
+      "G04",
+      "G06"
+    ],
+    "init_is_consistent": {
+      "status": "sat",
+      "seconds": 0.0109,
+      "sha256": "ee48ff6cb7fe8c596c8b5d9f2eb3d16f997119929444660965aa1bd051c6cdc1",
+      "model_excerpt": null
+    },
+    "removed_count": 10,
+    "reduced_implies_all_removed": {
+      "status": "unsat",
+      "seconds": 0.0143,
+      "sha256": "f1fa1670232decade3b06d12f255d17d6e1322148bc3062584dcde7a406c6257",
+      "model_excerpt": null
+    },
+    "initial": {
+      "status": "unsat",
+      "seconds": 0.0057,
+      "sha256": "44fa1d79f4f1b3473f0c29fdc7958484fbc2e1720140fa158bf052f1186de1fb",
+      "model_excerpt": null
+    },
+    "inductive_step": {
+      "status": "unsat",
+      "seconds": 0.6846,
+      "sha256": "cc01a7bcca6c501cc0fc8f13fb14bae522aa455329afba168e93544663df4716",
+      "model_excerpt": null
+    },
+    "safety": {
+      "status": "unsat",
+      "seconds": 0.0035,
+      "sha256": "703eb334dff41893aa9166b17bdb4b4f15e96f68f35270f1e2c566f784e21932",
+      "model_excerpt": null
+    },
+    "other_invariants_imply_all_directory_clauses": {
+      "status": "sat",
+      "seconds": 0.0144,
+      "sha256": "ff5b86b0b73d7fa354466e544cb528a2cccf1d29e088f5f1c57fa6e14e94c28f",
+      "model_excerpt": "((l0__tx 0)\n (l0__phase 0)\n (l0__kind 2)\n (l0__owner 3)\n (l0__wait_0 false)\n (l0__inv_0 false)\n (l0__grM_0 false)\n (l0__mode_0 0))"
+    },
+    "success": true
+  },
+  "4cores_3lines": {
+    "config": "4cores_3lines",
+    "model": "TemporalFairSpec_v1.7",
+    "candidate_definitions": {
+      "C01": "directory_sharer_metadata_supported",
+      "C03": "no_simultaneous_read_write_requests",
+      "C04": "read_request_implies_pending_invalid",
+      "C05": "write_request_implies_pending_invalid_or_shared",
+      "C06": "pending_has_queue_or_active_transaction",
+      "C07": "active_phase0_requester_is_pending",
+      "C08": "active_phase0_requester_not_also_queued",
+      "C09": "outstanding_grant_implies_no_queue",
+      "C10": "active_phase0_read_requester_invalid",
+      "C11": "invalidation_message_matches_phase_and_sharer",
+      "C12": "recall_message_matches_phase_and_owner",
+      "C13": "ack_message_matches_phase_and_sharer",
+      "C14": "writeback_message_matches_phase_and_data",
+      "C15": "shared_grant_matches_requester_and_version",
+      "C16": "modified_grant_matches_requester_and_version",
+      "C17": "grant_ack_matches_transaction_and_latest_data",
+      "C18": "phase1_has_some_grant_or_ack",
+      "C19": "write_grant_ack_implies_modified_owner",
+      "C20": "pending_grant_ack_has_a_queued_request",
+      "C21": "read_grant_ack_implies_shared_metadata",
+      "C22": "no_simultaneous_inv_and_recall",
+      "C23": "no_simultaneous_inv_and_ack",
+      "C24": "no_simultaneous_inv_and_writeback",
+      "C25": "no_simultaneous_recall_and_ack",
+      "C26": "no_simultaneous_recall_and_writeback",
+      "C27": "no_simultaneous_ack_and_writeback",
+      "C28": "phase0_owner_must_be_waited_for",
+      "C29": "phase0_writer_waits_for_other_sharer",
+      "C30": "waiter_requires_inflight_message",
+      "C31": "inflight_message_requires_waiter",
+      "G03": "owner_excludes_directory_sharers",
+      "G04": "active_transaction_has_valid_kind",
+      "G05": "owner_during_phase0_retains_dirty_data",
+      "G06": "idle_directory_has_no_inflight_messages",
+      "G07": "grant_phase_has_active_transaction_and_no_waiters"
+    },
+    "meaning": "solver-checked logical equivalence of all retained conjuncts",
+    "results": {
+      "C01": {
+        "status": "sat",
+        "seconds": 0.0167,
+        "sha256": "4ed1e456efccf9b1d60e14df5241ba9877285904bf560c3af00759e2646a412f",
+        "model_excerpt": null,
+        "schema": "directory_sharer_metadata_supported",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C03": {
+        "status": "unsat",
+        "seconds": 0.0149,
+        "sha256": "91d4cff80de8adc36de9c3eff7094a7e38a17cd08f2dbe5142ad2b8180b3cdad",
+        "model_excerpt": null,
+        "schema": "no_simultaneous_read_write_requests",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": true
+      },
+      "C04": {
+        "status": "sat",
+        "seconds": 0.0178,
+        "sha256": "4ea4862e8d77c6fb93924d556da006b646ceb3be5922d87365f7128a40c2e9fc",
+        "model_excerpt": null,
+        "schema": "read_request_implies_pending_invalid",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C05": {
+        "status": "sat",
+        "seconds": 0.0173,
+        "sha256": "a0e011c0582d6d990ef9afff9077585b910b7a6c76610e8f57deac4b6b21ce5c",
+        "model_excerpt": null,
+        "schema": "write_request_implies_pending_invalid_or_shared",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C06": {
+        "status": "sat",
+        "seconds": 0.0162,
+        "sha256": "401a2d41db9f33b75bc688c531698a1af2708d78e3ddffee8ad1a94eec090ba2",
+        "model_excerpt": null,
+        "schema": "pending_has_queue_or_active_transaction",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C07": {
+        "status": "sat",
+        "seconds": 0.017,
+        "sha256": "635eea2a5bf561eab83ab9184dfe5a177424256f2b006a82972211ddf6801ee2",
+        "model_excerpt": null,
+        "schema": "active_phase0_requester_is_pending",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C08": {
+        "status": "sat",
+        "seconds": 0.0174,
+        "sha256": "3a088471dc426a21ab08bc5625022392b8652164146c3d031e611b380bbc88fc",
+        "model_excerpt": null,
+        "schema": "active_phase0_requester_not_also_queued",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C09": {
+        "status": "sat",
+        "seconds": 0.0168,
+        "sha256": "b8a4f18a42b0f6e2fe7dc464da378aedf65bf014a3d28f66f1a2a98fb1e83da0",
+        "model_excerpt": null,
+        "schema": "outstanding_grant_implies_no_queue",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C10": {
+        "status": "sat",
+        "seconds": 0.0166,
+        "sha256": "d9df150e0bfcd48bbfcab03c14ba498ce5e7e82ac07c9474a315f6786249f49f",
+        "model_excerpt": null,
+        "schema": "active_phase0_read_requester_invalid",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C11": {
+        "status": "sat",
+        "seconds": 0.0158,
+        "sha256": "04dd80d5be4eb2e84dbb408fd9801734cf333a27689568caabd486229793b1c4",
+        "model_excerpt": null,
+        "schema": "invalidation_message_matches_phase_and_sharer",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C12": {
+        "status": "sat",
+        "seconds": 0.0171,
+        "sha256": "4a74ff543e59b84146281773ac1a8a24f5a24224a625aba3aa8559c4525a2ba6",
+        "model_excerpt": null,
+        "schema": "recall_message_matches_phase_and_owner",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C13": {
+        "status": "sat",
+        "seconds": 0.0169,
+        "sha256": "7582ed02e4502327ae1b804fdb30bbc334dbde46997e21f59e245b8115ee5fc6",
+        "model_excerpt": null,
+        "schema": "ack_message_matches_phase_and_sharer",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C14": {
+        "status": "sat",
+        "seconds": 0.0208,
+        "sha256": "3d0f4ec011cfd9aafa802733358222529ac500ecfa9b0b9b4a0c9c08ed365ee4",
+        "model_excerpt": null,
+        "schema": "writeback_message_matches_phase_and_data",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C15": {
+        "status": "sat",
+        "seconds": 0.0177,
+        "sha256": "0bb1f49c6a708c3864ec76a7b39f05a4899d5c9b3f3ff63c437a8e92a3e64569",
+        "model_excerpt": null,
+        "schema": "shared_grant_matches_requester_and_version",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C16": {
+        "status": "sat",
+        "seconds": 0.0175,
+        "sha256": "638bfe40a2d8b8768e5d2d7c89a9157094a36ffd12c7e18b76874ac3a217bf1b",
+        "model_excerpt": null,
+        "schema": "modified_grant_matches_requester_and_version",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C17": {
+        "status": "sat",
+        "seconds": 0.0176,
+        "sha256": "eb72fed7c1c0eee03ca3c791298fc3ec7cafa142e4b404adcb756e63f0d547a9",
+        "model_excerpt": null,
+        "schema": "grant_ack_matches_transaction_and_latest_data",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C18": {
+        "status": "sat",
+        "seconds": 0.016,
+        "sha256": "e401ea63f413c9a47e5b2bdccff564278e83879c4c3fe5c2d1bd23f4fa927e69",
+        "model_excerpt": null,
+        "schema": "phase1_has_some_grant_or_ack",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C19": {
+        "status": "sat",
+        "seconds": 0.0182,
+        "sha256": "18184adf34b2551ab8cfea5b12cded3d4fd74ed39e5f4b220251bb1aa74ac761",
+        "model_excerpt": null,
+        "schema": "write_grant_ack_implies_modified_owner",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C20": {
+        "status": "sat",
+        "seconds": 0.0201,
+        "sha256": "801d5879e62b9d6977370b510e5af56cfde9f1233928e4a5ce17ef722b0dbd9b",
+        "model_excerpt": null,
+        "schema": "pending_grant_ack_has_a_queued_request",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C21": {
+        "status": "sat",
+        "seconds": 0.0163,
+        "sha256": "9db8194152948c8c3f8ed08941b555265410ed95b36711c9792c15a68073b95d",
+        "model_excerpt": null,
+        "schema": "read_grant_ack_implies_shared_metadata",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C22": {
+        "status": "unsat",
+        "seconds": 0.0155,
+        "sha256": "30e9c074c5cbde113bf42add3ca49d66edb6ee964ac59f1a35c2e04d0e438fca",
+        "model_excerpt": null,
+        "schema": "no_simultaneous_inv_and_recall",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": true
+      },
+      "C23": {
+        "status": "unsat",
+        "seconds": 0.0156,
+        "sha256": "28ed35157edf9368fd8aeeab456ab9431e6947510e2ae4ec82495ff00648ee07",
+        "model_excerpt": null,
+        "schema": "no_simultaneous_inv_and_ack",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": true
+      },
+      "C24": {
+        "status": "unsat",
+        "seconds": 0.0304,
+        "sha256": "7c90c6674205b615beaa98f822727d9ebe41a2d9abed69d7431ccc4cf67f5183",
+        "model_excerpt": null,
+        "schema": "no_simultaneous_inv_and_writeback",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": true
+      },
+      "C25": {
+        "status": "unsat",
+        "seconds": 0.0141,
+        "sha256": "04c17e6539b64a2840cf3653d88d9672a8f94d819701597b2226435cc1640ecf",
+        "model_excerpt": null,
+        "schema": "no_simultaneous_recall_and_ack",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": true
+      },
+      "C26": {
+        "status": "unsat",
+        "seconds": 0.0146,
+        "sha256": "29e80e5059c93ace40f5d9a14acd013af2829a9d689d5c731a32b75f9235c0c9",
+        "model_excerpt": null,
+        "schema": "no_simultaneous_recall_and_writeback",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": true
+      },
+      "C27": {
+        "status": "unsat",
+        "seconds": 0.0155,
+        "sha256": "c81e8ea2d0d7acfa9a7210f9251f3f543d39fcbbcab595c2b88096ac05e57000",
+        "model_excerpt": null,
+        "schema": "no_simultaneous_ack_and_writeback",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": true
+      },
+      "C28": {
+        "status": "sat",
+        "seconds": 0.0152,
+        "sha256": "bc1bc036478682c338e0fd5f8920a7ddb3d3da22db80f2bdbba6110679864e08",
+        "model_excerpt": null,
+        "schema": "phase0_owner_must_be_waited_for",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C29": {
+        "status": "sat",
+        "seconds": 0.0157,
+        "sha256": "b11c273253f20a2b625cd7d707cc0ac0af730f22acb67e949033b8c078df1be2",
+        "model_excerpt": null,
+        "schema": "phase0_writer_waits_for_other_sharer",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C30": {
+        "status": "sat",
+        "seconds": 0.014,
+        "sha256": "e97684179a5a138342b8e569b24b5d40f2a4fe2298c89cbcb6db26d86b779815",
+        "model_excerpt": null,
+        "schema": "waiter_requires_inflight_message",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "C31": {
+        "status": "unsat",
+        "seconds": 0.0144,
+        "sha256": "c25a037ba17a231ddbcde306f773552621b9647e6a9a62b7400b3c73b5955d54",
+        "model_excerpt": null,
+        "schema": "inflight_message_requires_waiter",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": true
+      },
+      "G03": {
+        "status": "sat",
+        "seconds": 0.0139,
+        "sha256": "30124d8f3a5419b3906cb644ab9e32d4327416d4b3ddb79feb1aafcf648fd5fd",
+        "model_excerpt": null,
+        "schema": "owner_excludes_directory_sharers",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "G04": {
+        "status": "sat",
+        "seconds": 0.0137,
+        "sha256": "51f04ac0059884524989d0a5f6be35ef36b9c706768ef09df81483b1d3907203",
+        "model_excerpt": null,
+        "schema": "active_transaction_has_valid_kind",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "G05": {
+        "status": "unsat",
+        "seconds": 0.0142,
+        "sha256": "c9cd88768805c6d0e3e1bccf81c42e2bf56f99f7a09237451fbc0b4ade181f5e",
+        "model_excerpt": null,
+        "schema": "owner_during_phase0_retains_dirty_data",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": true
+      },
+      "G06": {
+        "status": "sat",
+        "seconds": 0.0152,
+        "sha256": "7a2c590fda03bcf0fc683f0007284eff0452202181d5a8e38c69f4ae4c4f66f5",
+        "model_excerpt": null,
+        "schema": "idle_directory_has_no_inflight_messages",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": false
+      },
+      "G07": {
+        "status": "unsat",
+        "seconds": 0.0135,
+        "sha256": "7d374ddfdddd18f4f9b5d038c9377566b043e3afa2757d968702cd1b94449179",
+        "model_excerpt": null,
+        "schema": "grant_phase_has_active_transaction_and_no_waiters",
+        "interpretation": "unsat=logically redundant; sat=independent; unknown=inconclusive",
+        "removed": true
+      }
+    },
+    "removed": [
+      "C03",
+      "C22",
+      "C23",
+      "C24",
+      "C25",
+      "C26",
+      "C27",
+      "C31",
+      "G05",
+      "G07"
+    ],
+    "retained": [
+      "C01",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C09",
+      "C10",
+      "C11",
+      "C12",
+      "C13",
+      "C14",
+      "C15",
+      "C16",
+      "C17",
+      "C18",
+      "C19",
+      "C20",
+      "C21",
+      "C28",
+      "C29",
+      "C30",
+      "G03",
+      "G04",
+      "G06"
+    ],
+    "init_is_consistent": {
+      "status": "sat",
+      "seconds": 0.0067,
+      "sha256": "9977f2c31230b8ab5204ed72626eb71cf07135213c4fb77fc6da790f4c830813",
+      "model_excerpt": null
+    },
+    "removed_count": 10,
+    "reduced_implies_all_removed": {
+      "status": "unsat",
+      "seconds": 0.0209,
+      "sha256": "bd758fe5f99407558c307de0482657b5d70c24a5c66ca69d2836cd72f5cf2885",
+      "model_excerpt": null
+    },
+    "initial": {
+      "status": "unsat",
+      "seconds": 0.0074,
+      "sha256": "30fca4794c72a85138ff00f9e9e6acbaf5f65383eb348fee57776b2656738abf",
+      "model_excerpt": null
+    },
+    "inductive_step": {
+      "status": "unsat",
+      "seconds": 1.2755,
+      "sha256": "7d2a6e433b790442cfadd72bfa8426a845f5d9f2385a2ef856ed95b488d678a5",
+      "model_excerpt": null
+    },
+    "safety": {
+      "status": "unsat",
+      "seconds": 0.0048,
+      "sha256": "7d53595a1bc80399bc92a7bae97decb4a7eeec8ba99b751dc5c80ce147667766",
+      "model_excerpt": null
+    },
+    "other_invariants_imply_all_directory_clauses": {
+      "status": "sat",
+      "seconds": 0.0161,
+      "sha256": "125a9f173527fd9343c82051b834111d9f6067e2e46a28539ae4ebcc6e3c5d3b",
+      "model_excerpt": "((l0__tx 0)\n (l0__phase 0)\n (l0__kind 2)\n (l0__owner 3)\n (l0__wait_0 false)\n (l0__inv_0 false)\n (l0__grM_0 false)\n (l0__mode_0 0))"
+    },
+    "success": true
+  }
+}
