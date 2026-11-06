@@ -1,3 +1,5 @@
+> **v2.0 MESI/MOESI extension:** See [MESI_MOESI_EXTENSION_v2_0.md](MESI_MOESI_EXTENSION_v2_0.md) for new abstract coherence variants, verified 4-core safety, progress premises and reproducible scripts. The full global temporal theorem is still open.
+
 # Cache concurrency / coherence formal verification experiments
 
 **A reconstructed, version-controlled research archive** of the incremental models developed in the preceding discussion, from the first explicit-state cache checker to speculative writes with a two-entry per-core queue.

@@ -32,3 +32,7 @@ protocol scheduling. A distinct reachable write-completion stall follows from
 the inherited immutable payload-version representation. See the proof report
 for assumptions and separate results. The full safety regression and 24 unit
 tests passed without modifying historical models.
+
+## v2.0 MESI/MOESI selectable extension
+
+See `../MESI_MOESI_EXTENSION_v2_0.md` for the formal scope, new variants, SMT proofs, witnesses, negative controls, and commands. Safety induction for 4 cores × 2/3 lines passed for MESI and MOESI. 4×2 local progress obligations passed, but no global temporal-liveness certificate or full SC refinement theorem has been produced. **Do not reuse v1.9 MSI proof hashes as proofs of these changed systems.**

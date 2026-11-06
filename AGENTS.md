@@ -1,3 +1,12 @@
+> **Active feature branch: `feature/mesi-moesi-composable` (v2.0).** Read
+> `MESI_MOESI_EXTENSION_v2_0.md` before changes. Abstract MESI and MOESI
+> implementations are in `experiments/12_mesi_moesi/`. Their new-model SMT
+> safety proofs are fresh, not automatic reuse of the old MSI certificates.
+> The complete global temporal-liveness and SC trace-refinement theorems
+> remain unproved. Use `tools/verify_mesi_moesi_v20.py`,
+> `tools/verify_extended_progress_v20.py`, and
+> `tools/verify_extended_focused_v20.py` to reproduce the scope reported.
+
 # Codex agent instructions — cache concurrency formal verification
 
 Read `CODEX_PROJECT_HANDOFF.md` first, then `docs/PROOF_STATUS.md`, `docs/FAST_SOLVER_PLAYBOOK.md`, `SAT_SMT_HEURISTICS.md`, and `experiments/09_combined_speculative_reads_writes/README.md`.

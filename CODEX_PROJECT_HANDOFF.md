@@ -1,3 +1,9 @@
+> **v2.0 update (2026-11-06):** This handoff preserves historical MSI instructions. For
+> current MESI/MOESI coherence models, see `MESI_MOESI_EXTENSION_v2_0.md`.
+> Old immutable payload descriptions below have been superseded by the v1.6
+> mutable ghost-array model. The MESI/MOESI models reuse the speculative
+> frontend and RR arbiter, but require newly checked invariants and transitions.
+
 # Codex Project Handoff — Incremental Formal Verification of Multicore Cache Coherence and Speculation
 
 **Project status:** 2026-11-05  
