@@ -1,11 +1,10 @@
-> **Active feature branch: `feature/mesi-moesi-composable` (v2.0).** Read
-> `MESI_MOESI_EXTENSION_v2_0.md` before changes. Abstract MESI and MOESI
-> implementations are in `experiments/12_mesi_moesi/`. Their new-model SMT
-> safety proofs are fresh, not automatic reuse of the old MSI certificates.
-> The complete global temporal-liveness and SC trace-refinement theorems
-> remain unproved. Use `tools/verify_mesi_moesi_v20.py`,
-> `tools/verify_extended_progress_v20.py`, and
-> `tools/verify_extended_focused_v20.py` to reproduce the scope reported.
+> **Desktop handoff baseline: `main` from v2.1.** Read `START_HERE_DESKTOP.md`
+> and `CHATGPT_PROJECT_INSTRUCTIONS.md` first. The most recent hierarchy model
+> is an **atomic-service** abstraction (`experiments/13_hierarchy/`), *not* an
+> asynchronous multilevel replacement of the v2.0 MSI/MESI/MOESI model.
+> The global concrete temporal-liveness theorem, full SC trace refinement,
+> arbitrary-core theorem, and automatic semantic cross-version certificate
+> transfer remain unproved. Original experiment branches and tags are retained.
 
 # Codex agent instructions — cache concurrency formal verification
 

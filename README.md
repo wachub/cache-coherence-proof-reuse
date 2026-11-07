@@ -1,3 +1,9 @@
+# ChatGPT Desktop handoff (2026-11-07)
+
+Start with **[START_HERE_DESKTOP.md](START_HERE_DESKTOP.md)** for local project setup and publishing to a **private GitHub repository**, **[CHATGPT_PROJECT_INSTRUCTIONS.md](CHATGPT_PROJECT_INSTRUCTIONS.md)** for the agent prompt, and **[PROJECT_FIRST_MESSAGE.md](PROJECT_FIRST_MESSAGE.md)** for the first chat message. The main branch is based on the verified-scope v2.1 snapshot; proof limitations are documented, not removed. The original historical branch names are preserved.
+
+---
+
 # v2.1 new experimental branch: configurable cache hierarchy
 
 For independently variable cache fan-out and depth, see **[HIERARCHICAL_COHERENCE_v2_1.md](HIERARCHICAL_COHERENCE_v2_1.md)**. This introduces an **atomic abstract hierarchy**, not yet an asynchronous hierarchical replacement for the existing v2.0 MESI/MOESI implementation. Source: `experiments/13_hierarchy/hierarchy.py`; proof tools: `tools/verify_*_v21.py`, `tools/verify_width_extension_v21.py`. The original v2.0 implementation and regression tests are retained.
